@@ -1,21 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sudaphone/view/widgets/constants.dart';
+import '../screen.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_social_login.dart';
-import '../constants.dart';
 import '../widgets/build_positioned_bottom.dart';
 import '../widgets/build_positioned_top.dart';
-import '../pages/screen.dart';
 import '../widgets/custom_text.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
-//import '../services/auth.dart';
 
 class LogIn extends StatefulWidget {
-  /// Function get onClick => null;
 
   @override
   State<StatefulWidget> createState() {
-    // var logInState = LogInState(onClick);
     return LogInState();
   }
 }
@@ -48,71 +44,16 @@ showdialogall(context, String mycontent) {
 }
 
 class LogInState extends State<LogIn> {
-  ///LogInState(this.onClick);
-  ///----
-  // final _auth = Auth();
-  // String _email, _password;
-  //  Function? onClick;
-  ///------
-
-  /// bool isLoading = false;
-
-  ///Start Controller
-  // late TextEditingController username = new TextEditingController();
-  // late TextEditingController email = new TextEditingController();
-  // late TextEditingController password = new TextEditingController();
-  // late TextEditingController confirmpassword = new TextEditingController();
-
   GlobalKey<FormState> formstatesignin = new GlobalKey<FormState>();
   GlobalKey<FormState> formstatesignup = new GlobalKey<FormState>();
 
-  // savePre(String username, String email, String password) async {
-  //   SharedPreferences preferences = await SharedPreferences.getInstance();
-  //   preferences.setString("username", username);
-  //   preferences.setString("email", email);
-  //   print(preferences.getString("username"));
-  //   print(preferences.getString("email"));
-  // }
-
-  // getPre() async {
-  //   SharedPreferences preferences = await SharedPreferences.getInstance();
-  //  setState(() {
-  //   var  username = preferences.getString("username");
-  //   var email = preferences.getString("email");
-  //  });
-
-  // }
-
   signin() {
-    // String formdata = formstatesignin.currentState;
-    // if (formdata.validate()) {
-    //   formdata.save();
-    //   // print(_email);
-    //   // print(_password);
-    //   // final authResult = await _auth.signIn(_email, _password);
-    //   // setState(() {
-
-    //   // });
-    //   // print(authResult.user.uid);
-    //   showdialogall(context, "تم تسجيل دخولك بنجاح");
-    // }
     showdialogall(context, "تم تسجيل دخولك بنجاح");
   }
 
   signup() {
-    // String formdata = formstatesignup.currentState;
-    // if (formdata.validate()) {
-    //   formdata.save();
-    //   //print(_email);
-    //   // print(_password);
-    //   // final authResult = await _auth.signUp(_email, _password);
-    //   // print(authResult.user.uid);
-    //   showdialogall(context, "تم إنشاء الحساب بنجاح");
-    // }
     showdialogall(context, "تم إنشاء الحساب بنجاح");
   }
-
-  //TapGestureRecognizer _changesign;
   bool showsignin = true;
 
   @override
@@ -166,7 +107,7 @@ class LogInState extends State<LogIn> {
                             showsignin
                                 ? InkWell(
                                     onTap: () {},
-                                    child: CustomText(
+                                    child: const CustomText(
                                       text: "هل نسيت كلمة المرور ؟",
                                       color: Colors.blue,
                                       fontSize: 15,
@@ -235,9 +176,7 @@ class LogInState extends State<LogIn> {
                             showsignin
                                 ? Directionality(
                                     textDirection: TextDirection.ltr,
-                                    child: Row(children: [
-                                      // Padding(
-                                      //     padding: EdgeInsets.only(right: 10)),
+                                    child: Row(children: const [
                                       Expanded(
                                         child: Center(
                                             child: SocialLogin(
@@ -245,7 +184,7 @@ class LogInState extends State<LogIn> {
                                                     "example/images/social/facebook.png",
                                                 text: "Login with Facebook")),
                                       ),
-                                      const SizedBox(width: 10),
+                                       SizedBox(width: 10),
                                       // Padding(
                                       //     padding: EdgeInsets.only(right: 10)),
                                       Expanded(
@@ -274,12 +213,12 @@ class LogInState extends State<LogIn> {
   Center buildFormBoxSignIn(double mdw) {
     return Center(
         child: AnimatedContainer(
-            duration: Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 600),
             curve: Curves.easeOutBack,
-            margin: EdgeInsets.only(top: 40),
+            margin: const EdgeInsets.only(top: 40),
             height: 250,
             width: mdw / 1.2,
-            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            decoration: const BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
                   color: Colors.black,
                   blurRadius: 0.1,
@@ -289,13 +228,13 @@ class LogInState extends State<LogIn> {
             child: Form(
               key: formstatesignin,
               child: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //Start Email----------
-                      CustomText(
+                     const CustomText(
                         text: "عنوان البريد الالكتروني",
                         color: Colors.blue,
                         fontSize: 15,
@@ -317,7 +256,7 @@ class LogInState extends State<LogIn> {
                           borderSideColor: kprimaryColor),
                       //End User Name----------
                       //Start User Password----------
-                      CustomText(
+                     const CustomText(
                         text: "كلمة المرور",
                         color: Colors.blue,
                         fontSize: 15,
@@ -353,7 +292,7 @@ class LogInState extends State<LogIn> {
             margin: EdgeInsets.only(top: showsignin ? 40 : 20),
             height: 402,
             width: mdw / 1.2,
-            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            decoration: const BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
                   color: Colors.black,
                   blurRadius: 0.1,
@@ -367,16 +306,16 @@ class LogInState extends State<LogIn> {
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+                    children: [
                       //Start User Name----------
-                      CustomText(
+                     const CustomText(
                         text: "إسم المستخدم",
                         color: kprimaryColor,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.right,
                       ),
-                      SizedBox(height: 10),
+                    const  SizedBox(height: 10),
                       CustomTextFormField(
                         onSave: (vlaue) {},
                         pass: false,
@@ -391,15 +330,15 @@ class LogInState extends State<LogIn> {
                       ),
                       //End User Name----------
                       //Start User E-mail ----------
-                      SizedBox(height: 10),
-                      CustomText(
+                     const SizedBox(height: 10),
+                     const CustomText(
                         text: "البريد الالكتروني",
                         color: kprimaryColor,
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         textAlign: TextAlign.right,
                       ),
-                      SizedBox(height: 10),
+                     const SizedBox(height: 10),
                       CustomTextFormField(
                         onSave: (vlaue) {},
                         pass: false,
@@ -414,14 +353,14 @@ class LogInState extends State<LogIn> {
                       ),
                       //End User E-mail ----------
                       //Start User Password----------
-                      CustomText(
+                    const  CustomText(
                         text: "كلمة المرور",
                         color: kprimaryColor,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.right,
                       ),
-                      SizedBox(height: 10),
+                     const SizedBox(height: 10),
                       CustomTextFormField(
                         onSave: (vlaue) {},
                         pass: true,
@@ -435,14 +374,14 @@ class LogInState extends State<LogIn> {
                         prefixColor: Colors.green.shade900,
                       ),
                       //Start User Password Confirm----------
-                      CustomText(
+                     const CustomText(
                         text: "تأكيد كلمة المرور",
                         color: kprimaryColor,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.right,
                       ),
-                      SizedBox(height: 10),
+                    const  SizedBox(height: 10),
                       CustomTextFormField(
                         onSave: (vlaue) {},
                         pass: true,
@@ -465,13 +404,13 @@ class LogInState extends State<LogIn> {
 
   AnimatedContainer buildContainerAvatar(double mdw) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       height: 100,
       width: 100,
       decoration: BoxDecoration(
           color: showsignin ? Colors.blue : kprimaryColor,
           borderRadius: BorderRadius.circular(100),
-          boxShadow: [
+          boxShadow:const [
             BoxShadow(color: Colors.black, blurRadius: 3, spreadRadius: 0.1)
           ]),
       child: InkWell(
@@ -481,7 +420,7 @@ class LogInState extends State<LogIn> {
           });
         },
         child: Stack(
-          children: [
+          children: const[
             Positioned(
               top: 25,
               right: 25,
