@@ -14,6 +14,7 @@ class AuthViewModel extends GetxController{
   }
   @override
   void onClose() {
+    showsignin = !showsignin;
     super.onClose();
   }
   
