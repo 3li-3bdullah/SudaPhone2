@@ -18,33 +18,6 @@ import '../widgets/custom_text.dart';
 //   }
 // }
 
-showdialogall(context, String mycontent) {
-  var mdw = MediaQuery.of(context).size.width;
-  return showDialog(
-      context: context,
-      builder: (context) {
-        return Container(
-          height: 100,
-          width: mdw / 1.2,
-          child: AlertDialog(
-            // title: Text(mytitle),
-            content: Text(mycontent, style: TextStyle(color: Colors.black)),
-            actions: [
-              TextButton(
-                child: const Text("تم",
-                    style: TextStyle(color: Colors.lightGreen)),
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return Screen();
-                  }));
-                },
-              ),
-            ],
-          ),
-        );
-      });
-}
 
 class LogIn extends AuthViewModel {
   GlobalKey<FormState> formstatesignin = GlobalKey<FormState>();
