@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobetech/constants.dart';
+import './constants.dart';
 
 class BuildPositionedTop extends StatelessWidget {
   const BuildPositionedTop({
@@ -22,7 +22,7 @@ class BuildPositionedTop extends StatelessWidget {
         /// the offset takes tow value hori and vertical hori will push it right with positive number and top with
         /// naigtive number and to bottom with positive number
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           height: mdw,
           width: mdw,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(mdw),
