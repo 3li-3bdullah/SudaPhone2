@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../widgets/custom_text.dart';
-import '../constants.dart';
+import './constants.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({
