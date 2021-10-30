@@ -51,17 +51,40 @@ class LogIn extends AuthViewModel {
   GlobalKey<FormState> formstatesignup = GlobalKey<FormState>();
 
   signin() {
-    showdialogall(context, "تم تسجيل دخولك بنجاح");
     Get.defaultDialog(
-      title:"تم تسحيل دخولك بنجاح",
-      textCancel: "إلغاء",
-      textConfirm: "تم",
-      buttonColor: Colors.green,
-    );
+        title: "تم تسحيل دخولك بنجاح",
+        textCancel: "إلغاء",
+        textConfirm: "تم",
+        buttonColor: Colors.green,
+        onCancel: () {
+          Get.back();
+        },
+        onConfirm: () {
+          Get.to(Screen(),
+          transition: Transition.zoom,
+          duration: const Duration(milliseconds:2000)
+          );
+        },radius:30,
+        );
   }
 
   signup() {
-    showdialogall(context, "تم إنشاء الحساب بنجاح");
+    Get.defaultDialog(
+        title: "تم إنشاء الحساب بنجاح",
+        textCancel: "إلغاء",
+        textConfirm: "تم",
+        buttonColor: Colors.green,
+        onCancel: () {
+          Get.back();
+        },
+        onConfirm: () {
+          Get.to(Screen(),
+          transition: Transition.zoom,
+          duration: const Duration(milliseconds:2000)
+          );
+        },
+        radius: 30,
+        );
   }
   //bool showsignin = true;
 
