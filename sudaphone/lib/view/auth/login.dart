@@ -45,8 +45,8 @@ showdialogall(context, String mycontent) {
 }
 
 class LogIn extends AuthViewModel {
-  GlobalKey<FormState> formstatesignin = new GlobalKey<FormState>();
-  GlobalKey<FormState> formstatesignup = new GlobalKey<FormState>();
+  GlobalKey<FormState> formstatesignin = GlobalKey<FormState>();
+  GlobalKey<FormState> formstatesignup = GlobalKey<FormState>();
 
   signin() {
     showdialogall(context, "تم تسجيل دخولك بنجاح");
@@ -57,15 +57,15 @@ class LogIn extends AuthViewModel {
   }
   //bool showsignin = true;
 
-  @override
-  void dispose() {
-    // setState(() {
-    //   // showsignin = !showsignin;
-    //   print(showsignin);
-    // });
-    //getPre();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // setState(() {
+  //   //   // showsignin = !showsignin;
+  //   //   print(showsignin);
+  //   // });
+  //   //getPre();
+  //   super.dispose();
+  // }
 
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
@@ -145,10 +145,11 @@ class LogIn extends AuthViewModel {
                             Container(
                                 margin:const EdgeInsets.only(top: 10),
                                 child: InkWell(
+                                  
                                   onTap: () {
-                                    setState(() {
+                                 
                                       showsignin = !showsignin;
-                                    });
+                                   
                                   },
                                   child: RichText(
                                       text: TextSpan(
@@ -412,9 +413,9 @@ class LogIn extends AuthViewModel {
           ]),
       child: InkWell(
         onTap: () {
-          setState(() {
+          
             showsignin = !showsignin;
-          });
+         
         },
         child: Stack(
           children: const[
