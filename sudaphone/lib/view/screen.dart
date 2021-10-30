@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import '../widgets/custom_text.dart';
-import '../widgets/categories_logo.dart';
-import '../widgets/last_product.dart';
-import '../widgets/data_search.dart';
+import './widgets/custom_text.dart';
+import './widgets/categories_logo.dart';
+import './widgets/last_product.dart';
+import './widgets/data_search.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-// import '../compount/mydrawer.dart';
 import 'dart:core';
 
 class Screen extends StatefulWidget {
@@ -55,13 +54,13 @@ class ScreenState extends State<Screen> {
               rotationAngle: 180,
               verticalOffset: -10,
               borderRadius: BorderRadius.circular(24),
-              dotBorder: DotBorder(
+              dotBorder: const DotBorder(
                 padding: 2,
                 width: 2,
                 color: Colors.white,
               ),
             ),
-            dotDecoration: DotDecoration(
+            dotDecoration:const DotDecoration(
               width: 24,
               height: 12,
               color: Colors.grey,
@@ -95,13 +94,13 @@ class ScreenState extends State<Screen> {
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
-              title: Text("SudaPhone"),
+              title: const Text("SudaPhone"),
               backgroundColor: Colors.blue,
               centerTitle: true,
               elevation: 6,
               actions: [
                 IconButton(
-                    icon: Icon(Icons.search),
+                    icon:const Icon(Icons.search),
                     onPressed: () {
                       showSearch(context: context, delegate: DataSearch());
                     })
@@ -122,11 +121,6 @@ class ScreenState extends State<Screen> {
                       String imagesCar = imagesCarousel[index];
                       return buildImage(imagesCar, index);
                     },
-                    // itemCount: imagesCarousel.length,
-                    // itemBuilder: (context, index, realIndex) {
-                    //   String imagesCar = imagesCarousel[index];
-                    //   return buildImage(imagesCar, index);
-                    // },
                   ),
                   footer: Container(
                     height: 60,
@@ -142,7 +136,7 @@ class ScreenState extends State<Screen> {
                 //const sizedBox(height:32),
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: CustomText(
                   text: "الأقسام",
                   textAlign: TextAlign.right,
@@ -209,7 +203,7 @@ class ScreenState extends State<Screen> {
                   ])),
               // End The Long Container....
               Container(
-                padding: EdgeInsets.all(10),
+                padding:const EdgeInsets.all(10),
                 child: CustomText(
                   text: "أحدث التلفونات",
                   textAlign: TextAlign.right,
@@ -222,7 +216,7 @@ class ScreenState extends State<Screen> {
               Container(
                 height: 400,
                 child: GridView(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2),
                     children: [
                       LastProduct(
