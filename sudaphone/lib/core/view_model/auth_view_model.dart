@@ -9,6 +9,7 @@ class AuthViewModel extends GetxController{
   }
   @override
   void onReady() {
+     showsignin = !showsignin;
     super.onReady();
   }
   @override
