@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import './constants.dart';
 
 class BuildPositionedBottom extends StatelessWidget {
   const BuildPositionedBottom({
@@ -18,7 +18,7 @@ class BuildPositionedBottom extends StatelessWidget {
       top: mdw * 1.2, // this will go down
       right: mdw / 1.5,
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         height: mdw,
         width: mdw,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(mdw),
