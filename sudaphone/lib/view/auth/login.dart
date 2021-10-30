@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sudaphone/core/view_model/auth_view_model.dart';
 import 'package:sudaphone/view/widgets/constants.dart';
 import '../screen.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -8,13 +9,13 @@ import '../widgets/build_positioned_bottom.dart';
 import '../widgets/build_positioned_top.dart';
 import '../widgets/custom_text.dart';
 
-class LogIn extends StatefulWidget {
+// class LogIn extends StatefulWidget {
 
-  @override
-  State<StatefulWidget> createState() {
-    return LogInState();
-  }
-}
+//   @override
+//   State<StatefulWidget> createState() {
+//     return LogInState();
+//   }
+// }
 
 showdialogall(context, String mycontent) {
   var mdw = MediaQuery.of(context).size.width;
@@ -29,7 +30,7 @@ showdialogall(context, String mycontent) {
             content: Text(mycontent, style: TextStyle(color: Colors.black)),
             actions: [
               TextButton(
-                child: Text("تم", style: TextStyle(color: Colors.lightGreen)),
+                child: const Text("تم", style: TextStyle(color: Colors.lightGreen)),
                 onPressed: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
@@ -43,7 +44,7 @@ showdialogall(context, String mycontent) {
       });
 }
 
-class LogInState extends State<LogIn> {
+class LogIn extends AuthViewModel {
   GlobalKey<FormState> formstatesignin = new GlobalKey<FormState>();
   GlobalKey<FormState> formstatesignup = new GlobalKey<FormState>();
 
@@ -54,22 +55,18 @@ class LogInState extends State<LogIn> {
   signup() {
     showdialogall(context, "تم إنشاء الحساب بنجاح");
   }
-  bool showsignin = true;
+  //bool showsignin = true;
 
   @override
   void dispose() {
-    // _changesign = new TapGestureRecognizer()
-    // ..onTap = () {
-    setState(() {
-      showsignin = !showsignin;
-      print(showsignin);
-    });
-    //  };
+    // setState(() {
+    //   // showsignin = !showsignin;
+    //   print(showsignin);
+    // });
     //getPre();
     super.dispose();
   }
 
-  @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
     return Directionality(
@@ -93,15 +90,15 @@ class LogInState extends State<LogIn> {
                               margin: EdgeInsets.only(top: 30),
                               child: Text(
                                   showsignin ? "تسجيل الدخول" : "إنشاء حساب",
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                       color: Colors.white, fontSize: 20)))),
-                      Padding(padding: EdgeInsets.only(top: 20)),
+                    const  Padding(padding: EdgeInsets.only(top: 20)),
                       buildContainerAvatar(mdw),
                       showsignin
                           ? buildFormBoxSignIn(mdw)
                           : buildFormBoxSignUp(mdw),
                       Container(
-                        margin: EdgeInsets.only(top: 20),
+                        margin: const EdgeInsets.only(top: 20),
                         child: Column(
                           children: [
                             showsignin
@@ -115,13 +112,13 @@ class LogInState extends State<LogIn> {
                                       textAlign: TextAlign.center,
                                     ),
                                   )
-                                : SizedBox(),
+                                :const SizedBox(),
                             SizedBox(height: showsignin ? 20 : 5),
                             Material(
                                 elevation: 10,
                                 color: showsignin ? kprimaryColor : Colors.green.shade900,
                                 child: MaterialButton(
-                                    padding: EdgeInsets.symmetric(
+                                    padding:const EdgeInsets.symmetric(
                                         vertical: 10, horizontal: 20),
                                     onPressed: showsignin ? signin : signup,
                                     child: Row(
@@ -133,20 +130,20 @@ class LogInState extends State<LogIn> {
                                             showsignin
                                                 ? "تسجيل الدخول"
                                                 : "إنشاء حساب",
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18),
                                           ),
                                           Container(
-                                              margin: EdgeInsets.only(top: 4),
-                                              padding: EdgeInsets.only(right: 10),
-                                              child: Icon(Icons.arrow_forward,
+                                              margin:const EdgeInsets.only(top: 4),
+                                              padding:const EdgeInsets.only(right: 10),
+                                              child:const Icon(Icons.arrow_forward,
                                                   color: Colors.white))
                                         ]))),
 
                             /// isLoading ? CircularProgressIndicator() : Padding(padding: EdgeInsets.all(0),),
                             Container(
-                                margin: EdgeInsets.only(top: 10),
+                                margin:const EdgeInsets.only(top: 10),
                                 child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -155,7 +152,7 @@ class LogInState extends State<LogIn> {
                                   },
                                   child: RichText(
                                       text: TextSpan(
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 16,
                                           ),
@@ -263,7 +260,7 @@ class LogInState extends State<LogIn> {
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 10),
+                     const SizedBox(height: 10),
                       CustomTextFormField(
                         onSave: (vlaue) {},
                         pass: true,
@@ -287,7 +284,7 @@ class LogInState extends State<LogIn> {
   Center buildFormBoxSignUp(double mdw) {
     return Center(
         child: AnimatedContainer(
-            duration: Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 600),
             curve: Curves.easeInOutBack,
             margin: EdgeInsets.only(top: showsignin ? 40 : 20),
             height: 402,
@@ -302,7 +299,7 @@ class LogInState extends State<LogIn> {
             child: Form(
               key: formstatesignup,
               child: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
