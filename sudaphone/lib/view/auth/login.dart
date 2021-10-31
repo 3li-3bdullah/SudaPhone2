@@ -71,6 +71,7 @@ class LogIn extends StatelessWidget {
   //   super.dispose();
   // }
 
+  @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
     return Directionality(
@@ -78,13 +79,13 @@ class LogIn extends StatelessWidget {
         child: Scaffold(
           body: Stack(
             children: [
-              Container(
+              const SizedBox(
                 height: double.infinity,
                 width: double.infinity,
               ),
               BuildPositionedTop(mdw: mdw, showsignin: showsignin),
               BuildPositionedBottom(mdw: mdw, showsignin: showsignin),
-              Container(
+              SizedBox(
                 height: 1150,
                 child: SingleChildScrollView(
                     child: Column(children: [
