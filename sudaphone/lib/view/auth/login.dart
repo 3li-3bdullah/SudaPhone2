@@ -19,7 +19,7 @@ import '../widgets/custom_text.dart';
 // }
 
 
-class LogIn extends AuthViewModel {
+class LogIn extends StatelessWidget {
   GlobalKey<FormState> formstatesignin = GlobalKey<FormState>();
   GlobalKey<FormState> formstatesignup = GlobalKey<FormState>();
 
@@ -59,7 +59,7 @@ class LogIn extends AuthViewModel {
         radius: 30,
         );
   }
-  //bool showsignin = true;
+  bool showsignin = true;
 
   // @override
   // void dispose() {
