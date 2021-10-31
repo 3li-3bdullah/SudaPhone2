@@ -45,18 +45,18 @@ class _MyDrawerState extends State<MyDrawer> {
           SafeArea(
               child: Container(
                   width: 200.0,
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(children: [
                     DrawerHeader(
                         child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         CircleAvatar(
                           radius: 50,
                           backgroundImage:
                               AssetImage("example/images/slider/ali.jpg"),
                         ),
-                        const SizedBox(height: 10),
+                         SizedBox(height: 10),
                         CustomText(
                             text: "Ali Abdullah",
                             textAlign: TextAlign.center,
@@ -94,8 +94,8 @@ class _MyDrawerState extends State<MyDrawer> {
                         ///  Get.to(Post());
                         },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                     const Padding(
+                        padding:  EdgeInsets.symmetric(horizontal: 30),
                         child: Divider(
                           color: Colors.white,
                         ),
@@ -123,7 +123,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   ]))),
           TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: value),
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               curve:Curves.easeIn,
               builder: (_, double val, __) {
                 return (Transform(
