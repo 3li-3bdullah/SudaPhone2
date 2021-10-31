@@ -2,14 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobetech/widgets/custom_text.dart';
-import '../constants.dart';
-import '../pages/post.dart';
-import '../pages/categories.dart';
-import '../pages/aboutapp.dart';
-import '../pages/login.dart';
-import '../pages/screen.dart';
-//import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sudaphone/view/screen.dart';
+import 'package:sudaphone/view/widgets/custom_text.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -90,14 +84,14 @@ class _MyDrawerState extends State<MyDrawer> {
                         "الأقسام",
                         Icons.category_outlined,
                         () {
-                          Get.to(Categories());
+                         /// Get.to(Categories());
                         },
                       ),
                       drawerItems(
                         "إضافة منشور",
                         Icons.post_add_outlined,
                         () {
-                          Get.to(Post());
+                        ///  Get.to(Post());
                         },
                       ),
                       Padding(
@@ -110,7 +104,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         "حول التطبيق",
                         Icons.info_outline,
                         () {
-                          Get.to(AboutApp());
+                        ///  Get.to(AboutApp());
                         },
                       ),
                       drawerItems(
@@ -122,7 +116,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         "تسجيل الدخول",
                         Icons.exit_to_app_outlined,
                         () {
-                          Get.to(LogIn());
+                        ///  Get.to(LogIn());
                         },
                       ),
                     ]))
