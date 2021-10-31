@@ -11,22 +11,7 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  // final username;
 
-  // final email;
-  // _MyDrawerState({this.username,this.email});
-
-  // getPreDra() async {
-  //   SharedPreferences preferences = await SharedPreferences.getInstance();
-  //   var  username = preferences.getString("username");
-  //   var email = preferences.getString("email");
-  // }
-
-  // @override
-  // void dispose() {
-  //   getPreDra();
-  //   super.dispose();
-  // }
   double value = 0;
 
   @override
@@ -176,70 +161,3 @@ class _MyDrawerState extends State<MyDrawer> {
     );
   }
 }
-/*
- return Drawer(
-      child: ListView(
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            accountName: Text("Ali Abdullah"),
-            accountEmail: Text("Alieko.A50@gmail.com"),
-            currentAccountPicture: Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("example/images/slider/ali.jpg")),
-                  shape: BoxShape.circle),
-            ),
-            decoration: BoxDecoration(
-              color: kprimaryColor,
-              // image: DecorationImage(
-              //     image: AssetImage("example/images/slider/drawer.jpg"),
-              //     fit: BoxFit.cover)
-            ),
-          ),
-          drawerItems(
-            "الصفحة الرئيسية",
-            Icons.home_outlined,
-            () {
-              Get.to(Screen());
-            },
-          ),
-          drawerItems(
-            "الأقسام",
-            Icons.category_outlined,
-            () {
-              Get.to(Categories());
-            },
-          ),
-          drawerItems(
-            "إضافة منشور",
-            Icons.post_add_outlined,
-            () {
-              Get.to(Post());
-            },
-          ),
-          Divider(
-            color: kprimaryColor,
-          ),
-          drawerItems(
-            "حول التطبيق",
-            Icons.info_outline,
-            () {
-              Get.to(AboutApp());
-            },
-          ),
-          drawerItems(
-            "الإعدادات",
-            Icons.settings_outlined,
-            () {},
-          ),
-          drawerItems(
-            "تسجيل الدخول",
-            Icons.exit_to_app_outlined,
-            () {
-              Get.to(LogIn());
-            },
-          ),
-        ],
-      ),
-    );
-*/
