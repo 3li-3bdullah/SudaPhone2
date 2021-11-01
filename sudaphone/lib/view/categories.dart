@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobetech/widgets/custom_text.dart';
-import '../widgets/categories_card.dart';
-import '../pages/samsung.dart';
-// import '../compount/mydrawer.dart';
-
+import 'package:sudaphone/view/samsung.dart';
+import 'package:sudaphone/view/widgets/categories_card.dart';
+import 'package:sudaphone/view/widgets/custom_text.dart';
 class Categories extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _CategoriesState();
@@ -22,7 +20,7 @@ class _CategoriesState extends State<Categories> {
             child: Scaffold(
               appBar: AppBar(
                 backgroundColor: Colors.blue,
-                title: CustomText(text: "الأقسام", textAlign: TextAlign.center, color: Colors.white,
+                title: const CustomText(text: "الأقسام", textAlign: TextAlign.center, color: Colors.white,
                  fontSize: 30, fontWeight: FontWeight.normal),
                 centerTitle: true,
               ),
