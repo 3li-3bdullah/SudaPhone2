@@ -51,7 +51,7 @@ class _MobileDetailsState extends State<MobileDetails> {
                                   ),
                                 )),
                               const  Padding(
-                                  padding: const EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(10),
                                   child: Text(
                                     "1200\$",
                                     style: TextStyle(
@@ -67,7 +67,7 @@ class _MobileDetailsState extends State<MobileDetails> {
             //End Header page
 
             Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: CustomText(
                   textAlign: TextAlign.right,
                   text: "المواصفات",
@@ -78,7 +78,7 @@ class _MobileDetailsState extends State<MobileDetails> {
             //Start Column Specfiction
 
             Container(
-                padding: EdgeInsets.all(10),
+                padding:const EdgeInsets.all(10),
                 child: Column(
                   children: const [
                     CustomTextOfDetails(
@@ -196,7 +196,7 @@ class _MobileDetailsState extends State<MobileDetails> {
             ),const SizedBox(height:2),
             //Start Column Specfiction
             Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   children: const [
                     CustomTextOfDetails(
