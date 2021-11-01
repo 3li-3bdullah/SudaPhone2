@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sudaphone/view/comments.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
-import '../constants.dart';
 class Post extends StatefulWidget {
   @override
   _PostState createState() => _PostState();
@@ -19,7 +18,7 @@ class _PostState extends State<Post> {
     appBar: AppBar(
       backgroundColor: Colors.blue,
 
-      title: CustomText(
+      title: const CustomText(
           text: "المنشورات",
           color: Colors.white,
           textAlign: TextAlign.center,
@@ -31,22 +30,22 @@ class _PostState extends State<Post> {
       Card(
           child: Column(children:[
         ListTile(
-          leading: CircleAvatar(backgroundImage: AssetImage("example/images/slider/ali.jpg"),),
+          leading: const CircleAvatar(backgroundImage: AssetImage("example/images/slider/ali.jpg"),),
           title: TextFormField(
             maxLength: 300,
             maxLines: 10,
             minLines: 1,
             decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10),
+                contentPadding: const EdgeInsets.all(10),
                 hintText: "اضف جوال للبيع",
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: const BorderSide(color: Colors.grey),
                   borderRadius: BorderRadius.circular(20),
                 )),
           ),
         ),
         IconButton(
-          icon: Icon(Icons.camera_alt_outlined),
+          icon: const Icon(Icons.camera_alt_outlined),
           onPressed: () {},
 
           ///=> pickercamera(),
@@ -60,7 +59,7 @@ class _PostState extends State<Post> {
                     border: Border(
                         top: BorderSide(
                             color: Colors.grey.withOpacity(0.2)))),
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -71,21 +70,19 @@ class _PostState extends State<Post> {
                         fontWeight: FontWeight.bold,
                         textAlign: TextAlign.center,
                       ),
-                      Padding(padding: EdgeInsets.only(right: 10)),
+                    const  Padding(padding: EdgeInsets.only(right: 10)),
                       Icon(Icons.add_box, color: Colors.grey.shade800),
                     ])),
           )),
         ]),
       ])),
-      // This card under editinggggggg ---------------
-      // The editing it has done with all peaceful :) ----
       Card(
         child: Column(children: [
           ListTile(
-              leading: CircleAvatar(child: Icon(Icons.person)),
+              leading: const CircleAvatar(child: Icon(Icons.person)),
               title: Container(
-                margin: EdgeInsets.only(top: 10),
-                child: CustomText(
+                margin: const EdgeInsets.only(top: 10),
+                child: const CustomText(
                   text: "علي عبدالله",
                   color: Colors.black,
                   fontSize: 18,
@@ -94,7 +91,7 @@ class _PostState extends State<Post> {
                 ),
               ),
               trailing: IconButton(
-                  icon: Icon(Icons.more_horiz), onPressed: () {}),
+                  icon: const Icon(Icons.more_horiz), onPressed: () {}),
               isThreeLine: true,
               subtitle: Column(children:[
                 CustomText(
@@ -112,7 +109,7 @@ class _PostState extends State<Post> {
             Expanded(
               child: InkWell(
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       border: Border(left: BorderSide(color: Colors.grey))),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +122,7 @@ class _PostState extends State<Post> {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(width: 4),
-                        Icon(Icons.thumb_up_alt_outlined
+                       const Icon(Icons.thumb_up_alt_outlined
                         , color: Colors.blue),
                       ]),
                 ),
@@ -145,7 +142,7 @@ class _PostState extends State<Post> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(width: 4),
-                      Icon(Icons.insert_comment_outlined
+                    const  Icon(Icons.insert_comment_outlined
                       , color: Colors.purple),
                     ]),
                 onTap: () {
@@ -157,7 +154,7 @@ class _PostState extends State<Post> {
               ),
             ),
           ]),
-          Padding(padding: EdgeInsets.only(top: 5)),
+         const Padding(padding: EdgeInsets.only(top: 5)),
         ]),
       ),
       //for (int i = 0; i < posts.length; i++)
