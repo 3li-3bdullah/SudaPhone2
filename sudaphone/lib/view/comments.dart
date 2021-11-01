@@ -24,15 +24,15 @@ class StateComments extends State<Comments> {
                       width: MediaQuery.of(context).size.width,
                       child: Column(children: [
                         Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               border: Border(top: BorderSide(color: Colors.grey))),
                           child: Row(children: [
                             IconButton(
-                                icon: Icon(Icons.camera_alt_outlined,
+                                icon: const Icon(Icons.camera_alt_outlined,
                                     color: Colors.purple),
                                 onPressed: () {}),
                             Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 5, vertical: 5),
                                 width: MediaQuery.of(context).size.width - 70,
                                 child: TextFormField(
@@ -44,15 +44,15 @@ class StateComments extends State<Comments> {
                                         icon: Icon(Icons.send_outlined,
                                             color: Colors.green.shade900),
                                         onPressed: () {}),
-                                    contentPadding: EdgeInsets.all(5),
+                                    contentPadding: const EdgeInsets.all(5),
                                     focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(60),
                                         borderSide:
-                                            BorderSide(style: BorderStyle.none)),
+                                           const BorderSide(style: BorderStyle.none)),
                                     enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(60),
                                         borderSide:
-                                            BorderSide(style: BorderStyle.none)),
+                                           const BorderSide(style: BorderStyle.none)),
                                     errorBorder: InputBorder.none,
                                     disabledBorder: InputBorder.none,
                                   ),
