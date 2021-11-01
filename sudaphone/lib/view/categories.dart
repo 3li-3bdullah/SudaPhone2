@@ -29,9 +29,9 @@ class _CategoriesState extends State<Categories> {
                 height: double.infinity,
                 width: double.infinity,
                 color: Colors.white,
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 child: GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),
                   children: [
                     CategoriesCard(
