@@ -4,6 +4,8 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view/widgets/custom_textof_details.dart';
 
 class MobileDetails extends StatefulWidget {
+  const MobileDetails({Key? key}) : super(key: key);
+
   @override
   _MobileDetailsState createState() => _MobileDetailsState();
 }
@@ -16,7 +18,7 @@ class _MobileDetailsState extends State<MobileDetails> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.blue,
-            title: CustomText(
+            title: const CustomText(
               textAlign: TextAlign.center,
               text: 'التفاصيل',
               fontSize: 25,
@@ -38,8 +40,8 @@ class _MobileDetailsState extends State<MobileDetails> {
                               children: [
                                 Expanded(
                                     child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Text(
+                                  padding:const EdgeInsets.all(10),
+                                  child: const Text(
                                     "S20 Ultra ",
                                     style: TextStyle(
                                         fontFamily: 'Cairo',
@@ -48,7 +50,7 @@ class _MobileDetailsState extends State<MobileDetails> {
                                         fontWeight: FontWeight.w700),
                                   ),
                                 )),
-                                Padding(
+                              const  Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Text(
                                     "1200\$",
