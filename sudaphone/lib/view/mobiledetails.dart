@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobetech/widgets/custom_text.dart';
-import '../widgets/custom_textof_details.dart';
-import '../constants.dart';
+import 'package:sudaphone/constants.dart';
+import 'package:sudaphone/view/widgets/custom_text.dart';
+import 'package:sudaphone/view/widgets/custom_textof_details.dart';
 
 class MobileDetails extends StatefulWidget {
   @override
