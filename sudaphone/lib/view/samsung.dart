@@ -1,14 +1,8 @@
-//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sudaphone/view/moblist.dart';
 import '../constants.dart';
-// import 'package:http/http.dart' as http;
-// import 'dart:convert';
-import '../compount/moblist.dart';
-
 class Samsung extends StatefulWidget {
-  //  const Samsung({Key key}) : super(key: key);
- // static const samsungRoute = '/samsung';
-
+  const Samsung({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _SamsungState();
@@ -89,7 +83,7 @@ class _SamsungState extends State<Samsung> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.blue,
-            title: Text("Samsung"),
+            title: const Text("Samsung"),
             centerTitle: true,
           ),
           body: Container(
