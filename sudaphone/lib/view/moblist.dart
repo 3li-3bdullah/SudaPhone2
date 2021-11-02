@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../pages/mobiledetails.dart';
+import 'package:sudaphone/view/mobiledetails.dart';
 
 class MobList extends StatelessWidget {
   final name;
@@ -74,7 +74,7 @@ class MobList extends StatelessWidget {
                                       style: TextStyle(color: Colors.red)),
                                 ]),
                               ),
-                              Row(children: [
+                              Row(children:  [
                                 Text("للمزيد إضغط هنا",
                                     style: TextStyle(color: Colors.green)),
                               ]),
@@ -88,7 +88,7 @@ class MobList extends StatelessWidget {
           ),
         ),
         onTap: () {
-          Get.to(MobileDetails());
+          Get.to(const MobileDetails());
         },
       ),
     );
