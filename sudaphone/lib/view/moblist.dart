@@ -10,8 +10,7 @@ class MobList extends StatelessWidget {
   final price;
   final memory;
   MobList(
-      {
-     this.battery,
+      {this.battery,
       this.camera,
       this.cpu,
       this.memory,
