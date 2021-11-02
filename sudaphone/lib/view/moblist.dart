@@ -10,7 +10,8 @@ class MobList extends StatelessWidget {
   final price;
   final memory;
   MobList(
-      {this.battery,
+      {
+     this.battery,
       this.camera,
       this.cpu,
       this.memory,
@@ -33,48 +34,48 @@ class MobList extends StatelessWidget {
                 Expanded(
                     flex: 2,
                     child: Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       alignment: Alignment.topRight,
                       height: 180,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom: 10, right: 10),
+                            margin: const EdgeInsets.only(bottom: 10, right: 10),
                             child: Text(name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w800),
                                 textAlign: TextAlign.center),
                           ),
                           Row(children: [
-                            Text("الكاميرا:",
+                          const  Text("الكاميرا:",
                                 style: TextStyle(color: Colors.grey)),
                             Text(camera, style: TextStyle(color: Colors.blue)),
                           ]),
                           Row(children: [
-                            Text("المعالج : ",
+                          const  Text("المعالج : ",
                                 style: TextStyle(color: Colors.grey)),
                             Text(cpu, style: TextStyle(color: Colors.blue))
                           ]),
                           Row(children: [
-                            Text("الذاكرة:",
+                          const  Text("الذاكرة:",
                                 style: TextStyle(color: Colors.grey)),
                             Text(memory, style: TextStyle(color: Colors.blue)),
                           ]),
-                          Row(children: [
-                            Text("البطارية :",
+                          Row(children:  [
+                           const Text("البطارية :",
                                 style: TextStyle(color: Colors.grey)),
                             Text(battery, style: TextStyle(color: Colors.blue))
                           ]),
                           Row(
                             children: [
                               Expanded(
-                                child: Row(children: [
+                                child: Row(children:  [
                                   Text("السعر : $price",
-                                      style: TextStyle(color: Colors.red)),
+                                      style: const TextStyle(color: Colors.red)),
                                 ]),
                               ),
-                              Row(children:  [
+                              Row(children: const [
                                 Text("للمزيد إضغط هنا",
                                     style: TextStyle(color: Colors.green)),
                               ]),
