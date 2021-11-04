@@ -152,7 +152,7 @@ class _MyDrawerState extends State<MyDrawer> {
   InkWell drawerItems(String text, IconData icon, Function onTap) {
     return InkWell(
       child: ListTile(
-        title: Text(text, style: TextStyle(color: Colors.white, fontSize: 18)),
+        title: Text(text, style: const TextStyle(color: Colors.white, fontSize: 18)),
         leading: Icon(icon, color: Colors.white, size: 25),
       ),
       onTap: () {
