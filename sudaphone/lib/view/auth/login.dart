@@ -18,47 +18,46 @@ import '../widgets/custom_text.dart';
 //   }
 // }
 
-
 class LogIn extends GetWidget<AuthViewModel> {
   final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
   final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
 
   signin() {
     Get.defaultDialog(
-        title: "تم تسحيل دخولك بنجاح",
-        textCancel: "إلغاء",
-        textConfirm: "تم",
-        buttonColor: Colors.green,
-        onCancel: () {
-          Get.back();
-        },
-        onConfirm: () {
-          Get.offAll(Screen(),
-          transition: Transition.zoom,
-          duration: const Duration(milliseconds:2000)
-          );
-        },radius:30,
-        );
+      title: "تم تسحيل دخولك بنجاح",
+      textCancel: "إلغاء",
+      textConfirm: "تم",
+      buttonColor: Colors.green,
+      onCancel: () {
+        Get.back();
+      },
+      onConfirm: () {
+        Get.offAll(Screen(),
+            transition: Transition.zoom,
+            duration: const Duration(milliseconds: 2000));
+      },
+      radius: 30,
+    );
   }
 
   signup() {
     Get.defaultDialog(
-        title: "تم إنشاء الحساب بنجاح",
-        textCancel: "إلغاء",
-        textConfirm: "تم",
-        buttonColor: Colors.green,
-        onCancel: () {
-          Get.back();
-        },
-        onConfirm: () {
-          Get.offAll(Screen(),
-          transition: Transition.zoom,
-          duration: const Duration(milliseconds:2000)
-          );
-        },
-        radius: 30,
-        );
+      title: "تم إنشاء الحساب بنجاح",
+      textCancel: "إلغاء",
+      textConfirm: "تم",
+      buttonColor: Colors.green,
+      onCancel: () {
+        Get.back();
+      },
+      onConfirm: () {
+        Get.offAll(Screen(),
+            transition: Transition.zoom,
+            duration: const Duration(milliseconds: 2000));
+      },
+      radius: 30,
+    );
   }
+
   bool showsignin = true;
 
   // @override
@@ -244,9 +243,15 @@ class LogIn extends GetWidget<AuthViewModel> {
 
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                          onSave: (value) {},
+                          onSave: (value) {
+                            controller.email = value;
+                          },
                           pass: false,
-                          validator: (value) {},
+                          validator: (value) {
+                            if (value == null) {
+                              print("Error");
+                            }
+                          },
                           icon: Icons.email_outlined,
                           myhinttext: "ادخل البريد الالكتروني هنا",
                           prefixColor: kprimaryColor,
