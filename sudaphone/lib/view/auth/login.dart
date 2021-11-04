@@ -19,7 +19,7 @@ import '../widgets/custom_text.dart';
 // }
 
 
-class LogIn extends StatelessWidget {
+class LogIn extends GetWidget<AuthViewModel> {
   GlobalKey<FormState> formstatesignin = GlobalKey<FormState>();
   GlobalKey<FormState> formstatesignup = GlobalKey<FormState>();
 
@@ -33,7 +33,7 @@ class LogIn extends StatelessWidget {
           Get.back();
         },
         onConfirm: () {
-          Get.to(Screen(),
+          Get.offAll(Screen(),
           transition: Transition.zoom,
           duration: const Duration(milliseconds:2000)
           );
@@ -51,7 +51,7 @@ class LogIn extends StatelessWidget {
           Get.back();
         },
         onConfirm: () {
-          Get.to(Screen(),
+          Get.offAll(Screen(),
           transition: Transition.zoom,
           duration: const Duration(milliseconds:2000)
           );
