@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/widgets/constants.dart';
+import 'package:sudaphone/view_model/auth_build_form_signin.dart';
 import 'package:sudaphone/view_model/auth_view_model.dart';
 import '../screen.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -9,14 +10,6 @@ import '../widgets/custom_social_login.dart';
 import '../widgets/build_positioned_bottom.dart';
 import '../widgets/build_positioned_top.dart';
 import '../widgets/custom_text.dart';
-
-// class LogIn extends StatefulWidget {
-
-//   @override
-//   State<StatefulWidget> createState() {
-//     return LogInState();
-//   }
-// }
 
 class LogIn extends GetWidget<AuthViewModel> {
   final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
@@ -63,17 +56,7 @@ class LogIn extends GetWidget<AuthViewModel> {
   }
 
   bool showsignin = true;
-
-  // @override
-  // void dispose() {
-  //   // setState(() {
-  //   //   // showsignin = !showsignin;
-  //   //   print(showsignin);
-  //   // });
-  //   //getPre();
-  //   super.dispose();
-  // }
-
+  
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
@@ -102,7 +85,7 @@ class LogIn extends GetWidget<AuthViewModel> {
                   const Padding(padding: EdgeInsets.only(top: 20)),
                   buildContainerAvatar(mdw),
                   showsignin
-                      ? buildFormBoxSignIn(mdw)
+                      ? BuildFormSignIn()
                       : buildFormBoxSignUp(mdw),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
