@@ -9,9 +9,13 @@ class AuthViewModel extends GetxController {
 
   late String email, password, name;
 
+  final Rx<User> _user = Rx<User>();
+  String get user => _user.value.email!;
+
   @override
   void onInit() {
     super.onInit();
+    _user.bindStream(_auth.authStateChanges());
   }
 
   @override
