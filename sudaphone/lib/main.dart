@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../view/auth/login.dart';
+import 'package:sudaphone/view/control_view.dart';
 
 
 void main()  {
@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "SudaPhone",
      // theme: ThemeData(fontFamily: 'Cairo'),
-      home: LogIn(),
+      home: ControlView(),
     );
   }
 }
