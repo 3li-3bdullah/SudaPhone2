@@ -23,6 +23,10 @@ class LogIn extends GetWidget<AuthViewModel> {
   final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
 
   signin() {
+    _formstatesignin.currentState!.save();
+    if (_formstatesignin.currentState!.validate()) {
+      controller.signInWithEmailAndPassword();
+    }
     Get.defaultDialog(
       title: "تم تسحيل دخولك بنجاح",
       textCancel: "إلغاء",
