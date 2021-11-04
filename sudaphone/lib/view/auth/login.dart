@@ -270,9 +270,15 @@ class LogIn extends GetWidget<AuthViewModel> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onSave: (vlaue) {},
+                        onSave: (value) {
+                          controller.password = value;
+                        },
                         pass: true,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null) {
+                            print("Error");
+                          }
+                        },
                         icon: Icons.lock_outline,
                         myhinttext: "أدخل  كلمة المرور هنا",
                         fillColor: kfillColor,
