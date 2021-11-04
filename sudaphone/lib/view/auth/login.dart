@@ -20,8 +20,8 @@ import '../widgets/custom_text.dart';
 
 
 class LogIn extends GetWidget<AuthViewModel> {
-  GlobalKey<FormState> formstatesignin = GlobalKey<FormState>();
-  GlobalKey<FormState> formstatesignup = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
 
   signin() {
     Get.defaultDialog(
@@ -226,7 +226,7 @@ class LogIn extends GetWidget<AuthViewModel> {
                   offset: Offset(1, 1))
             ]),
             child: Form(
-              key: formstatesignin,
+              key: _formstatesignin,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
@@ -300,7 +300,7 @@ class LogIn extends GetWidget<AuthViewModel> {
                   offset: Offset(1, 1))
             ]),
             child: Form(
-              key: formstatesignup,
+              key: _formstatesignup,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
