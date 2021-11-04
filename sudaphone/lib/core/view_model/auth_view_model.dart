@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/mydrawer.dart';
 
 class AuthViewModel extends GetxController {
   bool showsignin = true;
@@ -26,6 +27,7 @@ class AuthViewModel extends GetxController {
   void signInWithEmailAndPassword() async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
+      Get.offAll(MyDrawer());
     } catch (e) {
       print(e);
       Get.snackbar('Error login account', '$e',
