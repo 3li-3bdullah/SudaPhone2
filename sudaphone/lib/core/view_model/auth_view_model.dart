@@ -21,4 +21,12 @@ class AuthViewModel extends GetxController {
   void onClose() {
     super.onClose();
   }
+  void signInWithEmailAndPassword() async {
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      print(e);
+      Get.snackbar('Error login account', '$e');
+    }
+  }
 }
