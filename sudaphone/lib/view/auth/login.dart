@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sudaphone/core/view_model/auth_view_model.dart';
 import 'package:sudaphone/view/widgets/constants.dart';
+import 'package:sudaphone/view_model/auth_view_model.dart';
 import '../screen.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_social_login.dart';
