@@ -13,12 +13,12 @@ class CustomTextOfDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(10),
-        color: containerColor,
+        padding: const EdgeInsets.all(10),
+        color: Colors.grey.shade300,
         child: RichText(
-            text: TextSpan(style: TextStyle(fontSize: 18), children: <TextSpan>[
-          TextSpan(text: text1, style: TextStyle(color: Colors.black)),
-          TextSpan(text: text2, style: TextStyle(color: Colors.white)),
+            text: TextSpan(style: const TextStyle(fontSize: 18), children: <TextSpan>[
+          TextSpan(text: text1, style: const TextStyle(color: Colors.black)),
+          TextSpan(text: text2, style: TextStyle(color: Colors.grey.shade900)),
         ])));
   }
 }
