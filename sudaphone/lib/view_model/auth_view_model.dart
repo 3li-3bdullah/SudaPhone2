@@ -5,16 +5,19 @@ import 'package:get/get.dart';
 class AuthViewModel extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  final Rx<User> _user = Rx<User>();
+  String? get user => _user.value.email;
+
   late String email, password, name;
-  final bool showsignin = true;
+   bool showsignin = true;
   @override
   void onInit() {
     super.onInit();
+    _user.bindStream( _auth.authStateChanges());
   }
 
   @override
   void onReady() {
-    showsignin != showsignin;
     super.onReady();
   }
 
@@ -23,7 +26,7 @@ class AuthViewModel extends GetxController {
     super.onClose();
   }
 
-  signInWithEmailAndPassword() async {
+  void signInWithEmailAndPassword() async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
