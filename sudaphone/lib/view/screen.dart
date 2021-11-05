@@ -60,7 +60,7 @@ class ScreenState extends State<Screen> {
                 color: Colors.white,
               ),
             ),
-            dotDecoration:const DotDecoration(
+            dotDecoration: const DotDecoration(
               width: 24,
               height: 12,
               color: Colors.grey,
@@ -94,13 +94,18 @@ class ScreenState extends State<Screen> {
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
-              title: const Text("SudaPhone"),
-              backgroundColor: Colors.blue,
+              title: const CustomText(
+                  text: 'SudaPhone',
+                  textAlign: TextAlign.center,
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+              backgroundColor: Colors.white,
               centerTitle: true,
               elevation: 6,
               actions: [
                 IconButton(
-                    icon:const Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                     onPressed: () {
                       showSearch(context: context, delegate: DataSearch());
                     })
@@ -108,7 +113,8 @@ class ScreenState extends State<Screen> {
 
               // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
             ),
-           /// drawer: MyDrawer(),
+
+            /// drawer: MyDrawer(),
             body: ListView(children: [
               Container(
                 height: 310,
@@ -203,7 +209,7 @@ class ScreenState extends State<Screen> {
                   ])),
               // End The Long Container....
               Container(
-                padding:const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: CustomText(
                   text: "أحدث التلفونات",
                   textAlign: TextAlign.right,
@@ -216,8 +222,9 @@ class ScreenState extends State<Screen> {
               Container(
                 height: 400,
                 child: GridView(
-                    gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
                     children: [
                       LastProduct(
                           imageProduct: "example/images/product/huawei.jpg",
