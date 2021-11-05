@@ -8,7 +8,7 @@ class AuthViewModel extends GetxController {
   final Rx<User> _user = Rx<User>();
   String? get user => _user.value.email;
 
-  late String email, password, name;
+  late String email, password,confirmPassword, name;
    bool showsignin = true;
   @override
   void onInit() {
