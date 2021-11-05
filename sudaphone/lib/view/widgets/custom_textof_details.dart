@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 class CustomTextOfDetails extends StatelessWidget {
   const CustomTextOfDetails(
       {
-      required  this.containerColor,
       required  this.text1,
       required  this.text2});
-  final Color containerColor;
   final String text1;
   final String text2;
   @override
