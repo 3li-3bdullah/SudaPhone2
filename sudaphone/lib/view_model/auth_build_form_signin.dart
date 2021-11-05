@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view/widgets/custom_text_form_field.dart';
-import 'package:sudaphone/view_model/view_model/auth_view_model.dart';
-
+import 'package:sudaphone/view_model/auth_view_model.dart';
 import '../constants.dart';
 
 class BuildFormSignIn extends GetWidget<AuthViewModel> {
-  BuildFormSignIn({Key? key}) : super(key: key);
-  final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
+   // ignore: use_key_in_widget_constructors
+   const BuildFormSignIn({required this.signInKey});
+  //final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
+  final GlobalKey signInKey;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                   offset: Offset(1, 1))
             ]),
             child: Form(
-              key: _formstatesignin,
+              key: signInKey,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
