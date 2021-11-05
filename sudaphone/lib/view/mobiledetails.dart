@@ -17,12 +17,12 @@ class _MobileDetailsState extends State<MobileDetails> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.white,
             title: const CustomText(
               textAlign: TextAlign.center,
               text: 'التفاصيل',
               fontSize: 25,
-              fontWeight: FontWeight.bold, color: Colors.white,
+              fontWeight: FontWeight.bold, color: Colors.black,
             ),
             centerTitle: true,
           ),
@@ -68,10 +68,10 @@ class _MobileDetailsState extends State<MobileDetails> {
 
             Container(
                 padding: const EdgeInsets.all(10),
-                child: CustomText(
+                child: const CustomText(
                   textAlign: TextAlign.right,
                   text: "المواصفات",
-                  color: Colors.grey.shade800,
+                  color: Colors.black,
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),),
