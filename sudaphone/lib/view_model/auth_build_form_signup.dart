@@ -47,9 +47,15 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onSave: (vlaue) {},
+                        onSave: (value) {
+                          controller.name = value;
+                        },
                         pass: false,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null) {
+                            print('Error');
+                          }
+                        },
                         icon: Icons.person_outline_rounded,
                         myhinttext: "أدخل اسم المستخدم",
                         fillColor: kfillColor,
@@ -70,9 +76,15 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onSave: (vlaue) {},
+                        onSave: (value) {
+                          controller.email = value;
+                        },
                         pass: false,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null) {
+                            print('Error');
+                          }
+                        },
                         icon: Icons.email_outlined,
                         myhinttext: "أدخل عنوان البريد الالكتروني",
                         fillColor: kfillColor,
@@ -92,9 +104,15 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onSave: (vlaue) {},
+                        onSave: (value) {
+                          controller.password = value;
+                        },
                         pass: true,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null) {
+                            print('Error');
+                          }
+                        },
                         icon: Icons.lock_outlined,
                         myhinttext: "أدخل كلمة المرور",
                         fillColor: kfillColor,
@@ -113,9 +131,15 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onSave: (vlaue) {},
+                        onSave: (value) {
+                          controller.confirmPassword = value;
+                        },
                         pass: true,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value != controller.password) {
+                            print('كلمة المرور غير متطابقة');
+                          }
+                        },
                         icon: Icons.lock_outlined,
                         myhinttext: "تأكيد كلمة المرور",
                         fillColor: kfillColor,
