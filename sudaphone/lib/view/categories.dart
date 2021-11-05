@@ -4,6 +4,8 @@ import 'package:sudaphone/view/samsung.dart';
 import 'package:sudaphone/view/widgets/categories_card.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 class Categories extends StatefulWidget {
+  const Categories({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _CategoriesState();
 }
@@ -19,8 +21,8 @@ class _CategoriesState extends State<Categories> {
             textDirection: TextDirection.rtl,
             child: Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.blue,
-                title: const CustomText(text: "الأقسام", textAlign: TextAlign.center, color: Colors.white,
+                backgroundColor: Colors.white,
+                title: const CustomText(text: "الأقسام", textAlign: TextAlign.center, color: Colors.black,
                  fontSize: 30, fontWeight: FontWeight.normal),
                 centerTitle: true,
               ),
@@ -38,7 +40,7 @@ class _CategoriesState extends State<Categories> {
                       imageCat: "example/images/category/samsung.png",
                       text: "Samsung",
                       onTap: () {
-                        Get.to(Samsung()
+                        Get.to(const Samsung()
                         ,transition: Transition.zoom,
                         curve: Curves.bounceInOut
                         );
