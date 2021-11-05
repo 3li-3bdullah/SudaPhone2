@@ -38,6 +38,11 @@ class LogIn extends GetWidget<AuthViewModel> {
   }
 
   signup() {
+    _formstatesignup.currentState!.save();
+    if (_formstatesignup.currentState!.validate()) {
+      controller.signUpWithEmailAndPassword();
+    }
+
     Get.defaultDialog(
       title: "تم إنشاء الحساب بنجاح",
       textCancel: "إلغاء",
