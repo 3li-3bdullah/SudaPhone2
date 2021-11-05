@@ -6,9 +6,11 @@ import 'package:sudaphone/view_model/auth_view_model.dart';
 import '../constants.dart';
 
 class BuildFormSignUp extends GetWidget<AuthViewModel> {
-  BuildFormSignUp({Key? key}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  const BuildFormSignUp({required this.signUpKey});
+  final GlobalKey signUpKey;
 
-  final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
+  // final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                   offset: Offset(1, 1))
             ]),
             child: Form(
-              key: _formstatesignup,
+              key: signUpKey,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
