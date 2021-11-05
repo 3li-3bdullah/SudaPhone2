@@ -85,7 +85,7 @@ class LogIn extends GetWidget<AuthViewModel> {
                                   color: Colors.white, fontSize: 20)))),
                   const Padding(padding: EdgeInsets.only(top: 20)),
                   const BuildAvatar(),
-                  controller.showsignin ? BuildFormSignIn() : BuildFormSignUp(),
+                  controller.showsignin ? BuildFormSignIn(signInKey: _formstatesignin) : BuildFormSignUp(),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
                     child: Column(
