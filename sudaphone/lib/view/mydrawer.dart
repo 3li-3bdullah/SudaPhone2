@@ -62,7 +62,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         "الصفحة الرئيسية",
                         Icons.home_outlined,
                         () {
-                          Get.to(Screen());
+                          Get.offAll(const Screen());
                         },
                       ),
                       drawerItems(
@@ -118,7 +118,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     ..setEntry(0, 3,
                         200 * val) //This will allows us to translate the screen
                     ..rotateY((pi / 6) * val)),
-                  child: Screen(),
+                  child: const Screen(),
                 ));
               }),
 
