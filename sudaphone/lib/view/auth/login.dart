@@ -1,11 +1,11 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/widgets/constants.dart';
+import 'package:sudaphone/view_model/auth_build_avatar.dart';
 import 'package:sudaphone/view_model/auth_build_form_signin.dart';
+import 'package:sudaphone/view_model/auth_build_form_signup.dart';
 import 'package:sudaphone/view_model/auth_view_model.dart';
 import '../screen.dart';
-import '../widgets/custom_text_form_field.dart';
 import '../widgets/custom_social_login.dart';
 import '../widgets/build_positioned_bottom.dart';
 import '../widgets/build_positioned_top.dart';
@@ -29,7 +29,7 @@ class LogIn extends GetWidget<AuthViewModel> {
         Get.back();
       },
       onConfirm: () {
-        Get.offAll(Screen(),
+        Get.offAll(const Screen(),
             transition: Transition.zoom,
             duration: const Duration(milliseconds: 2000));
       },
@@ -47,7 +47,7 @@ class LogIn extends GetWidget<AuthViewModel> {
         Get.back();
       },
       onConfirm: () {
-        Get.offAll(Screen(),
+        Get.offAll(const Screen(),
             transition: Transition.zoom,
             duration: const Duration(milliseconds: 2000));
       },
@@ -55,8 +55,6 @@ class LogIn extends GetWidget<AuthViewModel> {
     );
   }
 
-  bool showsignin = true;
-  
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
@@ -69,8 +67,9 @@ class LogIn extends GetWidget<AuthViewModel> {
                 height: double.infinity,
                 width: double.infinity,
               ),
-              BuildPositionedTop(mdw: mdw, showsignin: showsignin),
-              BuildPositionedBottom(mdw: mdw, showsignin: showsignin),
+              BuildPositionedTop(mdw: mdw, showsignin: controller.showsignin),
+              BuildPositionedBottom(
+                  mdw: mdw, showsignin: controller.showsignin),
               SizedBox(
                 height: 1150,
                 child: SingleChildScrollView(
@@ -79,19 +78,19 @@ class LogIn extends GetWidget<AuthViewModel> {
                       child: Container(
                           margin: const EdgeInsets.only(top: 30),
                           child: Text(
-                              showsignin ? "تسجيل الدخول" : "إنشاء حساب",
+                              controller.showsignin
+                                  ? "تسجيل الدخول"
+                                  : "إنشاء حساب",
                               style: const TextStyle(
                                   color: Colors.white, fontSize: 20)))),
                   const Padding(padding: EdgeInsets.only(top: 20)),
-                  buildContainerAvatar(mdw),
-                  showsignin
-                      ? BuildFormSignIn()
-                      : buildFormBoxSignUp(mdw),
+                  const BuildAvatar(),
+                  controller.showsignin ? BuildFormSignIn() : BuildFormSignUp(),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
                     child: Column(
                       children: [
-                        showsignin
+                        controller.showsignin
                             ? InkWell(
                                 onTap: () {},
                                 child: const CustomText(
@@ -103,22 +102,23 @@ class LogIn extends GetWidget<AuthViewModel> {
                                 ),
                               )
                             : const SizedBox(),
-                        SizedBox(height: showsignin ? 20 : 5),
+                        SizedBox(height: controller.showsignin ? 20 : 5),
                         Material(
                             elevation: 10,
-                            color: showsignin
+                            color: controller.showsignin
                                 ? kprimaryColor
-                                : Colors.green.shade900,
+                                : Colors.green,
                             child: MaterialButton(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
-                                onPressed: showsignin ? signin : signup,
+                                onPressed:
+                                    controller.showsignin ? signin : signup,
                                 child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        showsignin
+                                        controller.showsignin
                                             ? "تسجيل الدخول"
                                             : "إنشاء حساب",
                                         style: const TextStyle(
@@ -137,7 +137,7 @@ class LogIn extends GetWidget<AuthViewModel> {
                             margin: const EdgeInsets.only(top: 10),
                             child: InkWell(
                               onTap: () {
-                                showsignin = !showsignin;
+                                controller.showsignin = !controller.showsignin;
                               },
                               child: RichText(
                                   text: TextSpan(
@@ -148,18 +148,18 @@ class LogIn extends GetWidget<AuthViewModel> {
                                       children: <TextSpan>[
                                     TextSpan(
                                         //recognizer: _changesign,
-                                        text: showsignin
+                                        text: controller.showsignin
                                             ? "إنشاء حساب جديد"
                                             : "تسجيل دخول",
                                         style: TextStyle(
-                                            color: showsignin
+                                            color: controller.showsignin
                                                 ? Colors.blue
                                                 : Colors.purple,
                                             fontWeight: FontWeight.w700)),
                                   ])),
                             )),
                         const SizedBox(height: 10),
-                        showsignin
+                        controller.showsignin
                             ? Directionality(
                                 textDirection: TextDirection.ltr,
                                 child: Row(children: const [
@@ -194,250 +194,5 @@ class LogIn extends GetWidget<AuthViewModel> {
             ],
           ),
         ));
-  }
-
-  Center buildFormBoxSignIn(double mdw) {
-    return Center(
-        child: AnimatedContainer(
-            duration: const Duration(milliseconds: 600),
-            curve: Curves.easeOutBack,
-            margin: const EdgeInsets.only(top: 40),
-            height: 250,
-            width: mdw / 1.2,
-            decoration: const BoxDecoration(color: Colors.white, boxShadow: [
-              BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 0.1,
-                  spreadRadius: 1,
-                  offset: Offset(1, 1))
-            ]),
-            child: Form(
-              key: _formstatesignin,
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //Start Email----------
-                      const CustomText(
-                        text: "عنوان البريد الالكتروني",
-                        color: Colors.blue,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        textAlign: TextAlign.center,
-                      ),
-
-                      const SizedBox(height: 10),
-                      CustomTextFormField(
-                          onSave: (value) {
-                            controller.email = value;
-                          },
-                          pass: false,
-                          validator: (value) {
-                            if (value == null) {
-                              print("Error");
-                            }
-                          },
-                          icon: Icons.email_outlined,
-                          myhinttext: "ادخل البريد الالكتروني هنا",
-                          prefixColor: kprimaryColor,
-                          fillColor: kfillColor,
-                          enabledColor: kprimaryColor,
-                          focusedColor: Colors.blue,
-                          borderSideColor: kprimaryColor),
-                      //End User Name----------
-                      //Start User Password----------
-                      const CustomText(
-                        text: "كلمة المرور",
-                        color: Colors.blue,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 10),
-                      CustomTextFormField(
-                        onSave: (value) {
-                          controller.password = value;
-                        },
-                        pass: true,
-                        validator: (value) {
-                          if (value == null) {
-                            print("Error");
-                          }
-                        },
-                        icon: Icons.lock_outline,
-                        myhinttext: "أدخل  كلمة المرور هنا",
-                        fillColor: kfillColor,
-                        enabledColor: kprimaryColor,
-                        focusedColor: Colors.blue,
-                        borderSideColor: kprimaryColor,
-                        prefixColor: kprimaryColor,
-                      ),
-                      //End User Password----------
-                    ],
-                  ),
-                ),
-              ),
-            )));
-  }
-
-  Center buildFormBoxSignUp(double mdw) {
-    return Center(
-        child: AnimatedContainer(
-            duration: const Duration(milliseconds: 600),
-            curve: Curves.easeInOutBack,
-            margin: EdgeInsets.only(top: showsignin ? 40 : 20),
-            height: 402,
-            width: mdw / 1.2,
-            decoration: const BoxDecoration(color: Colors.white, boxShadow: [
-              BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 0.1,
-                  spreadRadius: 1,
-                  offset: Offset(1, 1))
-            ]),
-            child: Form(
-              key: _formstatesignup,
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //Start User Name----------
-                      const CustomText(
-                        text: "إسم المستخدم",
-                        color: kprimaryColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        textAlign: TextAlign.right,
-                      ),
-                      const SizedBox(height: 10),
-                      CustomTextFormField(
-                        onSave: (vlaue) {},
-                        pass: false,
-                        validator: (value) {},
-                        icon: Icons.person_outline_rounded,
-                        myhinttext: "أدخل اسم المستخدم",
-                        fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
-                      ),
-                      //End User Name----------
-                      //Start User E-mail ----------
-                      const SizedBox(height: 10),
-                      const CustomText(
-                        text: "البريد الالكتروني",
-                        color: kprimaryColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700,
-                        textAlign: TextAlign.right,
-                      ),
-                      const SizedBox(height: 10),
-                      CustomTextFormField(
-                        onSave: (vlaue) {},
-                        pass: false,
-                        validator: (value) {},
-                        icon: Icons.email_outlined,
-                        myhinttext: "أدخل عنوان البريد الالكتروني",
-                        fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
-                      ),
-                      //End User E-mail ----------
-                      //Start User Password----------
-                      const CustomText(
-                        text: "كلمة المرور",
-                        color: kprimaryColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        textAlign: TextAlign.right,
-                      ),
-                      const SizedBox(height: 10),
-                      CustomTextFormField(
-                        onSave: (vlaue) {},
-                        pass: true,
-                        validator: (value) {},
-                        icon: Icons.lock_outlined,
-                        myhinttext: "أدخل كلمة المرور",
-                        fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
-                      ),
-                      //Start User Password Confirm----------
-                      const CustomText(
-                        text: "تأكيد كلمة المرور",
-                        color: kprimaryColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        textAlign: TextAlign.right,
-                      ),
-                      const SizedBox(height: 10),
-                      CustomTextFormField(
-                        onSave: (vlaue) {},
-                        pass: true,
-                        validator: (value) {},
-                        icon: Icons.lock_outlined,
-                        myhinttext: "تأكيد كلمة المرور",
-                        fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
-                      ),
-                      //End User Password Confirm----------
-                    ],
-                  ),
-                ),
-              ),
-            )));
-  }
-
-  AnimatedContainer buildContainerAvatar(double mdw) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 500),
-      height: 100,
-      width: 100,
-      decoration: BoxDecoration(
-          color: showsignin ? Colors.blue : kprimaryColor,
-          borderRadius: BorderRadius.circular(100),
-          boxShadow: const [
-            BoxShadow(color: Colors.black, blurRadius: 3, spreadRadius: 0.1)
-          ]),
-      child: InkWell(
-        onTap: () {
-          showsignin = !showsignin;
-        },
-        child: Stack(
-          children: const [
-            Positioned(
-              top: 25,
-              right: 25,
-              child: Icon(
-                Icons.person_outline,
-                size: 50,
-                color: Colors.white,
-              ),
-            ),
-            Positioned(
-              top: 35,
-              left: 60,
-              child: Icon(
-                Icons.arrow_back,
-                size: 30,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
