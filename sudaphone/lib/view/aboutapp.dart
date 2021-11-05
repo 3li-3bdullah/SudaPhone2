@@ -4,6 +4,8 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 // import '../compount/mydrawer.dart';
 
 class AboutApp extends StatefulWidget {
+  const AboutApp({Key? key}) : super(key: key);
+
   @override
   _AboutAppState createState() => _AboutAppState();
 }
@@ -18,10 +20,11 @@ class _AboutAppState extends State<AboutApp> {
               title: const CustomText(
                   text: "حول التطبيق",
                   textAlign: TextAlign.center,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 25,
                   fontWeight: FontWeight.normal),
               centerTitle: true,
+              backgroundColor: Colors.white,
             ),
 
             ///drawer: MyDrawer(),
@@ -61,7 +64,7 @@ class _AboutAppState extends State<AboutApp> {
                   child: TextButton(
                     onPressed: () {
                       Get.snackbar("Ali Abdullah",
-                          "Programmer he wanted to work just freelancer :) ");
+                          "Programmer only working freelancer & from home");
                     },
                     child: Container(
                       padding: const EdgeInsets.all(10),
