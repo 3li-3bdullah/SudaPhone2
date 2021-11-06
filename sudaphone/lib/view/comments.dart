@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Comments extends StatefulWidget {
+  const Comments({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return StateComments();
@@ -18,7 +20,7 @@ class StateComments extends State<Comments> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     width: MediaQuery.of(context).size.width,
                     child: Column(children: [
