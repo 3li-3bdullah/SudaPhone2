@@ -103,12 +103,12 @@ class _MyDrawerState extends State<MyDrawer> {
                         },
                         icon :Icons.settings_outlined,
                       ),
-                      drawerItems(
-                        "تسجيل الدخول",
-                        Icons.exit_to_app_outlined,
-                        () {
-                          ///  Get.to(LogIn());
+                      BuildListTile(
+                        text: "تسجيل الدخول",
+                        onTap: () {
+                         
                         },
+                        icon :Icons.exit_to_app_outlined,
                       ),
                     ]))
                   ]))),
