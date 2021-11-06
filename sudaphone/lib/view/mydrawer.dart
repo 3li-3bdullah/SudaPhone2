@@ -129,7 +129,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   ]))),
           TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: value),
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 400),
               curve: Curves.easeIn,
               builder: (_, double val, __) {
                 return (Transform(
