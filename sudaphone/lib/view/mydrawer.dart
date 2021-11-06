@@ -66,21 +66,27 @@ class _MyDrawerState extends State<MyDrawer> {
                       BuildListTile(
                         text: 'الصفحة الرئيسية',
                         onTap: () {
-                          Get.offAll(const Screen());
+                          Get.offAll(const Screen(),
+                          transition: Transition.rightToLeftWithFade
+                          );
                         },
                         icon: Icons.home_outlined,
                       ),
                       BuildListTile(
                         text: "الأقسام",
                         onTap: () {
-                          Get.to(const Categories());
+                          Get.to(const Categories(),
+                          transition: Transition.zoom
+                          );
                         },
                         icon: Icons.category_outlined,
                       ),
                       BuildListTile(
                         text: "إضافة منشور",
                         onTap: () {
-                          Get.to(Post());
+                          Get.to(Post(),
+                          transition:Transition.leftToRightWithFade
+                          );
                         },
                         icon: Icons.post_add_outlined,
                       ),
@@ -93,14 +99,18 @@ class _MyDrawerState extends State<MyDrawer> {
                       BuildListTile(
                         text: "حول التطبيق",
                         onTap: () {
-                          Get.to(const AboutApp());
+                          Get.to(const AboutApp(),
+                          transition:Transition.zoom
+                          );
                         },
                         icon: Icons.info_outline,
                       ),
                       BuildListTile(
                         text: "الإعدادات",
                         onTap: () {
-                          Get.to(const Settings());
+                          Get.to(const Settings(),
+                          transition:Transition.downToUp
+                          );
                         },
                         icon: Icons.settings_outlined,
                       ),
