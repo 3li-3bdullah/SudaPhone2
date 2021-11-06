@@ -49,29 +49,29 @@ class MobList extends StatelessWidget {
                           Row(children: [
                           const  Text("الكاميرا:",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(camera, style: TextStyle(color: Colors.blue)),
+                            Text(camera, style: const TextStyle(color: Colors.blue)),
                           ]),
                           Row(children: [
                           const  Text("المعالج : ",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(cpu, style: TextStyle(color: Colors.blue))
+                            Text(cpu, style: const TextStyle(color: Colors.blue))
                           ]),
                           Row(children: [
                           const  Text("الذاكرة:",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(memory, style: TextStyle(color: Colors.blue)),
+                            Text(memory, style: const TextStyle(color: Colors.blue)),
                           ]),
                           Row(children:  [
                            const Text("البطارية :",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(battery, style: TextStyle(color: Colors.blue))
+                            Text(battery, style: const TextStyle(color: Colors.blue))
                           ]),
                           Row(
                             children: [
                               Expanded(
                                 child: Row(children:  [
                                   Text("السعر : $price",
-                                      style: const TextStyle(color: Colors.red)),
+                                      style: const TextStyle(color: Colors.pink)),
                                 ]),
                               ),
                               Row(children: const [
