@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/categories.dart';
+import 'package:sudaphone/view/post.dart';
 import 'package:sudaphone/view/screen.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
@@ -76,7 +77,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       BuildListTile(
                         text: "إضافة منشور",
                         onTap: () {
-                          
+                          Get.to(Post());
                         },
                         icon :Icons.post_add_outlined,
                       ),
