@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/screen.dart';
+import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -11,7 +12,6 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-
   double value = 0;
 
   @override
@@ -41,7 +41,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           backgroundImage:
                               AssetImage("example/images/slider/ali.jpg"),
                         ),
-                         SizedBox(height: 10),
+                        SizedBox(height: 10),
                         CustomText(
                             text: "Ali Abdullah",
                             textAlign: TextAlign.center,
@@ -58,6 +58,13 @@ class _MyDrawerState extends State<MyDrawer> {
                     )),
                     Expanded(
                         child: ListView(children: [
+                      BuildListTile(
+                        text: 'الصفحة الرئيسية',
+                        onTap: () {
+                          Get.offAll(const Screen());
+                        },
+                        icon: Icons.home_outlined,
+                      ),
                       drawerItems(
                         "الصفحة الرئيسية",
                         Icons.home_outlined,
@@ -69,18 +76,18 @@ class _MyDrawerState extends State<MyDrawer> {
                         "الأقسام",
                         Icons.category_outlined,
                         () {
-                         /// Get.to(Categories());
+                          /// Get.to(Categories());
                         },
                       ),
                       drawerItems(
                         "إضافة منشور",
                         Icons.post_add_outlined,
                         () {
-                        ///  Get.to(Post());
+                          ///  Get.to(Post());
                         },
                       ),
-                     const Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 30),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30),
                         child: Divider(
                           color: Colors.white,
                         ),
@@ -89,7 +96,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         "حول التطبيق",
                         Icons.info_outline,
                         () {
-                        ///  Get.to(AboutApp());
+                          ///  Get.to(AboutApp());
                         },
                       ),
                       drawerItems(
@@ -101,7 +108,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         "تسجيل الدخول",
                         Icons.exit_to_app_outlined,
                         () {
-                        ///  Get.to(LogIn());
+                          ///  Get.to(LogIn());
                         },
                       ),
                     ]))
@@ -109,7 +116,7 @@ class _MyDrawerState extends State<MyDrawer> {
           TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: value),
               duration: const Duration(milliseconds: 500),
-              curve:Curves.easeIn,
+              curve: Curves.easeIn,
               builder: (_, double val, __) {
                 return (Transform(
                   alignment: Alignment.center,
@@ -152,7 +159,8 @@ class _MyDrawerState extends State<MyDrawer> {
   InkWell drawerItems(String text, IconData icon, Function onTap) {
     return InkWell(
       child: ListTile(
-        title: Text(text, style: const TextStyle(color: Colors.white, fontSize: 18)),
+        title: Text(text,
+            style: const TextStyle(color: Colors.white, fontSize: 18)),
         leading: Icon(icon, color: Colors.white, size: 25),
       ),
       onTap: () {
