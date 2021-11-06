@@ -7,6 +7,7 @@ import 'package:sudaphone/view/auth/login.dart';
 import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/post.dart';
 import 'package:sudaphone/view/screen.dart';
+import 'package:sudaphone/view/settings.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
@@ -74,14 +75,14 @@ class _MyDrawerState extends State<MyDrawer> {
                         onTap: () {
                           Get.to(const Categories());
                         },
-                        icon :Icons.category_outlined,
+                        icon: Icons.category_outlined,
                       ),
                       BuildListTile(
                         text: "إضافة منشور",
                         onTap: () {
                           Get.to(Post());
                         },
-                        icon :Icons.post_add_outlined,
+                        icon: Icons.post_add_outlined,
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
@@ -89,27 +90,26 @@ class _MyDrawerState extends State<MyDrawer> {
                           color: Colors.white,
                         ),
                       ),
-                      
                       BuildListTile(
                         text: "حول التطبيق",
                         onTap: () {
-                         Get.to(const AboutApp());
+                          Get.to(const AboutApp());
                         },
-                        icon :Icons.info_outline,
+                        icon: Icons.info_outline,
                       ),
                       BuildListTile(
                         text: "الإعدادات",
                         onTap: () {
-                         
+                          Get.to(const Settings());
                         },
-                        icon :Icons.settings_outlined,
+                        icon: Icons.settings_outlined,
                       ),
                       BuildListTile(
                         text: "تسجيل الخروج",
                         onTap: () {
-                         Get.to(LogIn());
+                          Get.to(LogIn());
                         },
-                        icon :Icons.exit_to_app_outlined,
+                        icon: Icons.exit_to_app_outlined,
                       ),
                     ]))
                   ]))),
