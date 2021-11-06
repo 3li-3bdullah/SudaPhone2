@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/aboutapp.dart';
 import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/post.dart';
 import 'package:sudaphone/view/screen.dart';
@@ -91,16 +92,9 @@ class _MyDrawerState extends State<MyDrawer> {
                       BuildListTile(
                         text: "حول التطبيق",
                         onTap: () {
-                         
+                         Get.to(const AboutApp());
                         },
                         icon :Icons.info_outline,
-                      ),
-                      drawerItems(
-                        "حول التطبيق",
-                        Icons.info_outline,
-                        () {
-                          ///  Get.to(AboutApp());
-                        },
                       ),
                       drawerItems(
                         "الإعدادات",
