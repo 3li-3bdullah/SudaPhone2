@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/aboutapp.dart';
+import 'package:sudaphone/view/auth/login.dart';
 import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/post.dart';
 import 'package:sudaphone/view/screen.dart';
@@ -104,9 +105,9 @@ class _MyDrawerState extends State<MyDrawer> {
                         icon :Icons.settings_outlined,
                       ),
                       BuildListTile(
-                        text: "تسجيل الدخول",
+                        text: "تسجيل الخروج",
                         onTap: () {
-                         
+                         Get.to(LogIn());
                         },
                         icon :Icons.exit_to_app_outlined,
                       ),
