@@ -73,12 +73,12 @@ class _MyDrawerState extends State<MyDrawer> {
                         },
                         icon :Icons.category_outlined,
                       ),
-                      drawerItems(
-                        "إضافة منشور",
-                        Icons.post_add_outlined,
-                        () {
-                          ///  Get.to(Post());
+                      BuildListTile(
+                        text: "إضافة منشور",
+                        onTap: () {
+                          
                         },
+                        icon :Icons.post_add_outlined,
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
