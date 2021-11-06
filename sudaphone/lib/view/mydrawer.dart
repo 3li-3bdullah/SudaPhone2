@@ -113,7 +113,14 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: "تسجيل الخروج",
                         onTap: () {
                           Get.defaultDialog(
-                            
+                            title: "Why :( ,Are you sure dear ?!",
+                            textConfirm:"نعم",
+                            textCancel: "لا",
+                            buttonColor: Colors.purple,
+                            confirmTextColor: Colors.white,
+                            cancelTextColor: Colors.green,
+                            onConfirm:(){},
+                            onCancel:(){}
                           );
                         },
                         icon: Icons.exit_to_app_outlined,
