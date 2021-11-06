@@ -19,11 +19,12 @@ class Settings extends StatelessWidget {
             child: Expanded(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children:  [
                   ListTile(
-                      title: Text("الوضع الليلي"),
-                      trailing: Icon(Icons.wb_sunny),
-                      onTap: () {})
+                      title: const Text("الوضع الليلي"),
+                      trailing: const Icon(Icons.wb_sunny),
+                      onTap: (){},
+                      )
                 ]))));
   }
 }
