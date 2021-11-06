@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sudaphone/view/comments.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 class Post extends StatefulWidget {
+  const Post({Key? key}) : super(key: key);
+
   @override
   _PostState createState() => _PostState();
 }
@@ -16,11 +18,11 @@ class _PostState extends State<Post> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
     appBar: AppBar(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
 
       title: const CustomText(
           text: "المنشورات",
-          color: Colors.white,
+          color: Colors.black,
           textAlign: TextAlign.center,
           fontSize: 25,
           fontWeight: FontWeight.normal),
@@ -122,8 +124,8 @@ class _PostState extends State<Post> {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(width: 4),
-                       const Icon(Icons.thumb_up_alt_outlined
-                        , color: Colors.blue),
+                        Icon(Icons.favorite_border_outlined
+                        , color: Colors.pink.shade600),
                       ]),
                 ),
                 onTap: () {},
@@ -142,13 +144,13 @@ class _PostState extends State<Post> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(width: 4),
-                    const  Icon(Icons.insert_comment_outlined
-                      , color: Colors.purple),
+                      const Icon(Icons.insert_comment_outlined
+                      , color: Colors.green),
                     ]),
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return Comments();
+                    return const Comments();
                   }));
                 },
               ),
