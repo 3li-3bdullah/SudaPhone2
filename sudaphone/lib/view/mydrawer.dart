@@ -96,10 +96,12 @@ class _MyDrawerState extends State<MyDrawer> {
                         },
                         icon :Icons.info_outline,
                       ),
-                      drawerItems(
-                        "الإعدادات",
-                        Icons.settings_outlined,
-                        () {},
+                      BuildListTile(
+                        text: "الإعدادات",
+                        onTap: () {
+                         
+                        },
+                        icon :Icons.settings_outlined,
                       ),
                       drawerItems(
                         "تسجيل الدخول",
