@@ -67,8 +67,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: 'الصفحة الرئيسية',
                         onTap: () {
                           Get.offAll(const Screen(),
-                          transition: Transition.rightToLeftWithFade
-                          );
+                              transition: Transition.rightToLeftWithFade);
                         },
                         icon: Icons.home_outlined,
                       ),
@@ -76,8 +75,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: "الأقسام",
                         onTap: () {
                           Get.to(const Categories(),
-                          transition: Transition.zoom
-                          );
+                              transition: Transition.zoom);
                         },
                         icon: Icons.category_outlined,
                       ),
@@ -85,8 +83,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: "إضافة منشور",
                         onTap: () {
                           Get.to(Post(),
-                          transition:Transition.leftToRightWithFade
-                          );
+                              transition: Transition.leftToRightWithFade);
                         },
                         icon: Icons.post_add_outlined,
                       ),
@@ -100,8 +97,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: "حول التطبيق",
                         onTap: () {
                           Get.to(const AboutApp(),
-                          transition:Transition.zoom
-                          );
+                              transition: Transition.upToDown);
                         },
                         icon: Icons.info_outline,
                       ),
@@ -109,15 +105,16 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: "الإعدادات",
                         onTap: () {
                           Get.to(const Settings(),
-                          transition:Transition.downToUp
-                          );
+                              transition: Transition.downToUp);
                         },
                         icon: Icons.settings_outlined,
                       ),
                       BuildListTile(
                         text: "تسجيل الخروج",
                         onTap: () {
-                          Get.to(LogIn());
+                          Get.defaultDialog(
+                            
+                          );
                         },
                         icon: Icons.exit_to_app_outlined,
                       ),
