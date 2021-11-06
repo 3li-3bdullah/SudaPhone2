@@ -87,6 +87,14 @@ class _MyDrawerState extends State<MyDrawer> {
                           color: Colors.white,
                         ),
                       ),
+                      
+                      BuildListTile(
+                        text: "حول التطبيق",
+                        onTap: () {
+                         
+                        },
+                        icon :Icons.info_outline,
+                      ),
                       drawerItems(
                         "حول التطبيق",
                         Icons.info_outline,
