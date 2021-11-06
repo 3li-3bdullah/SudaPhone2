@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/screen.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
@@ -65,19 +66,12 @@ class _MyDrawerState extends State<MyDrawer> {
                         },
                         icon: Icons.home_outlined,
                       ),
-                      drawerItems(
-                        "الصفحة الرئيسية",
-                        Icons.home_outlined,
-                        () {
-                          Get.offAll(const Screen());
+                      BuildListTile(
+                        text: "الأقسام",
+                        onTap: () {
+                          Get.to(const Categories());
                         },
-                      ),
-                      drawerItems(
-                        "الأقسام",
-                        Icons.category_outlined,
-                        () {
-                          /// Get.to(Categories());
-                        },
+                        icon :Icons.category_outlined,
                       ),
                       drawerItems(
                         "إضافة منشور",
