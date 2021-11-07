@@ -8,7 +8,12 @@ class CategoriesCarousel extends GetWidget<AuthViewModel> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child:Center()
+      child:Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: Center(
+          
+        ),
+      )
     );
   }
 }
