@@ -13,7 +13,7 @@ class BuildAvatar extends GetWidget<AuthViewModel> {
       height: 100,
       width: 100,
       decoration: BoxDecoration(
-          color: controller.showsignin ? Colors.blue : kprimaryColor,
+          color: controller.showsignin ? Colors.grey.shade300 : kprimaryColor,
           borderRadius: BorderRadius.circular(100),
           boxShadow: const [
             BoxShadow(color: Colors.black, blurRadius: 3, spreadRadius: 0.1)
