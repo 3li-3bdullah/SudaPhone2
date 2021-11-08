@@ -114,6 +114,8 @@ class _MyDrawerState extends State<MyDrawer> {
                         onTap: () {
                           Get.defaultDialog(
                             title: "Why :( ,Are you sure dear ?!",
+                            middleText: "If you logoff, you will stop receiving our service",
+                            titleStyle: TextStyle(color: Colors.black ),
                             textConfirm:"نعم",
                             textCancel: "لا",
                             buttonColor: Colors.purple,
