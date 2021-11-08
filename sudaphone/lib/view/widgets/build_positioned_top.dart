@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
 
 class BuildPositionedTop extends StatelessWidget {
   const BuildPositionedTop({
-    
     required this.mdw,
     required this.showsignin,
   });
@@ -13,6 +11,7 @@ class BuildPositionedTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const topColor = Color(0xff78a3eb);
     return Positioned(
         child: Transform.scale(
       scale: 1.3,
@@ -25,8 +24,9 @@ class BuildPositionedTop extends StatelessWidget {
           duration: const Duration(milliseconds: 500),
           height: mdw,
           width: mdw,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(mdw),
-           color: showsignin ? kprimaryColor : Colors.green.shade900),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(mdw),
+              color: showsignin ? Colors.grey.shade900 : topColor),
         ),
       ),
     ));
