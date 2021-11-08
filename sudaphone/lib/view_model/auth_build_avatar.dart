@@ -8,12 +8,13 @@ class BuildAvatar extends GetWidget<AuthViewModel> {
 
   @override
   Widget build(BuildContext context) {
+    Color RegAC = const Color(0xffcb98ed);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 500),
       height: 100,
       width: 100,
       decoration: BoxDecoration(
-          color: controller.showsignin ? Colors.grey.shade300 : kprimaryColor,
+          color: controller.showsignin ? Colors.grey.shade300 : RegAC,
           borderRadius: BorderRadius.circular(100),
           boxShadow: const [
             BoxShadow(color: Colors.black, blurRadius: 3, spreadRadius: 0.1)
