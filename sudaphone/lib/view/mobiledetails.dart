@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sudaphone/constants.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view/widgets/custom_textof_details.dart';
 
