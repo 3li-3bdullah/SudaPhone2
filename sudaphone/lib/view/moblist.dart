@@ -9,19 +9,20 @@ class MobList extends StatelessWidget {
   final battery;
   final price;
   final memory;
-  MobList(
-      {this.battery,
-      this.camera,
-      this.cpu,
-      this.memory,
-      this.name,
-      this.price});
+   MobList(
+      {
+      required this.battery,
+      required this.camera,
+      required this.cpu,
+      required this.memory,
+      required this.name,
+      required this.price});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom:10),
       child: InkWell(
-        child: Container(
+        child: SizedBox(
           height: 180,
           width: 100,
           child: Card(
