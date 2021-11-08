@@ -12,6 +12,8 @@ import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
 class MyDrawer extends StatefulWidget {
+  const MyDrawer({Key? key}) : super(key: key);
+
   @override
   _MyDrawerState createState() => _MyDrawerState();
 }
@@ -82,7 +84,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       BuildListTile(
                         text: "إضافة منشور",
                         onTap: () {
-                          Get.to(Post(),
+                          Get.to(const Post(),
                               transition: Transition.leftToRightWithFade);
                         },
                         icon: Icons.post_add_outlined,
@@ -113,17 +115,21 @@ class _MyDrawerState extends State<MyDrawer> {
                         text: "تسجيل الخروج",
                         onTap: () {
                           Get.defaultDialog(
-                            title: "Why :( ,Are you sure dear ?!",
-                            middleText: "If you logoff, you will stop receiving our service",
-                            titleStyle: TextStyle(color: Colors.black ),
-                            textConfirm:"نعم",
-                            textCancel: "لا",
-                            buttonColor: Colors.purple,
-                            confirmTextColor: Colors.white,
-                            cancelTextColor: Colors.green,
-                            onConfirm:(){},
-                            onCancel:(){}
-                          );
+                              title: "Why :( ,Are you sure dear ?!",
+                              middleText:
+                                  "If you logoff, you will stop receiving our service.",
+                              titleStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold),
+                                  middleTextStyle: TextStyle(color:Colors.grey.shade800 , fontSize:18  ),
+                              textConfirm: "نعم",
+                              textCancel: "لا",
+                              buttonColor: Colors.purple,
+                              confirmTextColor: Colors.white,
+                              cancelTextColor: Colors.green,
+                              onConfirm: () {},
+                              onCancel: () {});
                         },
                         icon: Icons.exit_to_app_outlined,
                       ),
