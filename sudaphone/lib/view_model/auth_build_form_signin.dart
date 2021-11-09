@@ -15,6 +15,7 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
   Widget build(BuildContext context) {
     final double mdw = MediaQuery.of(context).size.width;
     return Center(
+      //Here should i added expanded just after i test the last codes.
         child: AnimatedContainer(
             duration: const Duration(milliseconds: 600),
             curve: Curves.easeOutBack,
