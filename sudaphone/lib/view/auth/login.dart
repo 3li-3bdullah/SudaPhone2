@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/widgets/constants.dart';
-import 'package:sudaphone/view_model/auth_build_avatar.dart';
-import 'package:sudaphone/view_model/auth_build_form_signin.dart';
-import 'package:sudaphone/view_model/auth_build_form_signup.dart';
+import 'package:sudaphone/view/widgets/auth_build_avatar.dart';
+import 'package:sudaphone/view/widgets/auth_build_form_signin.dart';
+import 'package:sudaphone/view/widgets/auth_build_form_signup.dart';
 import 'package:sudaphone/view_model/auth_view_model.dart';
 import '../screen.dart';
 import '../widgets/custom_social_login.dart';
@@ -31,7 +31,7 @@ class LogIn extends GetWidget<AuthViewModel> {
       onConfirm: () {
         Get.offAll(const Screen(),
             transition: Transition.zoom,
-            duration: const Duration(milliseconds: 2000));
+            duration: const Duration(milliseconds: 500));
       },
       radius: 30,
     );
@@ -54,7 +54,7 @@ class LogIn extends GetWidget<AuthViewModel> {
       onConfirm: () {
         Get.offAll(const Screen(),
             transition: Transition.zoom,
-            duration: const Duration(milliseconds: 2000));
+            duration: const Duration(milliseconds: 500));
       },
       radius: 30,
     );
