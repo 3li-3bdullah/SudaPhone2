@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
 
 class BuildPositionedBottom extends StatelessWidget {
   const BuildPositionedBottom({
@@ -13,7 +12,8 @@ class BuildPositionedBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color bottomColor = const Color(0xfffbc2eb);
+    Color bottomColor2 = const Color(0xfffbc2eb);
+    Color bottomColor1 = const Color(0xfff5d099);
     return Positioned(
       //top : 300
       top: mdw * 1.1, // this will go down
@@ -23,7 +23,7 @@ class BuildPositionedBottom extends StatelessWidget {
         height: mdw,
         width: mdw,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(mdw),
-         color: showsignin ? Colors.blue.withOpacity(.5) : bottomColor),
+         color: showsignin ? bottomColor1 : bottomColor2),
       ),
     );
   }
