@@ -17,16 +17,16 @@ class BuildPositionedTop extends StatelessWidget {
       scale: 1.3,
       child: Transform.translate(
         offset: Offset(0, -mdw / 1.7),
-
-        /// the offset takes tow value hori and vertical hori will push it right with positive number and top with
-        /// naigtive number and to bottom with positive number
+        /// the offset takes two value horizontal and vertical,
+        ///  horizontal will push it right with positive number and left with
+        /// naigtive number, and vertical will go down with positive number and the oppsite right.
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 500),
           height: mdw,
           width: mdw,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(mdw),
-              color: showsignin ? Colors.grey.shade900 : topColor),
+              color: showsignin ? Colors.indigo.shade900 : topColor),
         ),
       ),
     ));
