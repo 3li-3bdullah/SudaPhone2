@@ -40,7 +40,7 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                       //Start Email----------
                       const CustomText(
                         text: "عنوان البريد الالكتروني",
-                        color: Colors.blue,
+                        color: Colors.black,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.center,
@@ -68,7 +68,7 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                       //Start User Password----------
                       const CustomText(
                         text: "كلمة المرور",
-                        color: Colors.blue,
+                        color: Colors.black,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.center,
