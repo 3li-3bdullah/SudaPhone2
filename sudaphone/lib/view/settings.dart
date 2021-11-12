@@ -28,22 +28,26 @@ class Settings extends StatelessWidget {
                     ListTile(
                       title: const Text("الوضع فاتح / داكن"),
                       onTap: () {
-                        Get.bottomSheet(
-                          Container(
-                            child: Wrap(
-                              children: [
-                                ListTile(
-                                  title:Text( "الوضع الفاتح"),
-                                  leading: Icon(Icons.wb_sunny_outlined),
-                                 onTap: (){},),
-                                 ListTile(
-                                  title:Text( "الوضع الداكن"),
-                                  leading: Icon(Icons.wb_sunny),
-                                 onTap: (){},),
-                              ],
-                            ),
-                          )
-                        );
+                        Get.bottomSheet(Container(
+                          child: Wrap(
+                            children: [
+                              ListTile(
+                                title: Text("الوضع الفاتح"),
+                                leading: Icon(Icons.wb_sunny_outlined),
+                                onTap: () {
+                                  Get.changeTheme(ThemeData.light());
+                                },
+                              ),
+                              ListTile(
+                                title: Text("الوضع الداكن"),
+                                leading: Icon(Icons.wb_sunny),
+                                onTap: () {
+                                  Get.changeTheme(ThemeData.dark());
+                                },
+                              ),
+                            ],
+                          ),
+                        ));
                       },
                     )
                   ]))),
