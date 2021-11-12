@@ -20,17 +20,17 @@ class Settings extends StatelessWidget {
                   backgroundColor: Colors.white,
                   ),
           body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children:  [
-                    ListTile(
-                        title: const Text("الوضع الليلي"),
-                        trailing: const Icon(Icons.wb_sunny),
-                        onTap: (){},
-                        )
-                  ])))),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                ListTile(
+                    title: const Text("الوضع فاتح / داكن"),
+                    onTap: (){
+                      
+                    },
+                    )
+              ]))),
     );
   }
 }
