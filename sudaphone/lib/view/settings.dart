@@ -13,9 +13,12 @@ class Settings extends StatelessWidget {
               title: const CustomText(
                   text: 'الإعدادات',
                   textAlign: TextAlign.center,
-                  color: Colors.blue,
+                  color: Colors.black,
                   fontSize: 25,
-                  fontWeight: FontWeight.normal)),
+                  fontWeight: FontWeight.normal),
+                  centerTitle: true,
+                  backgroundColor: Colors.white,
+                  ),
           body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Expanded(
