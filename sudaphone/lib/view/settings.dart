@@ -32,15 +32,15 @@ class Settings extends StatelessWidget {
                           child: Wrap(
                             children: [
                               ListTile(
-                                title: Text("الوضع الفاتح"),
-                                leading: Icon(Icons.wb_sunny_outlined),
+                                title: const Text("الوضع الفاتح"),
+                                leading: const Icon(Icons.wb_sunny_outlined),
                                 onTap: () {
                                   Get.changeTheme(ThemeData.light());
                                 },
                               ),
                               ListTile(
-                                title: Text("الوضع الداكن"),
-                                leading: Icon(Icons.wb_sunny),
+                                title: const Text("الوضع الداكن"),
+                                leading: const Icon(Icons.wb_sunny),
                                 onTap: () {
                                   Get.changeTheme(ThemeData.dark());
                                 },
