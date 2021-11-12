@@ -36,6 +36,10 @@ class Settings extends StatelessWidget {
                                   title:Text( "الوضع الفاتح"),
                                   leading: Icon(Icons.wb_sunny_outlined),
                                  onTap: (){},),
+                                 ListTile(
+                                  title:Text( "الوضع الداكن"),
+                                  leading: Icon(Icons.wb_sunny),
+                                 onTap: (){},),
                               ],
                             ),
                           )
