@@ -7,9 +7,9 @@ import '../../constants.dart';
 
 class BuildFormSignIn extends GetWidget<AuthViewModel> {
    // ignore: use_key_in_widget_constructors
-   const BuildFormSignIn({required this.signInKey});
+   const BuildFormSignIn({required this.globalSignInKey});
   //final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
-  final GlobalKey signInKey;
+  final GlobalKey globalSignInKey;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
     return Center(
       //Here should i added expanded just after i test the last codes.
         child: AnimatedContainer(
-            duration: const Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.easeOutBack,
             margin: const EdgeInsets.only(top: 40),
             height: 250,
@@ -30,7 +30,7 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                   offset: Offset(1, 1))
             ]),
             child: Form(
-              key: signInKey,
+              key: globalSignInKey,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
