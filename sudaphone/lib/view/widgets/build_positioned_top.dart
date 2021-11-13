@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../constants.dart';
+import 'package:sudaphone/constants.dart';
+
 class BuildPositionedTop extends StatelessWidget {
   const BuildPositionedTop({
     required this.mdw,
@@ -11,7 +14,6 @@ class BuildPositionedTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const topColor = Color(0xff78a3eb);
     return Positioned(
         child: Transform.scale(
       scale: 1.3,
@@ -26,7 +28,7 @@ class BuildPositionedTop extends StatelessWidget {
           width: mdw,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(mdw),
-              color: showsignin ? Colors.indigo.shade900 : topColor),
+              color: showsignin ? Colors.indigo.shade900 : ksignColor1),
         ),
       ),
     ));
