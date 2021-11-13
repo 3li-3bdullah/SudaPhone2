@@ -7,8 +7,8 @@ import '../../constants.dart';
 
 class BuildFormSignUp extends GetWidget<AuthViewModel> {
   // ignore: use_key_in_widget_constructors
-  const BuildFormSignUp({required this.signUpKey});
-  final GlobalKey signUpKey;
+  const BuildFormSignUp({required this.globalSignUpKey});
+  final GlobalKey globalSignUpKey;
 
   // final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
 
@@ -30,7 +30,7 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                   offset: Offset(1, 1))
             ]),
             child: Form(
-              key: signUpKey,
+              key: globalSignUpKey,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: SingleChildScrollView(
