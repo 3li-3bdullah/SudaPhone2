@@ -5,6 +5,7 @@ import 'package:sudaphone/view/widgets/auth_build_avatar.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signin.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signup.dart';
 import 'package:sudaphone/view_model/auth_view_model.dart';
+import '../../constants.dart';
 import '../screen.dart';
 import '../widgets/custom_social_login.dart';
 import '../widgets/build_positioned_bottom.dart';
@@ -113,8 +114,8 @@ class LogIn extends GetWidget<AuthViewModel> {
                         Material(
                             elevation: 10,
                             color: controller.showsignin
-                                ? kprimaryColor
-                                : Colors.green,
+                                ? Colors.indigo.shade900
+                                : ksignColor1,
                             child: MaterialButton(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
