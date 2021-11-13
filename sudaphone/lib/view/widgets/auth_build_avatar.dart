@@ -25,14 +25,14 @@ class BuildAvatar extends GetWidget<AuthViewModel> {
           controller.showsignin = !controller.showsignin;
         },
         child: Stack(
-          children:  [
+          children: const [
             Positioned(
               top: 25,
               right: 25,
               child: Icon(
                 Icons.person_outline,
                 size: 50,
-                color: controller.showsignin ? Colors.black : Colors.white,
+                color:  Colors.black,
               ),
             ),
             Positioned(
@@ -41,7 +41,7 @@ class BuildAvatar extends GetWidget<AuthViewModel> {
               child: Icon(
                 Icons.arrow_back,
                 size: 30,
-                color: controller.showsignin ? Colors.black : Colors.white,
+                color:  Colors.black,
               ),
             ),
           ],
