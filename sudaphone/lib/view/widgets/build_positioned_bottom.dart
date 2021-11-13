@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sudaphone/constants.dart';
 
 class BuildPositionedBottom extends StatelessWidget {
   const BuildPositionedBottom({
@@ -23,7 +24,7 @@ class BuildPositionedBottom extends StatelessWidget {
         height: mdw,
         width: mdw,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(mdw),
-         color: showsignin ? bottomColor1 : bottomColor2),
+         color: showsignin ? bottomColor1 : ksignUpColor2),
       ),
     );
   }
