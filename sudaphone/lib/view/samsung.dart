@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sudaphone/view/moblist.dart';
-import '../constants.dart';
 class Samsung extends StatefulWidget {
   const Samsung({Key? key}) : super(key: key);
 
@@ -86,9 +85,9 @@ class _SamsungState extends State<Samsung> {
             title: const Text("Samsung"),
             centerTitle: true,
           ),
-          body: Container(
+          body: SizedBox(
             height: double.infinity,
-            width: double.infinity,color: kbackGround,
+            width: double.infinity,
             child: ListView.builder(
               itemCount: mobilelist.length,
               itemBuilder: (context, i) {
