@@ -115,7 +115,7 @@ class LogIn extends GetWidget<AuthViewModel> {
                             elevation: 10,
                             color: controller.showsignin
                                 ? Colors.indigo.shade900
-                                : ksignColor1,
+                                : ksignInColor1,
                             child: MaterialButton(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
