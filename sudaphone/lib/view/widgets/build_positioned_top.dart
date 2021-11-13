@@ -28,7 +28,7 @@ class BuildPositionedTop extends StatelessWidget {
           width: mdw,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(mdw),
-              color: showsignin ? Colors.indigo.shade900 : ksignColor1),
+              color: showsignin ? Colors.indigo.shade900 : ksignUpColor1),
         ),
       ),
     ));
