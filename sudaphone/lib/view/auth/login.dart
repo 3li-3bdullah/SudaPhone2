@@ -12,12 +12,12 @@ import '../widgets/build_positioned_top.dart';
 import '../widgets/custom_text.dart';
 
 class LogIn extends GetWidget<AuthViewModel> {
-  final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
-  final GlobalKey<FormState> _formstatesignup = GlobalKey<FormState>();
+  final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
   signin() {
-    _formstatesignin.currentState!.save();
-    if (_formstatesignin.currentState!.validate()) {
+    _signInKey.currentState!.save();
+    if (_signInKey.currentState!.validate()) {
       controller.signInWithEmailAndPassword();
     }
     Get.defaultDialog(
@@ -38,8 +38,8 @@ class LogIn extends GetWidget<AuthViewModel> {
   }
 
   signup() {
-    _formstatesignup.currentState!.save();
-    if (_formstatesignup.currentState!.validate()) {
+    _signUpKey.currentState!.save();
+    if (_signUpKey.currentState!.validate()) {
       controller.signUpWithEmailAndPassword();
     }
 
@@ -91,8 +91,8 @@ class LogIn extends GetWidget<AuthViewModel> {
                   const Padding(padding: EdgeInsets.only(top: 20)),
                   const BuildAvatar(),
                   controller.showsignin
-                      ? BuildFormSignIn(globalSignInKey: _formstatesignin)
-                      : BuildFormSignUp(signUpKey: _formstatesignup),
+                      ? BuildFormSignIn(globalSignInKey: _signInKey)
+                      : BuildFormSignUp(globalSignUpKey: _signUpKey),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
                     child: Column(
