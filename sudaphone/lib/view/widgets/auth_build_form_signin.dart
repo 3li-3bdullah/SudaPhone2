@@ -63,7 +63,8 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                           fillColor: kfillColor,
                           enabledColor: ksignInColor1,
                           focusedColor: Colors.indigo.shade600,
-                          borderSideColor: ksignInColor1),
+                          borderSideColor: ksignInColor1
+                          ),
                       //End Email ----------
                       //Start User Password----------
                       const CustomText(
@@ -86,11 +87,11 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                         },
                         icon: Icons.lock_outline,
                         myhinttext: "أدخل  كلمة المرور هنا",
-                        fillColor: kfillColor,
-                        enabledColor: kprimaryColor,
-                        focusedColor: Colors.blue,
-                        borderSideColor: kprimaryColor,
-                        prefixColor: kprimaryColor,
+                        prefixColor: Colors.green,
+                          fillColor: kfillColor,
+                          enabledColor: ksignInColor1,
+                          focusedColor: Colors.indigo.shade600,
+                          borderSideColor: ksignInColor1
                       ),
                       //End User Password----------
                     ],
