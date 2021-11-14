@@ -59,10 +59,10 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                         icon: Icons.person_outline_rounded,
                         myhinttext: "أدخل اسم المستخدم",
                         fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
+                        enabledColor:ksignUpColor1,
+                        focusedColor: ksignUpColor2,
+                        borderSideColor:ksignUpColor1,
+                        prefixColor: Colors.green,
                       ),
                       //End User Name----------
                       //Start User E-mail ----------
