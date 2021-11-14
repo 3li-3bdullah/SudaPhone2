@@ -88,10 +88,10 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                         icon: Icons.email_outlined,
                         myhinttext: "أدخل عنوان البريد الالكتروني",
                         fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
+                        enabledColor:ksignUpColor1,
+                        focusedColor: ksignUpColor2,
+                        borderSideColor:ksignUpColor1,
+                        prefixColor: Colors.green,
                       ),
                       //End User E-mail ----------
                       //Start User Password----------
