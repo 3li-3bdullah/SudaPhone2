@@ -97,7 +97,7 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       //Start User Password----------
                       const CustomText(
                         text: "كلمة المرور",
-                        color: kprimaryColor,
+                        color: Colors.black,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.right,
