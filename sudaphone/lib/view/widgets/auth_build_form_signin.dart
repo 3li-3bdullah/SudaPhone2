@@ -59,12 +59,12 @@ class BuildFormSignIn extends GetWidget<AuthViewModel> {
                           },
                           icon: Icons.email_outlined,
                           myhinttext: "ادخل البريد الالكتروني هنا",
-                          prefixColor: kprimaryColor,
+                          prefixColor: Colors.green,
                           fillColor: kfillColor,
-                          enabledColor: kprimaryColor,
-                          focusedColor: Colors.blue,
-                          borderSideColor: kprimaryColor),
-                      //End User Name----------
+                          enabledColor: ksignInColor1,
+                          focusedColor: Colors.indigo.shade600,
+                          borderSideColor: ksignInColor1),
+                      //End Email ----------
                       //Start User Password----------
                       const CustomText(
                         text: "كلمة المرور",
