@@ -69,7 +69,7 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       const SizedBox(height: 10),
                       const CustomText(
                         text: "البريد الالكتروني",
-                        color: kprimaryColor,
+                        color: Colors.black,
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         textAlign: TextAlign.right,
