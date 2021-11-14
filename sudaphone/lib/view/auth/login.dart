@@ -161,8 +161,8 @@ class LogIn extends GetWidget<AuthViewModel> {
                                             : "تسجيل دخول",
                                         style: TextStyle(
                                             color: controller.showsignin
-                                                ? Colors.blue
-                                                : Colors.purple,
+                                                ? Colors.green
+                                                : Colors.pinkAccent,
                                             fontWeight: FontWeight.w700)),
                                   ])),
                             )),
