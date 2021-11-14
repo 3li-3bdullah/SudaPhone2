@@ -13,8 +13,6 @@ class BuildPositionedBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color bottomColor2 = const Color(0xfffbc2eb);
-    Color bottomColor1 = const Color(0xfff5d099);
     return Positioned(
       //top : 300
       top: mdw * 1.1, // this will go down
@@ -24,7 +22,7 @@ class BuildPositionedBottom extends StatelessWidget {
         height: mdw,
         width: mdw,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(mdw),
-         color: showsignin ? bottomColor1 : ksignUpColor2),
+         color: showsignin ? ksignInColor1 : ksignUpColor2),
       ),
     );
   }
