@@ -40,7 +40,7 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                       //Start User Name----------
                       const CustomText(
                         text: "إسم المستخدم",
-                        color: kprimaryColor,
+                        color: Colors.black,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.right,
