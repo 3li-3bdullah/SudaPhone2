@@ -9,7 +9,7 @@ class BuildAvatar extends GetWidget<AuthViewModel> {
 
   @override
   Widget build(BuildContext context) {
-    ///Color regAC = const Color(0xffcb98ed);
+    Color regAC = const Color(0xffcb99ed);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 500),
       height: 100,
