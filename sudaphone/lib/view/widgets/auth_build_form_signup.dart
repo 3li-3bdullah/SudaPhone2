@@ -116,10 +116,10 @@ class BuildFormSignUp extends GetWidget<AuthViewModel> {
                         icon: Icons.lock_outlined,
                         myhinttext: "أدخل كلمة المرور",
                         fillColor: kfillColor,
-                        enabledColor: Colors.green.shade900,
-                        focusedColor: kprimaryColor,
-                        borderSideColor: Colors.green.shade900,
-                        prefixColor: Colors.green.shade900,
+                        enabledColor:ksignUpColor1,
+                        focusedColor: ksignUpColor2,
+                        borderSideColor:ksignUpColor1,
+                        prefixColor: Colors.green,
                       ),
                       //Start User Password Confirm----------
                       const CustomText(
