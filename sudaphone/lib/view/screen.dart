@@ -110,7 +110,8 @@ class ScreenState extends State<Screen> {
                       showSearch(context: context, delegate: DataSearch());
                     })
               ],
-
+              leading: const Padding(padding: EdgeInsets.only(right:30),
+              child:CircleAvatar(backgroundImage: AssetImage("assets/images/slider/ali.jpg"),radius:30))
               // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
             ),
 
