@@ -124,7 +124,7 @@ class ScreenState extends State<Screen> {
             /// drawer: MyDrawer(),
             body: ListView(children: [
               SizedBox(
-                height: 310,
+                height: halfheight,
                 width: MediaQuery.of(context).size.width,
                 child: GridTile(
                   child: PageView.builder(
@@ -223,7 +223,7 @@ class ScreenState extends State<Screen> {
                 ),
               ),
               SizedBox(
-                height: 400,
+                height: halfheight + partOfHeight,
                 child: GridView(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
