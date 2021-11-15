@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
@@ -22,8 +21,8 @@ class ScreenState extends State<Screen> {
   List<MaterialColor> colors = const [
     Colors.green,
     Colors.red,
-    Colors.brown,
-    Colors.purple,
+    Colors.indigo,
+    Colors.pink,
     Colors.blue,
     Colors.amber,
   ];
@@ -45,44 +44,44 @@ class ScreenState extends State<Screen> {
         width: MediaQuery.of(context).size.width,
       ));
   Widget buildIndicator() => SmoothPageIndicator(
-    controller: controller,
-    count: imagesCarousel.length,
-    effect: CustomizableEffect(
-      activeDotDecoration: DotDecoration(
-        width: 32,
-        height: 12,
-        color: Colors.white,
-        rotationAngle: 180,
-        verticalOffset: -10,
-        borderRadius: BorderRadius.circular(24),
-        dotBorder: const DotBorder(
-          padding: 2,
-          width: 2,
-          color: Colors.black,
+        controller: controller,
+        count: imagesCarousel.length,
+        effect: CustomizableEffect(
+          activeDotDecoration: DotDecoration(
+            width: 32,
+            height: 12,
+            color: Colors.white,
+            rotationAngle: 180,
+            verticalOffset: -10,
+            borderRadius: BorderRadius.circular(24),
+            dotBorder: const DotBorder(
+              padding: 2,
+              width: 2,
+              color: Colors.black,
+            ),
+          ),
+          dotDecoration: const DotDecoration(
+            width: 24,
+            height: 12,
+            color: Colors.grey,
+            dotBorder: DotBorder(
+              padding: 2,
+              width: 2,
+              color: Colors.grey,
+            ),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(2),
+                topRight: Radius.circular(16),
+                bottomLeft: Radius.circular(16),
+                bottomRight: Radius.circular(2)),
+            //borderRadius: BorderRadius.circular(16),
+            verticalOffset: 0,
+          ),
+          spacing: 6.0,
+          // activeColorOverride: (i) => colors[i],
+          inActiveColorOverride: (i) => colors[i],
         ),
-      ),
-      dotDecoration: const DotDecoration(
-        width: 24,
-        height: 12,
-        color: Colors.grey,
-        dotBorder: DotBorder(
-          padding: 2,
-          width: 2,
-          color: Colors.grey,
-        ),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(2),
-            topRight: Radius.circular(16),
-            bottomLeft: Radius.circular(16),
-            bottomRight: Radius.circular(2)),
-        //borderRadius: BorderRadius.circular(16),
-        verticalOffset: 0,
-      ),
-      spacing: 6.0,
-      // activeColorOverride: (i) => colors[i],
-      inActiveColorOverride: (i) => colors[i],
-    ),
-  );
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -94,26 +93,30 @@ class ScreenState extends State<Screen> {
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
-              title: const CustomText(
-                  text: 'SudaPhone',
-                  textAlign: TextAlign.center,
-                  color: Colors.black,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
-              backgroundColor: Colors.white,
-              centerTitle: true,
-              elevation: 6,
-              actions: [
-                IconButton(
-                    icon: const Icon(Icons.search),
-                    onPressed: () {
-                      showSearch(context: context, delegate: DataSearch());
-                    })
-              ],
-              leading: const Padding(padding: EdgeInsets.only(right:30),
-              child:CircleAvatar(backgroundImage: AssetImage("assets/images/slider/ali.jpg"),radius:30))
-              // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
-            ),
+                title: const CustomText(
+                    text: 'SudaPhone',
+                    textAlign: TextAlign.center,
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+                backgroundColor: Colors.white,
+                centerTitle: true,
+                elevation: 6,
+                actions: [
+                  IconButton(
+                      icon: const Icon(Icons.search),
+                      onPressed: () {
+                        showSearch(context: context, delegate: DataSearch());
+                      })
+                ],
+                leading: const Padding(
+                    padding: EdgeInsets.only(right: 30),
+                    child: CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assets/images/slider/ali.jpg"),
+                        radius: 30))
+                // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                ),
 
             /// drawer: MyDrawer(),
             body: ListView(children: [
@@ -152,7 +155,6 @@ class ScreenState extends State<Screen> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-
               SizedBox(
                   height: 120,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -217,7 +219,6 @@ class ScreenState extends State<Screen> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-
               SizedBox(
                 height: 400,
                 child: GridView(
@@ -250,16 +251,16 @@ class ScreenState extends State<Screen> {
                           text: "Lenovo K12 Pro : 800\$",
                           onTap: () {}),
                       LastProduct(
+                          imageProduct: "example/images/product/nokia.jpg",
+                          text: "Nokia G300 : 750\$",
+                          onTap: () {}),
+                      LastProduct(
                           imageProduct: "example/images/product/realme.jpg",
                           text: "Realme race teaser : 900\$",
                           onTap: () {}),
                       LastProduct(
                           imageProduct: "example/images/product/tecno.jpg",
                           text: "Tecno Spark6 : 850\$",
-                          onTap: () {}),
-                      LastProduct(
-                          imageProduct: "example/images/product/nokia.jpg",
-                          text: "Nokia G300 : 750\$",
                           onTap: () {}),
                       LastProduct(
                           imageProduct: "example/images/product/vivo.jpeg",
