@@ -86,6 +86,9 @@ class ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     // ThemeData(fontFamily: 'Cairo');
+    double screenHeight = MediaQuery.of(context).size.width;
+    double halfheight = screenHeight / 2;
+    double partOfHeight = screenHeight / 10;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "SudaPhone",
