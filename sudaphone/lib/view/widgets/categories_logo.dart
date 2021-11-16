@@ -1,12 +1,11 @@
-
 import 'package:flutter/material.dart';
 import '../widgets/custom_text.dart';
 
 class CategoriesLogo extends StatelessWidget {
   const CategoriesLogo({
     required this.imageLogo,
-    required  this.text,
-    required   this.onTap,
+    required this.text,
+    required this.onTap,
   });
   final String imageLogo;
   final String text;
@@ -14,7 +13,7 @@ class CategoriesLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: Container(
+      child: SizedBox(
           height: 100,
           width: 100,
           child: ListTile(
@@ -24,16 +23,13 @@ class CategoriesLogo extends StatelessWidget {
                 width: 90,
                 fit: BoxFit.cover,
               ),
-              subtitle:
-                  Container(
-                    child:CustomText(
-                      text: text,
-                      textAlign: TextAlign.center,
-                      color: Colors.grey.shade800,
-                      fontSize: 15,
-                      fontWeight: FontWeight.normal,
-                    ),
-                        ))),
+              subtitle: CustomText(
+                text: text,
+                textAlign: TextAlign.center,
+                color: Colors.grey.shade800,
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
+              ))),
       onTap: () {
         onTap();
       },
