@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sudaphone/view/moblist.dart';
+import 'package:sudaphone/view/widgets/custom_text.dart';
+
 class Samsung extends StatefulWidget {
   const Samsung({Key? key}) : super(key: key);
 
@@ -82,7 +84,12 @@ class _SamsungState extends State<Samsung> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: const Text("Samsung"),
+            title: const CustomText(
+                text: 'Samsung',
+                textAlign: TextAlign.center,
+                color: Colors.black,
+                fontSize: 25,
+                fontWeight: FontWeight.normal),
             centerTitle: true,
           ),
           body: SizedBox(
@@ -91,14 +98,17 @@ class _SamsungState extends State<Samsung> {
             child: ListView.builder(
               itemCount: mobilelist.length,
               itemBuilder: (context, i) {
-                return MobList(battery: mobilelist[i]['battery'],
-                name: mobilelist[i]['name'],cpu: mobilelist[i]['cpu'],
-                camera: mobilelist[i]['camera'],memory: mobilelist[i]['memory'],
-                price: mobilelist[i]['price'],);
+                return MobList(
+                  battery: mobilelist[i]['battery'],
+                  name: mobilelist[i]['name'],
+                  cpu: mobilelist[i]['cpu'],
+                  camera: mobilelist[i]['camera'],
+                  memory: mobilelist[i]['memory'],
+                  price: mobilelist[i]['price'],
+                );
               },
             ),
           ),
         ));
   }
 }
-
