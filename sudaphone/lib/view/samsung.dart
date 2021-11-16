@@ -10,7 +10,7 @@ class Samsung extends StatefulWidget {
 }
 
 class _SamsungState extends State<Samsung> {
-  var mobilelist = [
+  List<Map<String, String>> mobilelist = <Map<String,String>>[
     {
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
@@ -73,7 +73,8 @@ class _SamsungState extends State<Samsung> {
       'cpu': 'Snapdragon 865 ثماني',
       'battery': '5000mha شحن سريع w15',
       'price': '1200\$',
-      'memory': '128GB'
+      'memory': '128GB',
+      'image':'example/images/product/samsung.jpg'
     }
   ];
 
