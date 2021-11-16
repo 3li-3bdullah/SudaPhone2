@@ -81,7 +81,7 @@ class _SamsungState extends State<Samsung> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.white,
             title: const Text("Samsung"),
             centerTitle: true,
           ),
