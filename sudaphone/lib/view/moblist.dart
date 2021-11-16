@@ -9,18 +9,18 @@ class MobList extends StatelessWidget {
   final battery;
   final price;
   final memory;
+  String? image;
    MobList(
-      {
-      required this.battery,
+      {required this.battery,
       required this.camera,
       required this.cpu,
       required this.memory,
       required this.name,
-      required this.price});
+      required this.price, this.image});
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom:10),
+      padding: const EdgeInsets.only(bottom: 10),
       child: InkWell(
         child: SizedBox(
           height: 180,
@@ -41,38 +41,44 @@ class MobList extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(bottom: 10, right: 10),
+                            margin:
+                                const EdgeInsets.only(bottom: 10, right: 10),
                             child: Text(name,
                                 style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w800),
                                 textAlign: TextAlign.center),
                           ),
                           Row(children: [
-                          const  Text("الكاميرا:",
+                            const Text("الكاميرا:",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(camera, style: const TextStyle(color: Colors.blue)),
+                            Text(camera,
+                                style: const TextStyle(color: Colors.blue)),
                           ]),
                           Row(children: [
-                          const  Text("المعالج : ",
+                            const Text("المعالج : ",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(cpu, style: const TextStyle(color: Colors.blue))
+                            Text(cpu,
+                                style: const TextStyle(color: Colors.blue))
                           ]),
                           Row(children: [
-                          const  Text("الذاكرة:",
+                            const Text("الذاكرة:",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(memory, style: const TextStyle(color: Colors.blue)),
+                            Text(memory,
+                                style: const TextStyle(color: Colors.blue)),
                           ]),
-                          Row(children:  [
-                           const Text("البطارية :",
+                          Row(children: [
+                            const Text("البطارية :",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(battery, style: const TextStyle(color: Colors.blue))
+                            Text(battery,
+                                style: const TextStyle(color: Colors.blue))
                           ]),
                           Row(
                             children: [
                               Expanded(
-                                child: Row(children:  [
+                                child: Row(children: [
                                   Text("السعر : $price",
-                                      style: const TextStyle(color: Colors.pink)),
+                                      style:
+                                          const TextStyle(color: Colors.pink)),
                                 ]),
                               ),
                               Row(children: const [
