@@ -84,7 +84,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       BuildListTile(
                         text: "إضافة منشور",
                         onTap: () {
-                          Get.to(const Post(),
+                          Get.to(Post(),
                               transition: Transition.leftToRightWithFade);
                         },
                         icon: Icons.post_add_outlined,
@@ -122,7 +122,8 @@ class _MyDrawerState extends State<MyDrawer> {
                                   color: Colors.black,
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold),
-                                  middleTextStyle: TextStyle(color:Colors.grey.shade800 , fontSize:18  ),
+                              middleTextStyle: TextStyle(
+                                  color: Colors.grey.shade800, fontSize: 18),
                               textConfirm: "نعم",
                               textCancel: "لا",
                               buttonColor: Colors.purple,
