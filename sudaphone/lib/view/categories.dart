@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sudaphone/view/samsung.dart';
+import 'package:sudaphone/view/categories_pages/samsung.dart';
 import 'package:sudaphone/view/widgets/categories_card.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 class Categories extends StatefulWidget {
