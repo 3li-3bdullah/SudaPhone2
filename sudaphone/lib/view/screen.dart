@@ -243,7 +243,7 @@ class ScreenState extends State<Screen> {
                           onTap: () {}),
                       LastProduct(
                           imageProduct: "example/images/product/xiaomi.jpg",
-                          text: "Xaiomi Mi 10T  : 950\$",
+                          text: "Xiaomi Mi 10T  : 950\$",
                           onTap: () {}),
                       LastProduct(
                           imageProduct: "example/images/product/oppo.jpg",
