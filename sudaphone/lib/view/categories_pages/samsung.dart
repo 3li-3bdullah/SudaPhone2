@@ -3,7 +3,7 @@ import 'package:sudaphone/view/categories_pages/moblist.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
 class Samsung extends StatelessWidget {
-  List<Map<String, String>> mobilelist = <Map<String, String>>[
+  final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
       'image': 'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
@@ -97,16 +97,16 @@ class Samsung extends StatelessWidget {
             height: double.infinity,
             width: double.infinity,
             child: ListView.builder(
-              itemCount: mobilelist.length,
+              itemCount: _mobilelist.length,
               itemBuilder: (context, i) {
                 return MobList(
-                  imageAtDetails: mobilelist[i]['image'],
-                  battery: mobilelist[i]['battery'],
-                  name: mobilelist[i]['name'],
-                  cpu: mobilelist[i]['cpu'],
-                  camera: mobilelist[i]['camera'],
-                  memory: mobilelist[i]['memory'],
-                  price: mobilelist[i]['price'],
+                  imageAtDetails: _mobilelist[i]['image'],
+                  battery: _mobilelist[i]['battery'],
+                  name: _mobilelist[i]['name'],
+                  cpu: _mobilelist[i]['cpu'],
+                  camera: _mobilelist[i]['camera'],
+                  memory: _mobilelist[i]['memory'],
+                  price: _mobilelist[i]['price'],
                 );
               },
             ),
