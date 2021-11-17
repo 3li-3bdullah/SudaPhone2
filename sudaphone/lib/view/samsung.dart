@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sudaphone/view/moblist.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
-class Samsung extends StatefulWidget {
-  const Samsung({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() => _SamsungState();
-}
-
-class _SamsungState extends State<Samsung> {
+class Samsung extends StatelessWidget {
   List<Map<String, String>> mobilelist = <Map<String,String>>[
     {
       'image':'example/images/product/samsung.jpg',
