@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:sudaphone/view/mobiledetails.dart';
 
 class MobList extends StatelessWidget {
-  final name;
-  final camera;
-  final cpu;
-  final battery;
-  final price;
-  final memory;
-  final detailsImage;
+  final String? name;
+  final String? camera;
+  final String? cpu;
+  final String? battery;
+  final String? price;
+  final String? memory;
+  final String? detailsImage;
   MobList(
       {required this.battery,
       required this.camera,
@@ -29,7 +29,7 @@ class MobList extends StatelessWidget {
           child: Card(
             child: Row(
               children: [
-                Expanded(flex: 1, child: Image.asset(detailsImage)),
+                Expanded(flex: 1, child: Image.asset(detailsImage!)),
                 Expanded(
                     flex: 2,
                     child: Container(
@@ -42,7 +42,7 @@ class MobList extends StatelessWidget {
                           Container(
                             margin:
                                 const EdgeInsets.only(bottom: 10, right: 10),
-                            child: Text(name,
+                            child: Text(name!,
                                 style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w800),
                                 textAlign: TextAlign.center),
@@ -50,25 +50,25 @@ class MobList extends StatelessWidget {
                           Row(children: [
                             const Text("الكاميرا:",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(camera,
+                            Text(camera!,
                                 style: const TextStyle(color: Colors.blue)),
                           ]),
                           Row(children: [
                             const Text("المعالج : ",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(cpu,
+                            Text(cpu!,
                                 style: const TextStyle(color: Colors.blue))
                           ]),
                           Row(children: [
                             const Text("الذاكرة:",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(memory,
+                            Text(memory!,
                                 style: const TextStyle(color: Colors.blue)),
                           ]),
                           Row(children: [
                             const Text("البطارية :",
                                 style: TextStyle(color: Colors.grey)),
-                            Text(battery,
+                            Text(battery!,
                                 style: const TextStyle(color: Colors.blue))
                           ]),
                           Row(
