@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view/widgets/custom_textof_details.dart';
 
-class MobileDetails extends StatefulWidget {
+class MobileDetails extends StatelessWidget {
   const MobileDetails({Key? key}) : super(key: key);
 
-  @override
-  _MobileDetailsState createState() => _MobileDetailsState();
-}
-
-class _MobileDetailsState extends State<MobileDetails> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
