@@ -12,6 +12,7 @@ class Samsung extends StatefulWidget {
 class _SamsungState extends State<Samsung> {
   List<Map<String, String>> mobilelist = <Map<String,String>>[
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -20,6 +21,7 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -28,6 +30,7 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -36,6 +39,7 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -44,6 +48,7 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -52,6 +57,7 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -60,6 +66,7 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -68,13 +75,13 @@ class _SamsungState extends State<Samsung> {
       'memory': '128GB'
     },
     {
+      'image':'example/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
       'battery': '5000mha شحن سريع w15',
       'price': '1200\$',
       'memory': '128GB',
-      'image':'example/images/product/samsung.jpg'
     }
   ];
 
@@ -99,7 +106,7 @@ class _SamsungState extends State<Samsung> {
             child: ListView.builder(
               itemCount: mobilelist.length,
               itemBuilder: (context, i) {
-                return MobList(
+                return MobList(detailsImage: mobilelist[i]['image'],
                   battery: mobilelist[i]['battery'],
                   name: mobilelist[i]['name'],
                   cpu: mobilelist[i]['cpu'],
