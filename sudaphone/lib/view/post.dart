@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sudaphone/view/comments.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
-class Post extends StatefulWidget {
-  const Post({Key? key}) : super(key: key);
 
-  @override
-  _PostState createState() => _PostState();
-}
 
-class _PostState extends State<Post> {
+class Post extends StatelessWidget {
 
   bool debugShowCheckedModeBanner = false;
 
