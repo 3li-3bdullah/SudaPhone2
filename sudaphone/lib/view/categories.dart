@@ -40,7 +40,7 @@ class _CategoriesState extends State<Categories> {
                       imageCat: "example/images/category/samsung.png",
                       text: "Samsung",
                       onTap: () {
-                        Get.to(const Samsung()
+                        Get.to(Samsung()
                         ,transition: Transition.zoom,
                         curve: Curves.bounceInOut
                         );
