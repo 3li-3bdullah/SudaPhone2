@@ -9,14 +9,15 @@ class MobList extends StatelessWidget {
   final battery;
   final price;
   final memory;
-  String? image;
-   MobList(
+  final detailsImage;
+  MobList(
       {required this.battery,
       required this.camera,
       required this.cpu,
       required this.memory,
       required this.name,
-      required this.price, this.image});
+      required this.price,
+      required this.detailsImage});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,9 +29,7 @@ class MobList extends StatelessWidget {
           child: Card(
             child: Row(
               children: [
-                Expanded(
-                    flex: 1,
-                    child: Image.asset("example/images/product/samsung.jpg")),
+                Expanded(flex: 1, child: Image.asset(detailsImage)),
                 Expanded(
                     flex: 2,
                     child: Container(
