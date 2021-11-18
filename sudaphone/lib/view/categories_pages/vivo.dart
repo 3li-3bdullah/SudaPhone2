@@ -8,7 +8,7 @@ class Lenovo extends StatelessWidget {
 
   final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
-      'image': 'example/images/product/vivo.jpg',
+      'image': 'example/images/product/vivo.jpeg',
       'name': 'Mate 40 Pro',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
