@@ -5,10 +5,10 @@ import 'package:get/get.dart';
 class AuthViewModel extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  final Rx<User> _user = Rx<User>();
-  String? get user => _user.value.email;
-
   late String email, password, confirmPassword, name;
+
+  final Rxn<User> _user = Rxn<User>();
+  String? get user => _user.value?.email;
   bool showsignin = true;
   @override
   void onInit() {
