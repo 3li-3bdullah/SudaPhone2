@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/aboutapp.dart';
-import 'package:sudaphone/view/auth/login.dart';
 import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/post.dart';
 import 'package:sudaphone/view/screen.dart';
@@ -117,7 +116,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           Get.defaultDialog(
                               title: "Why :( ,Are you sure dear ?!",
                               middleText:
-                                  "If you logoff, you will stop receiving our service.",
+                                  "If you logoff, you will stop receiving our services.",
                               titleStyle: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 24,
