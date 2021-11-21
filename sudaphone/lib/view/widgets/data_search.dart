@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DataSearch extends SearchDelegate<String> {
   @override
@@ -9,7 +10,7 @@ class DataSearch extends SearchDelegate<String> {
           onPressed: () {
             query = " ";
           },
-          icon: Icon(Icons.clear))
+          icon: const Icon(Icons.clear))
     ];
   }
 
@@ -18,10 +19,9 @@ class DataSearch extends SearchDelegate<String> {
     // Icon Leading
     return (IconButton(
       onPressed: () {
-        Navigator.of(context).pop();
-        //close(context, null);
+        Get.back();
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     ));
   }
 
@@ -34,7 +34,7 @@ class DataSearch extends SearchDelegate<String> {
   @override
   Widget buildSuggestions(BuildContext context) {
     // Show when someone searchers for something
-    return Text("Body Search");
+    return const Text("Body Search");
     //  ListView.builder(
     //     itemCount: searchlist.length,
     //     itemBuilder: (context, i) {
