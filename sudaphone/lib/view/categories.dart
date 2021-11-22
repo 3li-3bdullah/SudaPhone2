@@ -3,14 +3,9 @@ import 'package:get/get.dart';
 import 'package:sudaphone/view/categories_pages/samsung.dart';
 import 'package:sudaphone/view/widgets/categories_card.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
-class Categories extends StatefulWidget {
+class Categories extends StatelessWidget {
   const Categories({Key? key}) : super(key: key);
 
-  @override
-  State<StatefulWidget> createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     ///ThemeData(fontFamily: 'Cairo');
