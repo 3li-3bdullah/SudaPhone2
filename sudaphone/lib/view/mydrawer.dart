@@ -10,15 +10,15 @@ import 'package:sudaphone/view/settings.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
-class MyDrawer extends StatefulWidget {
-  const MyDrawer({Key? key}) : super(key: key);
+class MyDrawer extends StatelessWidget {
+   MyDrawer({Key? key}) : super(key: key);
 
-  @override
-  _MyDrawerState createState() => _MyDrawerState();
-}
+//   @override
+//   _MyDrawerState createState() => _MyDrawerState();
+// }
 
-class _MyDrawerState extends State<MyDrawer> {
-  double value = 0;
+// class _MyDrawerState extends State<MyDrawer> {
+  // double value = 0;
 
   @override
   Widget build(BuildContext context) {

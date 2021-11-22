@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Comments extends StatefulWidget {
+class Comments extends StatelessWidget {
   const Comments({Key? key}) : super(key: key);
 
-  @override
-  State<StatefulWidget> createState() {
-    return StateComments();
-  }
-}
-
-class StateComments extends State<Comments> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
