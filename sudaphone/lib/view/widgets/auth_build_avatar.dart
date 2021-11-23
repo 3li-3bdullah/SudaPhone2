@@ -4,7 +4,7 @@ import 'package:sudaphone/view_model/login_view_model.dart';
 
 import '../../constants.dart';
 
-class BuildAvatar extends GetWidget<AuthViewModel> {
+class BuildAvatar extends GetWidget<LoginViewModel> {
   const BuildAvatar({ Key? key }) : super(key: key);
 
   @override
