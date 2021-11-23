@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:sudaphone/view/widgets/auth_build_avatar.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signin.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signup.dart';
-import 'package:sudaphone/view_model/auth_view_model.dart';
+import 'package:sudaphone/view_model/login_view_model.dart';
 import '../constants.dart';
 import 'screen.dart';
 import 'widgets/custom_social_login.dart';
@@ -11,7 +11,7 @@ import 'widgets/build_positioned_bottom.dart';
 import 'widgets/build_positioned_top.dart';
 import 'widgets/custom_text.dart';
 
-class LogIn extends GetWidget<AuthViewModel> {
+class LogIn extends GetWidget<LoginViewModel> {
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
@@ -31,7 +31,7 @@ class LogIn extends GetWidget<AuthViewModel> {
         Get.back();
       },
       onConfirm: () {
-        Get.offAll(const Screen(),
+        Get.offAll(Screen(),
             transition: Transition.zoom,
             duration: const Duration(milliseconds: 500));
       },
@@ -54,7 +54,7 @@ class LogIn extends GetWidget<AuthViewModel> {
         Get.back();
       },
       onConfirm: () {
-        Get.offAll(const Screen(),
+        Get.offAll(Screen(),
             transition: Transition.zoom,
             duration: const Duration(milliseconds: 500));
       },
