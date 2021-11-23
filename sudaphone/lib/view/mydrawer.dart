@@ -9,9 +9,10 @@ import 'package:sudaphone/view/screen.dart';
 import 'package:sudaphone/view/settings.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
+import 'package:sudaphone/view_model/mydrawer_view_model.dart';
 
 class MyDrawer extends StatelessWidget {
-   MyDrawer({Key? key}) : super(key: key);
+  MyDrawer({Key? key}) : super(key: key);
 
 //   @override
 //   _MyDrawerState createState() => _MyDrawerState();
@@ -135,24 +136,57 @@ class MyDrawer extends StatelessWidget {
                       ),
                     ]))
                   ]))),
-          TweenAnimationBuilder(
-              tween: Tween<double>(begin: 0, end: value),
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeIn,
-              builder: (_, double val, __) {
-                return (Transform(
-                  alignment: Alignment.center,
-                  transform: (Matrix4.identity()
-                    ..setEntry(3, 2, 0.001)
-                    ..setEntry(0, 3,
-                        200 * val) //This will allows us to translate the screen
-                    ..rotateY((pi / 6) * val)),
-                  child: const Screen(),
-                ));
-              }),
+          GetBuilder<MyDrawerViewModel>(
+            init: MyDrawerViewModel(),
+            builder: (controller) => TweenAnimationBuilder(
+                tween: Tween<double>(begin: 0, end: controller.value),
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeIn,
+                builder: (_, double val, __) {
+                  return (Transform(
+                    alignment: Alignment.center,
+                    transform: (Matrix4.identity()
+                      ..setEntry(3, 2, 0.001)
+                      ..setEntry(
+                          0,
+                          3,
+                          200 *
+                              val) //This will allows us to translate the screen
+                      ..rotateY((pi / 6) * val)),
+                    child: const Screen(),
+                  ));
+                }),
+          ),
 
           ///The GestureDectector will allows to me open the drawer
-          GestureDetector(
+          GetBuilder<MyDrawerViewModel>(
+              builder: (controller) => GestureDetector(
+                    onHorizontalDragUpdate: (e) {
+                      if (e.delta.dx > 0) {
+                        controller.one();
+                      } else {
+                        controller.zero();
+                        // setState(() {
+                        //   value = 0;
+                        // });
+                      }
+                    },
+
+                    //   onTap: () {
+                    //   ///If the value equal to 0 then when we tap it will become 1
+                    //   ///else it will become 0
+                    //   setState(() {
+                    //     value == 0 ? value = 1 : value = 0;
+                    //   });
+                    // }
+                  ))
+        ],
+      ),
+    );
+  }
+}
+/*
+GestureDetector(
             onHorizontalDragUpdate: (e) {
               if (e.delta.dx > 0) {
                 setState(() {
@@ -172,9 +206,5 @@ class MyDrawer extends StatelessWidget {
             //     value == 0 ? value = 1 : value = 0;
             //   });
             // }
-          )
-        ],
-      ),
-    );
-  }
-}
+          ) 
+*/
