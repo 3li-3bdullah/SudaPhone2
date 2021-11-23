@@ -12,14 +12,7 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view_model/mydrawer_view_model.dart';
 
 class MyDrawer extends StatelessWidget {
-  MyDrawer({Key? key}) : super(key: key);
-
-//   @override
-//   _MyDrawerState createState() => _MyDrawerState();
-// }
-
-// class _MyDrawerState extends State<MyDrawer> {
-  // double value = 0;
+  const MyDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
