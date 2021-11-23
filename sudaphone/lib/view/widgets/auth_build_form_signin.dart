@@ -5,7 +5,7 @@ import 'package:sudaphone/view/widgets/custom_text_form_field.dart';
 import 'package:sudaphone/view_model/login_view_model.dart';
 import '../../constants.dart';
 
-class BuildFormSignIn extends GetWidget<AuthViewModel> {
+class BuildFormSignIn extends GetWidget<LoginViewModel> {
    // ignore: use_key_in_widget_constructors
    const BuildFormSignIn({required this.globalSignInKey});
   //final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
