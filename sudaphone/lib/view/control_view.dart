@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sudaphone/view/auth/login.dart';
+import 'package:sudaphone/view/login.dart';
 import 'package:sudaphone/view/mydrawer.dart';
 import 'package:sudaphone/view_model/auth_view_model.dart';
 
