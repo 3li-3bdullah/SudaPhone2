@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/login.dart';
 import 'package:sudaphone/view/mydrawer.dart';
-import 'package:sudaphone/view_model/auth_view_model.dart';
+import 'package:sudaphone/view_model/login_view_model.dart';
 
 class ControlView extends GetWidget<AuthViewModel> {
   const ControlView({Key? key}) : super(key: key);
