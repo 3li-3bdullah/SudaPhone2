@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view/widgets/custom_text_form_field.dart';
-import 'package:sudaphone/view_model/auth_view_model.dart';
+import 'package:sudaphone/view_model/login_view_model.dart';
 import '../../constants.dart';
 
 class BuildFormSignIn extends GetWidget<AuthViewModel> {
