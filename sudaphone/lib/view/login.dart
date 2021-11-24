@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/screen.dart';
 import 'package:sudaphone/view/widgets/auth_build_avatar.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signin.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signup.dart';
 import 'package:sudaphone/view_model/login_view_model.dart';
 import '../constants.dart';
-import 'screen.dart';
 import 'widgets/custom_social_login.dart';
 import 'widgets/build_positioned_bottom.dart';
 import 'widgets/build_positioned_top.dart';
 import 'widgets/custom_text.dart';
 
-class LogIn extends GetWidget<LoginViewModel> {
+class LogIn extends StatelessWidget {
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
-   LogIn({Key? key}) : super(key: key);
+  LogIn({Key? key}) : super(key: key);
+  LoginViewModel controller = Get.find();
 
   signin() {
     _signInKey.currentState!.save();
