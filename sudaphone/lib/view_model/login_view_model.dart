@@ -28,7 +28,7 @@ class LoginViewModel extends GetxController {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
       print(e);
-      Get.snackbar("Error login account", "$e",
+      Get.snackbar("Error login account", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
   }
@@ -39,7 +39,7 @@ class LoginViewModel extends GetxController {
           email: email, password: password);
     } catch (e) {
       print(e);
-      Get.snackbar("Error login account", "$e",
+      Get.snackbar("Error login account", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
   }
