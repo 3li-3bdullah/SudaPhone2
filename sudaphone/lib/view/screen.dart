@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
@@ -6,18 +7,9 @@ import './widgets/data_search.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:core';
 
-class Screen extends StatefulWidget {
-  const Screen({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() {
-    return ScreenState();
-  }
-}
-
-class ScreenState extends State<Screen> {
-  int activeIndex = 0;
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+class Screen extends GetWidget {
+  // int activeIndex = 0;
+  final controllerCarousel = PageController(viewportFraction: 0.8, keepPage: true);
   List<MaterialColor> colors = const [
     Colors.green,
     Colors.red,
@@ -34,17 +26,18 @@ class ScreenState extends State<Screen> {
     "example/images/slider/5.jpg",
     "example/images/slider/6.jpg",
   ];
-  Widget buildImage(String imagesCarousel, int index) => Container(
-      // margin: EdgeInsets.symmetric(horizontal: 2),
-      color: Colors.grey,
-      width: MediaQuery.of(context).size.width,
-      child: Image.asset(
-        imagesCarousel,
-        fit: BoxFit.cover,
-        width: MediaQuery.of(context).size.width,
-      ));
+  Widget buildImage(String imagesCarousel, int index, double width) =>
+      Container(
+          // margin: EdgeInsets.symmetric(horizontal: 2),
+          color: Colors.grey,
+          width: width,
+          child: Image.asset(
+            imagesCarousel,
+            fit: BoxFit.cover,
+            width: width,
+          ));
   Widget buildIndicator() => SmoothPageIndicator(
-        controller: controller,
+        controller: controllerCarousel,
         count: imagesCarousel.length,
         effect: CustomizableEffect(
           activeDotDecoration: DotDecoration(
@@ -86,18 +79,19 @@ class ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     // ThemeData(fontFamily: 'Cairo');
-    double screenHeight = MediaQuery.of(context).size.width;
-    double halfheight = screenHeight / 2;
-    double partOfHeight = screenHeight / 10;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double halfheight = height / 2;
+    double partOfHeight = height / 10;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "SudaPhone",
+      title: "سودافون",
       home: Directionality(
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
                 title: const CustomText(
-                    text: 'SudaPhone',
+                    text: 'سودافون',
                     textAlign: TextAlign.center,
                     color: Colors.black,
                     fontSize: 25,
@@ -128,11 +122,14 @@ class ScreenState extends State<Screen> {
                 width: MediaQuery.of(context).size.width,
                 child: GridTile(
                   child: PageView.builder(
-                    controller: controller,
+                    controller: controllerCarousel,
                     itemCount: imagesCarousel.length,
                     itemBuilder: (context, index) {
                       String imagesCar = imagesCarousel[index];
-                      return buildImage(imagesCar, index);
+                      return SizedBox(
+                        height: height,
+                        width: width,
+                        child: buildImage(imagesCar, index , width));
                     },
                   ),
                   footer: Container(
