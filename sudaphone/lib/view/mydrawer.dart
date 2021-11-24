@@ -61,7 +61,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: 'الصفحة الرئيسية',
                         onTap: () {
-                          Get.offAll(const Screen(),
+                          Get.offAll( Screen(),
                               transition: Transition.rightToLeftWithFade);
                         },
                         icon: Icons.home_outlined,
@@ -146,7 +146,7 @@ class MyDrawer extends StatelessWidget {
                           200 *
                               val) //This will allows us to translate the screen
                       ..rotateY((pi / 6) * val)),
-                    child: const Screen(),
+                    child:  Screen(),
                   ));
                 }),
           ),
