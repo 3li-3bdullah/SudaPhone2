@@ -13,7 +13,7 @@ class SocialLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 85,
         width: 90,
         child: Container(
@@ -26,14 +26,12 @@ class SocialLogin extends StatelessWidget {
                 width: 88,
                 fit: BoxFit.cover,
               ),
-              subtitle: Container(
-                child: CustomText(
-                  text: text,
-                  textAlign: TextAlign.center,
-                  color: kprimaryColor,
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal,
-                ),
+              subtitle: CustomText(
+                text: text,
+                textAlign: TextAlign.center,
+                color: kprimaryColor,
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
               )),
         ));
   }
