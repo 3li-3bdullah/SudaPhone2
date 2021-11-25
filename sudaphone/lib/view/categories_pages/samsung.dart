@@ -5,7 +5,7 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 class Samsung extends StatelessWidget {
   final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -14,7 +14,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -23,7 +23,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -32,7 +32,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -41,7 +41,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -50,7 +50,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -59,7 +59,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
@@ -68,7 +68,7 @@ class Samsung extends StatelessWidget {
       'memory': '128GB'
     },
     {
-      'image': 'example/images/product/samsung.jpg',
+      'image': 'assets/images/product/samsung.jpg',
       'name': 'S20 Ultra',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
