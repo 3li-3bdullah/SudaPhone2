@@ -8,7 +8,7 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.ltr,
+      textDirection: TextDirection.rtl,
       child: Scaffold(
           appBar: AppBar(
             title: const CustomText(
@@ -27,6 +27,7 @@ class Settings extends StatelessWidget {
                   children: [
                     ListTile(
                       title: const Text("الوضع فاتح / داكن"),
+                      trailing: const Icon(Icons.wb_sunny),
                       onTap: () {
                         Get.bottomSheet(Wrap(
                           children: [
