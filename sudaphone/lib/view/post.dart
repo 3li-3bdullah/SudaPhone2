@@ -5,8 +5,6 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 
 class Post extends StatelessWidget {
 
-  bool debugShowCheckedModeBanner = false;
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
