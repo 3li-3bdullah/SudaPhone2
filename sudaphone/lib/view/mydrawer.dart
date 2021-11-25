@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/aboutapp.dart';
 import 'package:sudaphone/view/categories.dart';
+import 'package:sudaphone/view/login.dart';
 import 'package:sudaphone/view/post.dart';
 import 'package:sudaphone/view/screen.dart';
 import 'package:sudaphone/view/settings.dart';
@@ -29,7 +30,7 @@ class MyDrawer extends StatelessWidget {
           ),
           SafeArea(
               child: Container(
-                  width: 200.0,
+                  width: 220.0,
                   padding: const EdgeInsets.all(8.0),
                   child: Column(children: [
                     DrawerHeader(
@@ -46,14 +47,15 @@ class MyDrawer extends StatelessWidget {
                             text: "Ali Abdullah",
                             textAlign: TextAlign.center,
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 19,
                             fontWeight: FontWeight.normal),
                         CustomText(
                             text: "Alieko.soul@gamil.com",
                             textAlign: TextAlign.center,
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.normal),
+                        SizedBox(height: 10),
                       ],
                     )),
                     Expanded(
@@ -61,10 +63,10 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: 'الصفحة الرئيسية',
                         onTap: () {
-                          Get.offAll( Screen(),
+                          Get.offAll(const MyDrawer(),
                               transition: Transition.rightToLeftWithFade);
                         },
-                        icon: Icons.home_outlined,
+                        icon: Icons.home,
                       ),
                       BuildListTile(
                         text: "الأقسام",
@@ -72,7 +74,7 @@ class MyDrawer extends StatelessWidget {
                           Get.to(const Categories(),
                               transition: Transition.zoom);
                         },
-                        icon: Icons.category_outlined,
+                        icon: Icons.category,
                       ),
                       BuildListTile(
                         text: "إضافة منشور",
@@ -80,7 +82,7 @@ class MyDrawer extends StatelessWidget {
                           Get.to(Post(),
                               transition: Transition.leftToRightWithFade);
                         },
-                        icon: Icons.post_add_outlined,
+                        icon: Icons.post_add,
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
@@ -94,7 +96,7 @@ class MyDrawer extends StatelessWidget {
                           Get.to(const AboutApp(),
                               transition: Transition.upToDown);
                         },
-                        icon: Icons.info_outline,
+                        icon: Icons.info,
                       ),
                       BuildListTile(
                         text: "الإعدادات",
@@ -102,31 +104,41 @@ class MyDrawer extends StatelessWidget {
                           Get.to(const Settings(),
                               transition: Transition.downToUp);
                         },
-                        icon: Icons.settings_outlined,
+                        icon: Icons.settings,
                       ),
                       BuildListTile(
-                        text: "تسجيل الخروج",
-                        onTap: () {
-                          Get.defaultDialog(
-                              title: "Why :( ,Are you sure dear ?!",
-                              middleText:
-                                  "If you logoff, you will stop receiving our services.",
-                              titleStyle: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold),
-                              middleTextStyle: TextStyle(
-                                  color: Colors.grey.shade800, fontSize: 18),
-                              textConfirm: "نعم",
-                              textCancel: "لا",
-                              buttonColor: Colors.purple,
-                              confirmTextColor: Colors.white,
-                              cancelTextColor: Colors.green,
-                              onConfirm: () {},
-                              onCancel: () {});
-                        },
-                        icon: Icons.exit_to_app_outlined,
-                      ),
+                          text: 'تسجيل الدخول',
+                          onTap: () {
+                            Get.to(() => LogIn());
+                          },
+                          icon: Icons.login),
+
+                      /// i will Start this when i will try use firebase-------
+                      // BuildListTile(
+                      //   text: "تسجيل الخروج",
+                      //   onTap: () {
+                      //     Get.defaultDialog(
+                      //         title: "Why :( ,Are you sure dear ?!",
+                      //         middleText:
+                      //             "If you logoff, you will stop receiving our services.",
+                      //         titleStyle: const TextStyle(
+                      //             color: Colors.black,
+                      //             fontSize: 24,
+                      //             fontWeight: FontWeight.bold),
+                      //         middleTextStyle: TextStyle(
+                      //             color: Colors.grey.shade800, fontSize: 18),
+                      //         textConfirm: "نعم",
+                      //         textCancel: "لا",
+                      //         buttonColor: Colors.purple,
+                      //         confirmTextColor: Colors.white,
+                      //         cancelTextColor: Colors.green,
+                      //         onConfirm: () {},
+                      //         onCancel: () {
+                      //           Get.back();
+                      //         });
+                      //   },
+                      //   icon: Icons.exit_to_app,
+                      // ),
                     ]))
                   ]))),
           GetBuilder<MyDrawerViewModel>(
@@ -146,7 +158,7 @@ class MyDrawer extends StatelessWidget {
                           200 *
                               val) //This will allows us to translate the screen
                       ..rotateY((pi / 6) * val)),
-                    child:  Screen(),
+                    child: Screen(),
                   ));
                 }),
           ),
