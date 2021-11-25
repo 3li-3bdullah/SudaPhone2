@@ -40,7 +40,7 @@ class MyDrawer extends StatelessWidget {
                         CircleAvatar(
                           radius: 50,
                           backgroundImage:
-                              AssetImage("example/images/slider/ali.jpg"),
+                              AssetImage("assets/images/slider/ali.jpg"),
                         ),
                         SizedBox(height: 10),
                         CustomText(
