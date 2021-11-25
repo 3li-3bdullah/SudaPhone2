@@ -10,18 +10,16 @@ class LoginViewModel extends GetxController {
   final Rxn<User> _user = Rxn<User>();
   String? get user => _user.value?.email;
   bool showsignin = true;
+  void toggle() {
+    showsignin = !showsignin;
+    update();
+  }
+
   @override
   void onInit() {
     super.onInit();
     _user.bindStream(_auth.authStateChanges());
   }
-
-  @override
-  void onReady() {
-    showsignin = !showsignin;
-    super.onReady();
-  }
-
 
   void signInWithEmailAndPassword() async {
     try {
