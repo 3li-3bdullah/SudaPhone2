@@ -111,9 +111,8 @@ class Screen extends StatelessWidget {
                 leading: const Padding(
                     padding: EdgeInsets.only(right: 30),
                     child: CircleAvatar(
-                        backgroundImage:
-                            AssetImage("assets/images/slider/ali.jpg"),
-                        radius: 30))
+                        backgroundImage:AssetImage("assets/images/slider/ali.jpg"),
+                        radius: 40))
                 // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
                 ),
 
@@ -123,7 +122,7 @@ class Screen extends StatelessWidget {
                 height: halfheight,
                 width: MediaQuery.of(context).size.width,
                 child: GridTile(
-                  child: PageView.builder(
+                  child: PageView.builder(allowImplicitScrolling: true,
                     controller: controllerCarousel,
                     itemCount: imagesCarousel.length,
                     itemBuilder: (context, index) {
