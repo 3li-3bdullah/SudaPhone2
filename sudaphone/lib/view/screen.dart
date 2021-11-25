@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
@@ -7,10 +6,11 @@ import './widgets/data_search.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:core';
 
-class Screen extends GetWidget {
+class Screen extends StatelessWidget {
   // int activeIndex = 0;
+
   final controllerCarousel = PageController(viewportFraction: 0.8, keepPage: true);
-  List<MaterialColor> colors = const [
+  final List<MaterialColor> colors = const [
     Colors.green,
     Colors.red,
     Colors.indigo,
@@ -18,7 +18,7 @@ class Screen extends GetWidget {
     Colors.blue,
     Colors.amber,
   ];
-  List<String> imagesCarousel = [
+  final List<String> imagesCarousel = [
     "example/images/slider/1.png",
     "example/images/slider/2.png",
     "example/images/slider/3.jpg",
@@ -26,6 +26,8 @@ class Screen extends GetWidget {
     "example/images/slider/5.jpg",
     "example/images/slider/6.jpg",
   ];
+
+   Screen({Key? key}) : super(key: key);
   Widget buildImage(String imagesCarousel, int index, double width) =>
       Container(
           // margin: EdgeInsets.symmetric(horizontal: 2),
@@ -101,7 +103,7 @@ class Screen extends GetWidget {
                 elevation: 6,
                 actions: [
                   IconButton(
-                      icon: const Icon(Icons.search),
+                      icon: const Icon(Icons.search , color:Colors.black),
                       onPressed: () {
                         showSearch(context: context, delegate: DataSearch());
                       })
