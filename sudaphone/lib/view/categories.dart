@@ -32,7 +32,7 @@ class Categories extends StatelessWidget {
                       crossAxisCount: 2),
                   children: [
                     CategoriesCard(
-                      imageCat: "example/images/category/samsung.png",
+                      imageCat: "assets/images/category/samsung.png",
                       text: "Samsung",
                       onTap: () {
                         Get.to(Samsung()
@@ -42,12 +42,12 @@ class Categories extends StatelessWidget {
                       },
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/huawei.png",
+                      imageCat: "assets/images/category/huawei.png",
                       text: "Huawei",
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/apple.jpg",
+                      imageCat: "assets/images/category/apple.jpg",
                       text: "Apple",
                       onTap: () {},
                     ),
@@ -57,32 +57,32 @@ class Categories extends StatelessWidget {
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/xiaomi.png",
+                      imageCat: "assets/images/category/xiaomi.png",
                       text: "Xiaomi",
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/lenovo.png",
+                      imageCat: "assets/images/category/lenovo.png",
                       text: "Lenovo",
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/realme.png",
+                      imageCat: "assets/images/category/realme.png",
                       text: "Realme",
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/tecno.png",
+                      imageCat: "assets/images/category/tecno.png",
                       text: "Tecno",
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/vivo.jpg",
+                      imageCat: "assets/images/category/vivo.jpg",
                       text: "Vivo",
                       onTap: () {},
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/nokia.png",
+                      imageCat: "assets/images/category/nokia.png",
                       text: "Nokia",
                       onTap: () {},
                     ),
