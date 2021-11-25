@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
 import 'package:sudaphone/constants.dart';
 
 class BuildPositionedTop extends StatelessWidget {
