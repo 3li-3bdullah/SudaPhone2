@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sudaphone/view/screen.dart';
+import 'package:sudaphone/view/mydrawer.dart';
 import 'package:sudaphone/view/widgets/auth_build_avatar.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signin.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signup.dart';
@@ -12,10 +12,10 @@ import 'widgets/build_positioned_top.dart';
 import 'widgets/custom_text.dart';
 
 class LogIn extends StatelessWidget {
+
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
-  LogIn({Key? key}) : super(key: key);
   LoginViewModel controller = Get.find();
 
   signin() {
@@ -32,7 +32,7 @@ class LogIn extends StatelessWidget {
         Get.back();
       },
       onConfirm: () {
-        Get.offAll(Screen(),
+        Get.offAll(const MyDrawer(),
             transition: Transition.zoom,
             duration: const Duration(milliseconds: 500));
       },
@@ -55,7 +55,7 @@ class LogIn extends StatelessWidget {
         Get.back();
       },
       onConfirm: () {
-        Get.offAll(Screen(),
+        Get.offAll(const MyDrawer(),
             transition: Transition.zoom,
             duration: const Duration(milliseconds: 500));
       },
