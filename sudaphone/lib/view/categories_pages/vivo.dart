@@ -3,12 +3,12 @@ import 'package:sudaphone/view/categories_pages/moblist.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 
 
-class Lenovo extends StatelessWidget {
-   Lenovo({ Key? key }) : super(key: key);
+class Vivo extends StatelessWidget {
+   Vivo({ Key? key }) : super(key: key);
 
   final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
-      'image': 'example/images/product/vivo.jpeg',
+      'image': 'assets/images/product/vivo.jpeg',
       'name': 'Mate 40 Pro',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
