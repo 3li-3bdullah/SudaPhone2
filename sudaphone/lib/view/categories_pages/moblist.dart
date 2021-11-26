@@ -94,7 +94,7 @@ class MobList extends StatelessWidget {
           ),
         ),
         onTap: () {
-          Get.to(const MobileDetails());
+          Get.to( MobileDetails(photo: imageAtDetails!,namePhone: name!,));
         },
       ),
     );
