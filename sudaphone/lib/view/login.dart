@@ -12,7 +12,6 @@ import 'widgets/build_positioned_top.dart';
 import 'widgets/custom_text.dart';
 
 class LogIn extends StatelessWidget {
-
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
@@ -147,7 +146,7 @@ class LogIn extends StatelessWidget {
                             margin: const EdgeInsets.only(top: 10),
                             child: InkWell(
                               onTap: () {
-                                controller.showsignin = !controller.showsignin;
+                                controller.toggle();
                               },
                               child: RichText(
                                   text: TextSpan(
