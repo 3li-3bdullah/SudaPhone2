@@ -24,7 +24,7 @@ class MobileDetails extends StatelessWidget {
             SizedBox(
                 height: 300,
                 child: GridTile(
-                    child: Image.asset("example/images/product/samsung.jpg"),
+                    child: Image.asset("assets/images/product/samsung.jpg"),
                     footer: Container(
                         height: 80,
                         color: Colors.black.withOpacity(0.3),
