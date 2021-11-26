@@ -10,10 +10,7 @@ class LoginViewModel extends GetxController {
   final Rxn<User> _user = Rxn<User>();
   String? get user => _user.value?.email;
   bool showsignin = true;
-  void toggle() {
-    showsignin = !showsignin;
-    update();
-  }
+  bool toggle() => showsignin = !showsignin;
 
   @override
   void onInit() {
