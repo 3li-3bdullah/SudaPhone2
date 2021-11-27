@@ -3,10 +3,10 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view/widgets/custom_textof_details.dart';
 
 class MobileDetails extends StatelessWidget {
-   String? namePhone;
-   String? photo;
+  String? namePhone;
+  String? photo;
 
-  MobileDetails({required this.namePhone,required this.photo});
+  MobileDetails({required this.namePhone, required this.photo});
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +39,9 @@ class MobileDetails extends StatelessWidget {
                                 Expanded(
                                     child: Container(
                                   padding: const EdgeInsets.all(10),
-                                  child:  Text(
+                                  child: Text(
                                     namePhone!,
                                     style: const TextStyle(
-                                        fontFamily: 'Cairo',
                                         color: Colors.white,
                                         fontSize: 20,
                                         fontWeight: FontWeight.w700),
@@ -53,7 +52,6 @@ class MobileDetails extends StatelessWidget {
                                   child: Text(
                                     "1200\$",
                                     style: TextStyle(
-                                        fontFamily: 'Cairo',
                                         color: Colors.white,
                                         fontSize: 20,
                                         fontWeight: FontWeight.w700),
