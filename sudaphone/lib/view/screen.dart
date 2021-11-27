@@ -19,12 +19,12 @@ class Screen extends StatelessWidget {
     Colors.amber,
   ];
   final List<String> imagesCarousel = [
-    "example/images/slider/1.png",
-    "example/images/slider/2.png",
-    "example/images/slider/3.jpg",
-    "example/images/slider/4.jpg",
-    "example/images/slider/5.jpg",
-    "example/images/slider/6.jpg",
+    "assets/images/slider/1.png",
+    "assets/images/slider/2.png",
+    "assets/images/slider/3.jpg",
+    "assets/images/slider/4.jpg",
+    "assets/images/slider/5.jpg",
+    "assets/images/slider/6.jpg",
   ];
 
    Screen({Key? key}) : super(key: key);
