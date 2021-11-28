@@ -160,52 +160,52 @@ class Screen extends StatelessWidget {
                   height: 120,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/huawei.png",
+                      imageLogo: "assets/images/logo/huawei.png",
                       text: "Huawei",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/iphone.jpg",
+                      imageLogo: "assets/images/logo/iphone.jpg",
                       text: "Apple",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/realme.png",
+                      imageLogo: "assets/images/logo/realme.png",
                       text: "Realme",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/lenovo.png",
+                      imageLogo: "assets/images/logo/lenovo.png",
                       text: "Lenovo",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/vivo.png",
+                      imageLogo: "assets/images/logo/vivo.png",
                       text: "Vivo",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/samsung.jpg",
+                      imageLogo: "assets/images/logo/samsung.jpg",
                       text: "Samsung",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/xiaomi.png",
+                      imageLogo: "assets/images/logo/xiaomi.png",
                       text: "Xiaomi",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/oppo.jpg",
+                      imageLogo: "assets/images/logo/oppo.jpg",
                       text: "Oppo",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/tecno.png",
+                      imageLogo: "assets/images/logo/tecno.png",
                       text: "Tecno",
                       onTap: () {},
                     ),
                     CategoriesLogo(
-                      imageLogo: "example/images/logo/nokia.jpg",
+                      imageLogo: "assets/images/logo/nokia.jpg",
                       text: "Nokia",
                       onTap: () {},
                     ),
@@ -228,43 +228,43 @@ class Screen extends StatelessWidget {
                             crossAxisCount: 2),
                     children: [
                       LastProduct(
-                          imageProduct: "example/images/product/huawei.jpg",
+                          imageProduct: "assets/images/product/huawei.jpg",
                           text: "Huawei Mate 40 Pro : 1000\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/samsung.jpg",
+                          imageProduct: "assets/images/product/samsung.jpg",
                           text: "Samsung S20 Ultra : 999\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/iphone.jpg",
+                          imageProduct: "assets/images/product/iphone.jpg",
                           text: "iPhone 12 pro max : 1170\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/xiaomi.jpg",
+                          imageProduct: "assets/images/product/xiaomi.jpg",
                           text: "Xiaomi Mi 10T  : 950\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/oppo.jpg",
+                          imageProduct: "assets/images/product/oppo.jpg",
                           text: "Oppo F17 Pro : 975\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/lenovo.jpg",
+                          imageProduct: "assets/images/product/lenovo.jpg",
                           text: "Lenovo K12 Pro : 800\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/nokia.jpg",
+                          imageProduct: "assets/images/product/nokia.jpg",
                           text: "Nokia G300 : 750\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/realme.jpg",
+                          imageProduct: "assets/images/product/realme.jpg",
                           text: "Realme race teaser : 900\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/tecno.jpg",
+                          imageProduct: "assets/images/product/tecno.jpg",
                           text: "Tecno Spark6 : 850\$",
                           onTap: () {}),
                       LastProduct(
-                          imageProduct: "example/images/product/vivo.jpeg",
+                          imageProduct: "assets/images/product/vivo.jpeg",
                           text: "Vivo Y53s : 950\$",
                           onTap: () {}),
                     ]),
@@ -274,3 +274,86 @@ class Screen extends StatelessWidget {
     );
   }
 }
+/*
+Container(
+                height: 300,
+                // width: double.infinity,
+                child: GridTile(
+                  child: CarouselSlider.builder(
+                    // carouselController: controller,
+                    options: CarouselOptions(
+                      height: 300,
+                      //initialPage: 0,
+                      // This will show up one picture on the page
+                      viewportFraction: 1,
+                      // This will show the pictures the left and right in small shape
+                      enlargeCenterPage: true,
+                      // This will show up in animated pictures
+                      enlargeStrategy: CenterPageEnlargeStrategy.height,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 2),
+                      onPageChanged: (index, reason) =>
+                          setState(() => activeIndex = index),
+                    ),
+                    itemCount: imagesCarousel.length,
+                    itemBuilder: (context, index, realIndex) {
+                      String imagesCar = imagesCarousel[index];
+                      return buildImage(imagesCar, index);
+                    },
+                  ),
+                  footer: Container(
+                    height: 60,
+                    color: Colors.black.withOpacity(0.4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildIndicator(),
+                      ],
+                    ),
+                  ),
+                ),
+                //const sizedBox(height:32),
+              ),
+              //-------------
+              int activeIndex = 0;
+  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+  final colors = const [
+    Colors.red,
+    Colors.green,
+    Colors.greenAccent,
+    Colors.amberAccent,
+    Colors.blue,
+    Colors.amber,
+  ];
+  List<String> imagesCarousel = [
+    "example/images/slider/1.png",
+    "example/images/slider/2.png",
+    "example/images/slider/3.jpg",
+    "example/images/slider/4.jpg",
+    "example/images/slider/5.jpg",
+    "example/images/slider/6.jpg",
+  ];
+              //---------------------------- the methods
+               Widget buildImage(String imagesCarousel, int index) => Container(
+      // margin: EdgeInsets.symmetric(horizontal: 2),
+      color: Colors.grey,
+      width: double.infinity,
+      child: Image.asset(
+        imagesCarousel,
+        fit: BoxFit.cover,
+      ));
+      
+  Widget buildIndicator() => Container(
+          child: SmoothPageIndicator(
+        // activeIndex: activeIndex,
+        controller: controller,
+        count: imagesCarousel.length,
+
+        effect: SwapEffect(
+          dotHeight: 16,
+          dotWidth: 16,
+          type: SwapType.yRotation,
+        ),
+      ));
+      //----------------------
+*/
