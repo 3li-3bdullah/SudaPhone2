@@ -8,8 +8,8 @@ class Iphone extends StatelessWidget {
 
   final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
-      'image': 'assets/images/product/huawei.jpg',
-      'name': 'Mate 40 Pro',
+      'image': 'assets/images/product/iphone.jpg',
+      'name': 'Iphone 12 Pro Max',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
       'battery': '7000mha شحن سريع w15',
@@ -26,7 +26,7 @@ class Iphone extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.white,
             title: const CustomText(
-                text: 'Huawei',
+                text: 'Iphone',
                 textAlign: TextAlign.center,
                 color: Colors.black,
                 fontSize: 25,
