@@ -9,7 +9,7 @@ class Tecno extends StatelessWidget {
   final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
       'image': 'assets/images/product/tecno.jpg',
-      'name': 'Mate 40 Pro',
+      'name': 'Spark 6',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
       'battery': '7000mha شحن سريع w15',
