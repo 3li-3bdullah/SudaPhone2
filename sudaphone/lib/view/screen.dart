@@ -108,13 +108,14 @@ class Screen extends StatelessWidget {
                         showSearch(context: context, delegate: DataSearch());
                       })
                 ],
-                leading: const Padding(
-                    padding: EdgeInsets.only(right: 30),
-                    child: CircleAvatar(
-                        backgroundImage:AssetImage("assets/images/slider/ali.jpg"),
-                        radius: 40))
+                leading:  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Container(height:50,width:50, decoration:BoxDecoration(
+                      borderRadius:BorderRadius.circular(50),
+                      image: const DecorationImage(image: AssetImage('assets/images/slider/ali.jpg'))
+                    ))
                 // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
-                ),
+                ),),
 
             /// drawer: MyDrawer(),
             body: ListView(children: [
