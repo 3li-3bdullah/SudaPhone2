@@ -9,7 +9,7 @@ class Nokia extends StatelessWidget {
   final List<Map<String, String>> _mobilelist = <Map<String, String>>[
     {
       'image': 'assets/images/product/nokia.jpg',
-      'name': 'Mate 40 Pro',
+      'name': 'G300',
       'camera': '108 Megapixel',
       'cpu': 'Snapdragon 865 ثماني',
       'battery': '7000mha شحن سريع w15',
