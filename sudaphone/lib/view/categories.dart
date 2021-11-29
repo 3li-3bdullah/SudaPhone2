@@ -70,7 +70,7 @@ class Categories extends StatelessWidget {
                       },
                     ),
                     CategoriesCard(
-                      imageCat: "example/images/category/oppo.png",
+                      imageCat: "assets/images/category/oppo.png",
                       text: "Oppo",
                       onTap: () {
                         Get.to(Oppo());
