@@ -167,33 +167,6 @@ class LogIn extends StatelessWidget {
                                             fontWeight: FontWeight.w700)),
                                   ])),
                             )),
-                        const SizedBox(height: 10),
-                        controller.showsignin
-                            ? Directionality(
-                                textDirection: TextDirection.ltr,
-                                child: Row(children: const [
-                                  Expanded(
-                                    child: Center(
-                                        child: SocialLogin(
-                                            imageSocial:
-                                                "example/images/social/facebook.png",
-                                            text: "Login with Facebook")),
-                                  ),
-                                  SizedBox(width: 10),
-                                  // Padding(
-                                  //     padding: EdgeInsets.only(right: 10)),
-                                  Expanded(
-                                    child: Center(
-                                        child: SocialLogin(
-                                            imageSocial:
-                                                "example/images/social/google.png",
-                                            text: "Login with Google")),
-                                  ),
-                                  // Padding(
-                                  //     padding: EdgeInsets.only(right: 10)),
-                                ]),
-                              )
-                            : const SizedBox(),
                       ],
                     ),
                   )
