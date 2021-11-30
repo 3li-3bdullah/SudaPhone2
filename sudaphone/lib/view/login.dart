@@ -6,16 +6,16 @@ import 'package:sudaphone/view/widgets/auth_build_form_signin.dart';
 import 'package:sudaphone/view/widgets/auth_build_form_signup.dart';
 import 'package:sudaphone/view_model/login_view_model.dart';
 import '../constants.dart';
-import 'widgets/custom_social_login.dart';
 import 'widgets/build_positioned_bottom.dart';
 import 'widgets/build_positioned_top.dart';
 import 'widgets/custom_text.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends GetWidget {
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
-  LoginViewModel controller = Get.find();
+  // LoginViewModel controller = Get.find();
+  LoginViewModel controller = Get.put(LoginViewModel());
 
   signin() {
     _signInKey.currentState!.save();
@@ -68,15 +68,15 @@ class LogIn extends StatelessWidget {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          body: Stack(
+          body: Obx(()=>Stack(
             children: [
               const SizedBox(
                 height: double.infinity,
                 width: double.infinity,
               ),
-              BuildPositionedTop(mdw: mdw, showsignin: controller.showsignin),
+              BuildPositionedTop(mdw: mdw, showsignin: controller.showsignin(true)),
               BuildPositionedBottom(
-                  mdw: mdw, showsignin: controller.showsignin),
+                  mdw: mdw, showsignin: controller.showsignin(true)),
               SizedBox(
                 height: 1150,
                 child: SingleChildScrollView(
@@ -85,21 +85,21 @@ class LogIn extends StatelessWidget {
                       child: Container(
                           margin: const EdgeInsets.only(top: 30),
                           child: Text(
-                              controller.showsignin
+                              controller.showsignin(true)
                                   ? "تسجيل الدخول"
                                   : "إنشاء حساب",
                               style: const TextStyle(
                                   color: Colors.white, fontSize: 20)))),
                   const Padding(padding: EdgeInsets.only(top: 20)),
                   const BuildAvatar(),
-                  controller.showsignin
+                  controller.showsignin(true)
                       ? BuildFormSignIn(globalSignInKey: _signInKey)
                       : BuildFormSignUp(globalSignUpKey: _signUpKey),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
                     child: Column(
                       children: [
-                        controller.showsignin
+                        controller.showsignin(true)
                             ? InkWell(
                                 onTap: () {},
                                 child: const CustomText(
@@ -111,23 +111,23 @@ class LogIn extends StatelessWidget {
                                 ),
                               )
                             : const SizedBox(),
-                        SizedBox(height: controller.showsignin ? 20 : 5),
+                        SizedBox(height: controller.showsignin(true) ? 20 : 5),
                         Material(
                             elevation: 10,
-                            color: controller.showsignin
+                            color: controller.showsignin(true)
                                 ? Colors.indigo.shade900
                                 : ksignInColor1,
                             child: MaterialButton(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
                                 onPressed:
-                                    controller.showsignin ? signin : signup,
+                                    controller.showsignin(true) ? signin : signup,
                                 child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        controller.showsignin
+                                        controller.showsignin(true)
                                             ? "تسجيل الدخول"
                                             : "إنشاء حساب",
                                         style: const TextStyle(
@@ -146,7 +146,7 @@ class LogIn extends StatelessWidget {
                             margin: const EdgeInsets.only(top: 10),
                             child: InkWell(
                               onTap: () {
-                                controller.toggle();
+                                controller.showsignin(false);
                               },
                               child: RichText(
                                   text: TextSpan(
@@ -157,11 +157,11 @@ class LogIn extends StatelessWidget {
                                       children: <TextSpan>[
                                     TextSpan(
                                         //recognizer: _changesign,
-                                        text: controller.showsignin
+                                        text: controller.showsignin(true)
                                             ? "إنشاء حساب جديد"
                                             : "تسجيل دخول",
                                         style: TextStyle(
-                                            color: controller.showsignin
+                                            color: controller.showsignin(true)
                                                 ? Colors.green
                                                 : Colors.pinkAccent,
                                             fontWeight: FontWeight.w700)),
@@ -174,7 +174,7 @@ class LogIn extends StatelessWidget {
               ),
               const SizedBox(height: 20),
             ],
-          ),
+          ),)
         ));
   }
 }
