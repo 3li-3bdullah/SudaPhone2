@@ -10,12 +10,12 @@ import 'widgets/build_positioned_bottom.dart';
 import 'widgets/build_positioned_top.dart';
 import 'widgets/custom_text.dart';
 
-class LogIn extends GetWidget {
+class LogIn extends GetWidget<LoginViewModel> {
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
   // LoginViewModel controller = Get.find();
-  LoginViewModel controller = Get.put(LoginViewModel());
+  // LoginViewModel controller = Get.put(LoginViewModel());
 
   signin() {
     _signInKey.currentState!.save();
@@ -74,9 +74,9 @@ class LogIn extends GetWidget {
                 height: double.infinity,
                 width: double.infinity,
               ),
-              BuildPositionedTop(mdw: mdw, showsignin: controller.showsignin(true)),
+              BuildPositionedTop(mdw: mdw, showsignin: controller.showsignin.value),
               BuildPositionedBottom(
-                  mdw: mdw, showsignin: controller.showsignin(true)),
+                  mdw: mdw, showsignin: controller.showsignin.value),
               SizedBox(
                 height: 1150,
                 child: SingleChildScrollView(
@@ -85,21 +85,21 @@ class LogIn extends GetWidget {
                       child: Container(
                           margin: const EdgeInsets.only(top: 30),
                           child: Text(
-                              controller.showsignin(true)
+                              controller.showsignin.value
                                   ? "تسجيل الدخول"
                                   : "إنشاء حساب",
                               style: const TextStyle(
                                   color: Colors.white, fontSize: 20)))),
                   const Padding(padding: EdgeInsets.only(top: 20)),
                   const BuildAvatar(),
-                  controller.showsignin(true)
+                  controller.showsignin.value
                       ? BuildFormSignIn(globalSignInKey: _signInKey)
                       : BuildFormSignUp(globalSignUpKey: _signUpKey),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
                     child: Column(
                       children: [
-                        controller.showsignin(true)
+                        controller.showsignin.value
                             ? InkWell(
                                 onTap: () {},
                                 child: const CustomText(
@@ -111,23 +111,23 @@ class LogIn extends GetWidget {
                                 ),
                               )
                             : const SizedBox(),
-                        SizedBox(height: controller.showsignin(true) ? 20 : 5),
+                        SizedBox(height: controller.showsignin.value ? 20 : 5),
                         Material(
                             elevation: 10,
-                            color: controller.showsignin(true)
+                            color: controller.showsignin.value
                                 ? Colors.indigo.shade900
                                 : ksignInColor1,
                             child: MaterialButton(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
                                 onPressed:
-                                    controller.showsignin(true) ? signin : signup,
+                                    controller.showsignin.value ? signin : signup,
                                 child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        controller.showsignin(true)
+                                        controller.showsignin.value
                                             ? "تسجيل الدخول"
                                             : "إنشاء حساب",
                                         style: const TextStyle(
@@ -157,11 +157,11 @@ class LogIn extends GetWidget {
                                       children: <TextSpan>[
                                     TextSpan(
                                         //recognizer: _changesign,
-                                        text: controller.showsignin(true)
+                                        text: controller.showsignin.value
                                             ? "إنشاء حساب جديد"
                                             : "تسجيل دخول",
                                         style: TextStyle(
-                                            color: controller.showsignin(true)
+                                            color: controller.showsignin.value
                                                 ? Colors.green
                                                 : Colors.pinkAccent,
                                             fontWeight: FontWeight.w700)),
