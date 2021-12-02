@@ -14,6 +14,8 @@ class LogIn extends GetWidget<LoginViewModel> {
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
 
+  LoginViewModel xcontroller = Get.put(LoginViewModel());
+
   // LoginViewModel controller = Get.find();
   // LoginViewModel controller = Get.put(LoginViewModel());
 
@@ -91,7 +93,7 @@ class LogIn extends GetWidget<LoginViewModel> {
                               style: const TextStyle(
                                   color: Colors.white, fontSize: 20)))),
                   const Padding(padding: EdgeInsets.only(top: 20)),
-                  const BuildAvatar(),
+                   BuildAvatar(),
                   controller.showsignin.value
                       ? BuildFormSignIn(globalSignInKey: _signInKey)
                       : BuildFormSignUp(globalSignUpKey: _signUpKey),
