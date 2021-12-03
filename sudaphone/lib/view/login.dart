@@ -148,7 +148,7 @@ class LogIn extends GetWidget<LoginViewModel> {
                             margin: const EdgeInsets.only(top: 10),
                             child: InkWell(
                               onTap: () {
-                                controller.showsignin(false);
+                                controller.changVal();
                               },
                               child: RichText(
                                   text: TextSpan(
