@@ -10,6 +10,9 @@ class LoginViewModel extends GetxController {
   final Rxn<User> _user = Rxn<User>();
   String? get user => _user.value?.email;
   RxBool showsignin = true.obs;
+   changVal() {
+   return showsignin.value = !showsignin.value;
+  }
 
   @override
   void onInit() {
@@ -21,7 +24,6 @@ class LoginViewModel extends GetxController {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      print(e);
       Get.snackbar("Error login account", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
@@ -32,7 +34,6 @@ class LoginViewModel extends GetxController {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } catch (e) {
-      print(e);
       Get.snackbar("Error login account", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
