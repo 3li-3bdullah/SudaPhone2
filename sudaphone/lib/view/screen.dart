@@ -101,14 +101,18 @@ class Screen extends StatelessWidget {
             /// drawer: MyDrawer(),
             body: ListView(children: [
               Container(
-                height: size.height * 0.2,
-                margin:EdgeInsets.only(
-                  left: kDefaultPadding,
-                  right:kDefaultPadding,
-                  bottom: 36+kDefaultPadding
+                  height: size.height * 0.2 - 27,
+                  margin: const EdgeInsets.only(
+                      left: kDefaultPadding,
+                      right: kDefaultPadding,
+                      bottom: 36 + kDefaultPadding),
+                  decoration: const BoxDecoration(
+                      color: kPrimaryColor,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30))),
 
-                )
-              ),
+                          ),
               SizedBox(
                 height: halfheight,
                 width: MediaQuery.of(context).size.width,
