@@ -128,6 +128,14 @@ class Screen extends StatelessWidget {
                                   image: AssetImage(
                                       'assets/images/slider/ali.jpg')))
                         ])),
+                        Positioned(
+                          left: 0,
+                          bottom:0,
+                          right:0,
+                          child:Container(
+                            height:54,
+                          )
+                        )
                   ],
                 ),
               ),
