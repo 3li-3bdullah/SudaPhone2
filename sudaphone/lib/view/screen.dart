@@ -134,6 +134,20 @@ class Screen extends StatelessWidget {
                           right:0,
                           child:Container(
                             height:54,
+                            alignment: Alignment.center,
+                            margin: const EdgeInsets.symmetric(horizontal:kDefaultPadding),
+                            padding: const EdgeInsets.symmetric(horizontal:kDefaultPadding),
+                            decoration: BoxDecoration(
+                              color:Colors.white,
+                              borderRadius:BorderRadius.circular(20),
+                              boxShadow:[
+                                BoxShadow(offset: const Offset(0, 10),
+                                blurRadius: 50,
+                                color: kPrimaryColor.withOpacity(0.23),
+                                )
+                              ]
+                            ),
+                            
                           )
                         )
                   ],
