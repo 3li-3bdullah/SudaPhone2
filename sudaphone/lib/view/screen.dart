@@ -92,29 +92,8 @@ class Screen extends StatelessWidget {
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
-                title: const CustomText(
-                    text: 'سودافون',
-                    textAlign: TextAlign.center,
-                    color: Colors.black,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
-                backgroundColor: Colors.white,
-                centerTitle: true,
-                elevation: 6,
-                actions: [
-                  IconButton(
-                      icon: const Icon(Icons.search , color:Colors.black),
-                      onPressed: () {
-                        showSearch(context: context, delegate: DataSearch());
-                      })
-                ],
-                leading:  Padding(
-                    padding: const EdgeInsets.only(right: 30),
-                    child: Container(height:50,width:50, decoration:BoxDecoration(
-                      borderRadius:BorderRadius.circular(50),
-                      image: const DecorationImage(image: AssetImage('assets/images/slider/ali.jpg'))
-                    ))
-                // leading: IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                elevation: 0,
+                leading: IconButton(icon: const Icon(Icons.menu_rounded), onPressed: () {}),
                 ),),
 
             /// drawer: MyDrawer(),
