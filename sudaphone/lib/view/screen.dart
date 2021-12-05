@@ -101,7 +101,7 @@ class Screen extends StatelessWidget {
             /// drawer: MyDrawer(),
             body: ListView(children: [
               Container(
-                height: size.height *  0.2,
+                height: size.height * 0.2,
                 margin: const EdgeInsets.only(bottom: 50),
                 child: Stack(
                   children: [
@@ -116,8 +116,18 @@ class Screen extends StatelessWidget {
                             borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(30),
                                 bottomRight: Radius.circular(30))),
-
-                                ),
+                        child: Row(children: [
+                          const CustomText(
+                              text: 'سودافون',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                          const Spacer(),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Image(
+                                  image: AssetImage(
+                                      'assets/images/slider/ali.jpg')))
+                        ])),
                   ],
                 ),
               ),
