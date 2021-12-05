@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sudaphone/constants.dart';
 import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
@@ -9,7 +10,8 @@ import 'dart:core';
 class Screen extends StatelessWidget {
   // int activeIndex = 0;
 
-  final controllerCarousel = PageController(viewportFraction: 0.8, keepPage: true);
+  final controllerCarousel =
+      PageController(viewportFraction: 0.8, keepPage: true);
   final List<MaterialColor> colors = const [
     Colors.green,
     Colors.red,
@@ -27,7 +29,7 @@ class Screen extends StatelessWidget {
     "assets/images/slider/6.jpg",
   ];
 
-   Screen({Key? key}) : super(key: key);
+  Screen({Key? key}) : super(key: key);
   Widget buildImage(String imagesCarousel, int index, double width) =>
       Container(
           // margin: EdgeInsets.symmetric(horizontal: 2),
@@ -80,37 +82,47 @@ class Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ThemeData(fontFamily: 'Cairo');
+    Size size = MediaQuery.of(context).size;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     double halfheight = height / 2;
     double partOfHeight = height / 10;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "سودافون",
       home: Directionality(
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
-                elevation: 0,
-                leading: IconButton(icon: const Icon(Icons.menu_rounded), onPressed: () {}),
-                ),),
+              elevation: 0,
+              leading: IconButton(
+                  icon: const Icon(Icons.menu_rounded), onPressed: () {}),
+            ),
 
             /// drawer: MyDrawer(),
             body: ListView(children: [
+              Container(
+                height: size.height * 0.2,
+                margin:EdgeInsets.only(
+                  left: kDefaultPadding,
+                  right:kDefaultPadding,
+                  bottom: 36+kDefaultPadding
+
+                )
+              ),
               SizedBox(
                 height: halfheight,
                 width: MediaQuery.of(context).size.width,
                 child: GridTile(
-                  child: PageView.builder(allowImplicitScrolling: true,
+                  child: PageView.builder(
+                    allowImplicitScrolling: true,
                     controller: controllerCarousel,
                     itemCount: imagesCarousel.length,
                     itemBuilder: (context, index) {
                       String imagesCar = imagesCarousel[index];
                       return SizedBox(
-                        height: height,
-                        width: width,
-                        child: buildImage(imagesCar, index , width));
+                          height: height,
+                          width: width,
+                          child: buildImage(imagesCar, index, width));
                     },
                   ),
                   footer: Container(
