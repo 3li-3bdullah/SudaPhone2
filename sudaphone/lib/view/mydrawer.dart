@@ -63,7 +63,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: 'الصفحة الرئيسية',
                         onTap: () {
-                          Get.offAll(const MyDrawer(),
+                          Get.offAll(()=>const MyDrawer(),
                               transition: Transition.rightToLeftWithFade);
                         },
                         icon: Icons.home,
@@ -71,7 +71,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: "الأقسام",
                         onTap: () {
-                          Get.to(const Categories(),
+                          Get.to(()=>const Categories(),
                               transition: Transition.zoom);
                         },
                         icon: Icons.category,
@@ -79,7 +79,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: "إضافة منشور",
                         onTap: () {
-                          Get.to(Post(),
+                          Get.to(()=>Post(),
                               transition: Transition.leftToRightWithFade);
                         },
                         icon: Icons.post_add,
@@ -93,7 +93,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: "حول التطبيق",
                         onTap: () {
-                          Get.to(const AboutApp(),
+                          Get.to(()=>const AboutApp(),
                               transition: Transition.upToDown);
                         },
                         icon: Icons.info,
@@ -101,7 +101,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                         text: "الإعدادات",
                         onTap: () {
-                          Get.to(const Settings(),
+                          Get.to(()=>const Settings(),
                               transition: Transition.downToUp);
                         },
                         icon: Icons.settings,
@@ -164,7 +164,7 @@ class MyDrawer extends StatelessWidget {
           ),
 
           ///The GestureDectector will allows to me open the drawer
-          GetBuilder<MyDrawerViewModel>(
+          GetX<MyDrawerViewModel>(
               builder: (controller) => GestureDetector(
                     onHorizontalDragUpdate: (e) {
                       if (e.delta.dx > 0) {
