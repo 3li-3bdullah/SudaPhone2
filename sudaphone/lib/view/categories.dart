@@ -26,11 +26,9 @@ class Categories extends StatelessWidget {
             textDirection: TextDirection.rtl,
             child: Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.white,
                 title: const CustomText(
                     text: "الأقسام",
                     textAlign: TextAlign.center,
-                    color: Colors.black,
                     fontSize: 30,
                     fontWeight: FontWeight.normal),
                 centerTitle: true,
@@ -40,7 +38,6 @@ class Categories extends StatelessWidget {
               body: Container(
                 height: double.infinity,
                 width: double.infinity,
-                color: Colors.white,
                 padding: const EdgeInsets.all(5),
                 child: GridView(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
