@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sudaphone/constants.dart';
 import 'package:sudaphone/view/control_view.dart';
 // import 'package:sudaphone/view/mydrawer.dart';
 
@@ -20,11 +19,7 @@ class MyApp extends StatelessWidget {
     return  GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "SudaPhone",
-     theme: ThemeData(
-       textTheme: Theme.of(context).textTheme.apply(bodyColor:kTextColor),
-       scaffoldBackgroundColor:kBackgroundColor,
-       visualDensity: VisualDensity.adaptivePlatformDensity
-     ),
+     theme: ThemeData.light(),
       home: const ControlView(),
     );
   }
