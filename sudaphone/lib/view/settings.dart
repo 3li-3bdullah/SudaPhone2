@@ -14,40 +14,43 @@ class Settings extends StatelessWidget {
             title: const CustomText(
                 text: 'الإعدادات',
                 textAlign: TextAlign.center,
-                color: Colors.black,
                 fontSize: 25,
                 fontWeight: FontWeight.normal),
             centerTitle: true,
-            backgroundColor: Colors.white,
           ),
           body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ListTile(
-                      title: const Text("الوضع فاتح / داكن"),
-                      trailing: const Icon(Icons.wb_sunny),
-                      onTap: () {
-                        Get.bottomSheet(Wrap(
-                          children: [
-                            ListTile(
-                              title: const Text("الوضع الفاتح"),
-                              leading: const Icon(Icons.wb_sunny_outlined),
-                              onTap: () {
-                                Get.changeTheme(ThemeData.light());
-                              },
-                            ),
-                            ListTile(
-                              title: const Text("الوضع الداكن"),
-                              leading: const Icon(Icons.wb_sunny),
-                              onTap: () {
-                                Get.changeTheme(ThemeData.dark());
-                              },
-                            ),
-                          ],
-                        ));
-                      },
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          title: const Text("الوضع فاتح / داكن"),
+                          trailing: const Icon(Icons.wb_sunny),
+                          onTap: () {
+                            Get.bottomSheet(Wrap(
+                              children: [
+                                ListTile(
+                                  title: const Text("الوضع الفاتح"),
+                                  leading: const Icon(Icons.wb_sunny_outlined),
+                                  onTap: () {
+                                    Get.changeTheme(ThemeData.light());
+                                  },
+                                ),
+                                ListTile(
+                                  title: const Text("الوضع الداكن"),
+                                  leading: const Icon(Icons.wb_sunny),
+                                  onTap: () {
+                                    Get.changeTheme(ThemeData.dark());
+                                  },
+                                ),
+                              ],
+                            ));
+                          },
+                        ),
+                      ],
                     )
                   ]))),
     );
