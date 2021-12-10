@@ -119,8 +119,7 @@ class Screen extends StatelessWidget {
                         child: Row(children: [
                           const CustomText(
                               text: 'سودافون',
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                              fontWeight: FontWeight.bold),
                           const Spacer(),
                           IconButton(
                               onPressed: () {},
@@ -205,7 +204,6 @@ class Screen extends StatelessWidget {
                 child: const CustomText(
                   text: "الأقسام",
                   textAlign: TextAlign.right,
-                  color: Colors.black,
                   fontSize: 30,
                   fontWeight: FontWeight.normal,
                 ),
@@ -269,7 +267,6 @@ class Screen extends StatelessWidget {
                 child: const CustomText(
                   text: "أحدث التلفونات",
                   textAlign: TextAlign.right,
-                  color: Colors.black,
                   fontSize: 30,
                   fontWeight: FontWeight.normal,
                 ),
@@ -328,86 +325,3 @@ class Screen extends StatelessWidget {
     );
   }
 }
-/*
-Container(
-                height: 300,
-                // width: double.infinity,
-                child: GridTile(
-                  child: CarouselSlider.builder(
-                    // carouselController: controller,
-                    options: CarouselOptions(
-                      height: 300,
-                      //initialPage: 0,
-                      // This will show up one picture on the page
-                      viewportFraction: 1,
-                      // This will show the pictures the left and right in small shape
-                      enlargeCenterPage: true,
-                      // This will show up in animated pictures
-                      enlargeStrategy: CenterPageEnlargeStrategy.height,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 2),
-                      onPageChanged: (index, reason) =>
-                          setState(() => activeIndex = index),
-                    ),
-                    itemCount: imagesCarousel.length,
-                    itemBuilder: (context, index, realIndex) {
-                      String imagesCar = imagesCarousel[index];
-                      return buildImage(imagesCar, index);
-                    },
-                  ),
-                  footer: Container(
-                    height: 60,
-                    color: Colors.black.withOpacity(0.4),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        buildIndicator(),
-                      ],
-                    ),
-                  ),
-                ),
-                //const sizedBox(height:32),
-              ),
-              //-------------
-              int activeIndex = 0;
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
-  final colors = const [
-    Colors.red,
-    Colors.green,
-    Colors.greenAccent,
-    Colors.amberAccent,
-    Colors.blue,
-    Colors.amber,
-  ];
-  List<String> imagesCarousel = [
-    "example/images/slider/1.png",
-    "example/images/slider/2.png",
-    "example/images/slider/3.jpg",
-    "example/images/slider/4.jpg",
-    "example/images/slider/5.jpg",
-    "example/images/slider/6.jpg",
-  ];
-              //---------------------------- the methods
-               Widget buildImage(String imagesCarousel, int index) => Container(
-      // margin: EdgeInsets.symmetric(horizontal: 2),
-      color: Colors.grey,
-      width: double.infinity,
-      child: Image.asset(
-        imagesCarousel,
-        fit: BoxFit.cover,
-      ));
-      
-  Widget buildIndicator() => Container(
-          child: SmoothPageIndicator(
-        // activeIndex: activeIndex,
-        controller: controller,
-        count: imagesCarousel.length,
-
-        effect: SwapEffect(
-          dotHeight: 16,
-          dotWidth: 16,
-          type: SwapType.yRotation,
-        ),
-      ));
-      //----------------------
-*/
