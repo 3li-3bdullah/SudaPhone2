@@ -11,11 +11,9 @@ class Post extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
     appBar: AppBar(
-      backgroundColor: Colors.white,
 
       title: const CustomText(
           text: "المنشورات",
-          color: Colors.black,
           textAlign: TextAlign.center,
           fontSize: 25,
           fontWeight: FontWeight.normal),
