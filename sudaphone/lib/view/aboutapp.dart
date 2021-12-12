@@ -15,11 +15,9 @@ class AboutApp extends StatelessWidget {
               title: const CustomText(
                   text: "حول التطبيق",
                   textAlign: TextAlign.center,
-                  color: Colors.black,
                   fontSize: 25,
                   fontWeight: FontWeight.normal),
               centerTitle: true,
-              backgroundColor: Colors.white,
             ),
 
             ///drawer: MyDrawer(),
