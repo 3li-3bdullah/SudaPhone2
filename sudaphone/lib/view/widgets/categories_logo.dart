@@ -17,13 +17,7 @@ class CategoriesLogo extends StatelessWidget {
           height: 100,
           width: 100,
           child: ListTile(
-              title: Container(
-                decoration:BoxDecoration(borderRadius: BorderRadius.circular(100),
-                  image: DecorationImage(
-                    image: AssetImage(imageLogo),fit:BoxFit.cover
-                  )
-                )
-              ),
+              title: Image.asset(   imageLogo,fit:BoxFit.cover),
               subtitle: CustomText(
                 text: text,
                 textAlign: TextAlign.center,
