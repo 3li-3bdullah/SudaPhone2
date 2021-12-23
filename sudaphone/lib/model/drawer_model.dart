@@ -17,5 +17,13 @@ class DrawerItems{
   static DrawerItem help = DrawerItem(title: 'Help', icon: Icons.help);
   static DrawerItem info = DrawerItem(title: 'Info', icon: Icons.info);
  
+  static final List<DrawerItem> all = [
+  home,
+  categories,
+  settings,
+  logOut,
+  help,
+  info
+ ];
 
 }
