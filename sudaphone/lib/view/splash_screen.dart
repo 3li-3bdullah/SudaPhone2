@@ -8,8 +8,13 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue.shade800,
       body: Stack(
-        
+        buildDrawer(),
       ),
     );
   }
+
+  Widget buildDrawer(){
+    
+  }
+
 }
