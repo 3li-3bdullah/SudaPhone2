@@ -33,12 +33,17 @@ class SplashScreen extends GetWidget<SplashScreenViewModel> {
   // Widget screenHolder -----------
   Widget screenHolder() {
     return Obx(
-      () => AbsorbPointer(
-        absorbing: controller.isDrawerOpen!.value,
-        child: ClipRRect(
-            borderRadius:
-                BorderRadius.circular(controller.isDrawerOpen!.value ? 20 : 0),
-            child: Screen()),
+      () => AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+            transform: Matrix4.translationValues(
+                controller.xOffset!.value, controller.yOffset!.value, 0),
+        child: AbsorbPointer(
+          absorbing: controller.isDrawerOpen!.value,
+          child: ClipRRect(
+              borderRadius:
+                  BorderRadius.circular(controller.isDrawerOpen!.value ? 20 : 0),
+              child: Screen()),
+        ),
       ),
     );
   }
