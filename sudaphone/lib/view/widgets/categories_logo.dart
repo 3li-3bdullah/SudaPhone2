@@ -12,21 +12,19 @@ class CategoriesLogo extends StatelessWidget {
   final Function onTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: SizedBox(
-          height: 100,
-          width: 100,
-          child: ListTile(
-              title: Image.asset(   imageLogo,fit:BoxFit.cover),
-              subtitle: CustomText(
-                text: text,
-                textAlign: TextAlign.center,
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ))),
-      onTap: () {
-        onTap();
-      },
-    );
+    return SizedBox(
+        height: 100,
+        width: 100,
+        child: ListTile(
+            onTap: () {
+              onTap();
+            },
+            title: Image.asset(imageLogo, fit: BoxFit.cover),
+            subtitle: CustomText(
+              text: text,
+              textAlign: TextAlign.center,
+              fontSize: 15,
+              fontWeight: FontWeight.normal,
+            )));
   }
 }
