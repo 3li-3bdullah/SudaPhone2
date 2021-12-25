@@ -11,8 +11,9 @@ import 'package:sudaphone/view/settings.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view_model/mydrawer_view_model.dart';
+import 'package:sudaphone/view_model/screen_view_model.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends GetWidget<ScreenViewModel> {
   const MyDrawer({Key? key}) : super(key: key);
 
   @override
@@ -23,7 +24,7 @@ class MyDrawer extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-              colors: [Colors.blue.shade400, Colors.blue.shade800],
+              colors: [Colors.blue.shade400, Colors.blue.shade900],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
             )),
@@ -109,7 +110,7 @@ class MyDrawer extends StatelessWidget {
                       BuildListTile(
                           text: 'تسجيل الدخول',
                           onTap: () {
-                            Get.to(() => LogIn());
+                            // Get.to(() => LogIn());
                           },
                           icon: Icons.login),
 
@@ -141,11 +142,10 @@ class MyDrawer extends StatelessWidget {
                       // ),
                     ]))
                   ]))),
-          GetBuilder<MyDrawerViewModel>(
-            init: MyDrawerViewModel(),
+          GetX<ScreenViewModel>(
             builder: (controller) => TweenAnimationBuilder(
-                tween: Tween<double>(begin: 0, end: controller.value),
-                duration: const Duration(milliseconds: 400),
+                tween: Tween<double>(begin: 0, end: controller.value.value),
+                duration: const Duration(milliseconds: 300),
                 curve: Curves.easeIn,
                 builder: (_, double val, __) {
                   return (Transform(
@@ -162,29 +162,29 @@ class MyDrawer extends StatelessWidget {
                   ));
                 }),
           ),
+        /// =========================Under testing.
+          // ///The GestureDectector will allows to me open the drawer
+          // GetX<MyDrawerViewModel>(
+          //     builder: (controller) => GestureDetector(
+          //           // onHorizontalDragUpdate: (e) {
+          //           //   if (e.delta.dx > 0) {
+          //           //     controller.one();
+          //           //   } else {
+          //           //     controller.zero();
+          //           //     // setState(() {
+          //           //     //   value = 0;
+          //           //     // });
+          //           //   }
+          //           // },
 
-          ///The GestureDectector will allows to me open the drawer
-          GetX<MyDrawerViewModel>(
-              builder: (controller) => GestureDetector(
-                    onHorizontalDragUpdate: (e) {
-                      if (e.delta.dx > 0) {
-                        controller.one();
-                      } else {
-                        controller.zero();
-                        // setState(() {
-                        //   value = 0;
-                        // });
-                      }
-                    },
-
-                    //   onTap: () {
-                    //   ///If the value equal to 0 then when we tap it will become 1
-                    //   ///else it will become 0
-                    //   setState(() {
-                    //     value == 0 ? value = 1 : value = 0;
-                    //   });
-                    // }
-                  ))
+          //           //   onTap: () {
+          //           //   ///If the value equal to 0 then when we tap it will become 1
+          //           //   ///else it will become 0
+          //           //   setState(() {
+          //           //     value == 0 ? value = 1 : value = 0;
+          //           //   });
+          //           // }
+          //         ))
         ],
       ),
     );
