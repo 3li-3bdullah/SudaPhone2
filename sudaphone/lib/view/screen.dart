@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/screen_widgets/categories_title.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
 import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
@@ -117,10 +118,7 @@ class Screen extends GetWidget<ScreenViewModel> {
             ),
 
         /// drawer: MyDrawer(),
-        body: ElasticDrawer(
-          mainColor: Colors.transparent,
-          drawerColor:Colors.transparent,
-          mainChild: ListView(children: [
+        body: ListView(children: [
             SizedBox(
               height: halfheight,
               width: size.width,
@@ -149,12 +147,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: const Text(
-                "Categories", style:TextStyle(fontSize:20)
-              ),
-            ),
+            CategoriesTitle(text:"Categories",press:(){}),
             SizedBox(
                 height: 120,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -209,10 +202,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                     onTap: () {},
                   ),
                 ])),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: const Text( "Most Used",style:TextStyle(fontSize: 20,))
-                ),
+                CategoriesTitle(text: "Most Used",press:(){}),
             Container(
                 padding: const EdgeInsets.only(top: 10,left:5,bottom:10,right:5),
                 height: size.height / 3,
@@ -258,12 +248,13 @@ class Screen extends GetWidget<ScreenViewModel> {
                         autoPlayCurve: Curves.fastOutSlowIn,
                         autoPlayAnimationDuration:
                             const Duration(milliseconds: 400)))),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: const Text(
-                "Lastest Phones", style:TextStyle(fontSize:20)
-              ),
-            ),
+                            CategoriesTitle(text: "Lastest Phones",press: (){},),
+            // Container(
+            //   padding: const EdgeInsets.all(10),
+            //   child: const Text(
+            //     "Lastest Phones", style:TextStyle(fontSize:20)
+            //   ),
+            // ),
             SizedBox(
               height: halfheight + partOfHeight,
               child: GridView(
@@ -313,13 +304,8 @@ class Screen extends GetWidget<ScreenViewModel> {
                   ]),
             ),
           ]),
-          drawerChild: Scaffold(appBar: AppBar(title: const Text("Under Testing"),centerTitle: true, actions:[
-            IconButton(onPressed: (){},icon: const Icon(Icons.search),)
-          ],
-        ),
-        body: const Center(child:Text("Dude , don\'t wait do it now"))
-        ),
-      ),
+          
+        
      ) );
   }
 }
