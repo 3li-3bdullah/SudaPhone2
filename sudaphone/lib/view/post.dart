@@ -4,7 +4,8 @@ import 'package:sudaphone/view/widgets/custom_text.dart';
 
 
 class Post extends StatelessWidget {
-
+  const Post({Key? key}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -12,11 +13,8 @@ class Post extends StatelessWidget {
       child: Scaffold(
     appBar: AppBar(
 
-      title: const CustomText(
-          text: "المنشورات",
-          textAlign: TextAlign.center,
-          fontSize: 25,
-          fontWeight: FontWeight.normal),
+      title: const Text(
+           "المنشورات"),
           centerTitle: true,
     ),
     body: ListView(children: [
