@@ -11,11 +11,9 @@ class AboutApp extends StatelessWidget {
         textDirection: TextDirection.rtl,
         child: Scaffold(
             appBar: AppBar(
-              title: const CustomText(
-                  text: "حول التطبيق",
-                  textAlign: TextAlign.center,
-                  fontSize: 25,
-                  fontWeight: FontWeight.normal),
+              title: const Text(
+                "حول التطبيق",
+                  ),
               centerTitle: true,
             ),
 
