@@ -7,20 +7,23 @@ class CategoriesTitle extends StatelessWidget {
   Function? press;
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Text(
-        text!,
-        style: const TextStyle(fontSize: 20),
-      ),
-      const Spacer(),
-      Material(
-        color: Colors.green,
-        child: MaterialButton(
-            onPressed: () {
-              press!();
-            },
-            child: const Text("more", style: TextStyle(color: Colors.white))),
-      )
-    ]);
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Row(children: [
+        Text(
+          text!,
+          style: const TextStyle(fontSize: 20),
+        ),
+        const Spacer(),
+        Material(
+          color: Colors.green,
+          child: MaterialButton(
+              onPressed: () {
+                press!();
+              },
+              child: const Text("more", style: TextStyle(color: Colors.white))),
+        )
+      ]),
+    );
   }
 }
