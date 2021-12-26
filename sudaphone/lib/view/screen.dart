@@ -7,6 +7,7 @@ import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:elastic_drawer/elastic_drawer.dart';
 import 'dart:core';
 
 class Screen extends GetWidget<ScreenViewModel> {
@@ -116,197 +117,209 @@ class Screen extends GetWidget<ScreenViewModel> {
             ),
 
         /// drawer: MyDrawer(),
-        body: ListView(children: [
-          SizedBox(
-            height: halfheight,
-            width: size.width,
-            child: GridTile(
-              child: PageView.builder(
-                allowImplicitScrolling: true,
-                controller: controllerCarousel,
-                itemCount: imagesCarousel.length,
-                itemBuilder: (context, index) {
-                  String imagesCar = imagesCarousel[index];
-                  return SizedBox(
-                      height: size.height / 2,
-                      width: size.width,
-                      child: buildImage(imagesCar, index, size.width));
-                },
-              ),
-              footer: Container(
-                height: 60,
-                color: Colors.black.withOpacity(0.3),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    buildIndicator(),
-                  ],
+        body: ElasticDrawer(
+          mainColor: Colors.transparent,
+          drawerColor:Colors.transparent,
+          mainChild: ListView(children: [
+            SizedBox(
+              height: halfheight,
+              width: size.width,
+              child: GridTile(
+                child: PageView.builder(
+                  allowImplicitScrolling: true,
+                  controller: controllerCarousel,
+                  itemCount: imagesCarousel.length,
+                  itemBuilder: (context, index) {
+                    String imagesCar = imagesCarousel[index];
+                    return SizedBox(
+                        height: size.height / 2,
+                        width: size.width,
+                        child: buildImage(imagesCar, index, size.width));
+                  },
+                ),
+                footer: Container(
+                  height: 60,
+                  color: Colors.black.withOpacity(0.3),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      buildIndicator(),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Container(
-            child: const CustomText(
-              text: "Categories",
-              textAlign: TextAlign.end,
-              fontSize: 30,
-              fontWeight: FontWeight.normal,
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Text(
+                "Categories", style:TextStyle(fontSize:20)
+              ),
             ),
-          ),
-          SizedBox(
-              height: 120,
-              child: ListView(scrollDirection: Axis.horizontal, children: [
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/huawei.png",
-                  text: "Huawei",
-                  onTap: () {},
+            SizedBox(
+                height: 120,
+                child: ListView(scrollDirection: Axis.horizontal, children: [
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/huawei.png",
+                    text: "Huawei",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/iphone.jpg",
+                    text: "Apple",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/realme.png",
+                    text: "Realme",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/lenovo.png",
+                    text: "Lenovo",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/vivo.png",
+                    text: "Vivo",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/samsung.jpg",
+                    text: "Samsung",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/xiaomi.png",
+                    text: "Xiaomi",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/oppo.jpg",
+                    text: "Oppo",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/tecno.png",
+                    text: "Tecno",
+                    onTap: () {},
+                  ),
+                  CategoriesLogo(
+                    imageLogo: "assets/images/logo/nokia.jpg",
+                    text: "Nokia",
+                    onTap: () {},
+                  ),
+                ])),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const Text( "Most Used",style:TextStyle(fontSize: 20,))
                 ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/iphone.jpg",
-                  text: "Apple",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/realme.png",
-                  text: "Realme",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/lenovo.png",
-                  text: "Lenovo",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/vivo.png",
-                  text: "Vivo",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/samsung.jpg",
-                  text: "Samsung",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/xiaomi.png",
-                  text: "Xiaomi",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/oppo.jpg",
-                  text: "Oppo",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/tecno.png",
-                  text: "Tecno",
-                  onTap: () {},
-                ),
-                CategoriesLogo(
-                  imageLogo: "assets/images/logo/nokia.jpg",
-                  text: "Nokia",
-                  onTap: () {},
-                ),
-              ])),
-          SizedBox(
-              height: size.height / 3,
-              child: CarouselSlider(
-                  items: [
-                    Container(
-                        margin: const EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                                image: AssetImage('assets/images/carousel/1.jpg'),
-                                fit: BoxFit.cover)),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              CustomText(
-                                text: "Enjoy Your Eyes",
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                textAlign: TextAlign.center,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(5.0),
-                                child: CustomText(
-                                  text:
-                                      "Open Your Eyes And See The World As You Will See As A Last Moment",
-                                  fontSize: 15,
+            Container(
+                padding: const EdgeInsets.only(top: 10,left:5,bottom:10,right:5),
+                height: size.height / 3,
+                child: CarouselSlider(
+                    items: [
+                      Container(
+                          margin: const EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: const DecorationImage(
+                                  image: AssetImage('assets/images/carousel/1.jpg'),
+                                  fit: BoxFit.cover)),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                CustomText(
+                                  text: "Enjoy Your Eyes",
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                   textAlign: TextAlign.center,
                                 ),
-                              ),
-                            ]))
-                  ],
-                  options: CarouselOptions(
-                      height: size.height / 3,
-                      autoPlay: true,
-                      enableInfiniteScroll: true,
-                      enlargeCenterPage: true,
-                      aspectRatio: 16 / 9,
-                      viewportFraction: 0.8,
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 400)))),
-          const CustomText(
-            text: "Lastest Phones",
-            textAlign: TextAlign.right,
-            fontSize: 30,
-            fontWeight: FontWeight.normal,
-          ),
-          SizedBox(
-            height: halfheight + partOfHeight,
-            child: GridView(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                children: [
-                  LastProduct(
-                      imageProduct: "assets/images/product/huawei.jpg",
-                      text: "Huawei Mate 40 Pro : 1000\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/samsung.jpg",
-                      text: "Samsung S20 Ultra : 999\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/iphone.jpg",
-                      text: "iPhone 12 pro max : 1170\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/xiaomi.jpg",
-                      text: "Xiaomi Mi 10T  : 950\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/oppo.jpg",
-                      text: "Oppo F17 Pro : 975\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/lenovo.jpg",
-                      text: "Lenovo K12 Pro : 800\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/nokia.jpg",
-                      text: "Nokia G300 : 750\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/realme.jpg",
-                      text: "Realme race teaser : 900\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/tecno.jpg",
-                      text: "Tecno Spark6 : 850\$",
-                      onTap: () {}),
-                  LastProduct(
-                      imageProduct: "assets/images/product/vivo.jpeg",
-                      text: "Vivo Y53s : 950\$",
-                      onTap: () {}),
-                ]),
-          ),
-        ]),
+                                Padding(
+                                  padding: EdgeInsets.all(5.0),
+                                  child: CustomText(
+                                    text:
+                                        "Open Your Eyes And See The World As You Will See As A Last Moment",
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ]))
+                    ],
+                    options: CarouselOptions(
+                        height: size.height / 3,
+                        autoPlay: true,
+                        enableInfiniteScroll: true,
+                        enlargeCenterPage: true,
+                        aspectRatio: 16 / 9,
+                        viewportFraction: 0.8,
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        autoPlayAnimationDuration:
+                            const Duration(milliseconds: 400)))),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Text(
+                "Lastest Phones", style:TextStyle(fontSize:20)
+              ),
+            ),
+            SizedBox(
+              height: halfheight + partOfHeight,
+              child: GridView(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  children: [
+                    LastProduct(
+                        imageProduct: "assets/images/product/huawei.jpg",
+                        text: "Huawei Mate 40 Pro : 1000\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/samsung.jpg",
+                        text: "Samsung S20 Ultra : 999\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/iphone.jpg",
+                        text: "iPhone 12 pro max : 1170\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/xiaomi.jpg",
+                        text: "Xiaomi Mi 10T  : 950\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/oppo.jpg",
+                        text: "Oppo F17 Pro : 975\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/lenovo.jpg",
+                        text: "Lenovo K12 Pro : 800\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/nokia.jpg",
+                        text: "Nokia G300 : 750\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/realme.jpg",
+                        text: "Realme race teaser : 900\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/tecno.jpg",
+                        text: "Tecno Spark6 : 850\$",
+                        onTap: () {}),
+                    LastProduct(
+                        imageProduct: "assets/images/product/vivo.jpeg",
+                        text: "Vivo Y53s : 950\$",
+                        onTap: () {}),
+                  ]),
+            ),
+          ]),
+          drawerChild: Scaffold(appBar: AppBar(title: const Text("Under Testing"),centerTitle: true, actions:[
+            IconButton(onPressed: (){},icon: const Icon(Icons.search),)
+          ],
+        ),
+        body: const Center(child:Text("Dude , don\'t wait do it now"))
+        ),
       ),
-    );
+     ) );
   }
 }
