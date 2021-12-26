@@ -11,7 +11,6 @@ import 'package:sudaphone/view/categories_pages/tecno.dart';
 import 'package:sudaphone/view/categories_pages/vivo.dart';
 import 'package:sudaphone/view/categories_pages/xiaomi.dart';
 import 'package:sudaphone/view/widgets/categories_card.dart';
-import 'package:sudaphone/view/widgets/custom_text.dart';
 
 class Categories extends StatelessWidget {
   const Categories({Key? key}) : super(key: key);
@@ -26,11 +25,9 @@ class Categories extends StatelessWidget {
             textDirection: TextDirection.rtl,
             child: Scaffold(
               appBar: AppBar(
-                title: const CustomText(
-                    text: "الأقسام",
-                    textAlign: TextAlign.center,
-                    fontSize: 30,
-                    fontWeight: FontWeight.normal),
+                title: const Text(
+                    "الأقسام"
+                    ),
                 centerTitle: true,
               ),
 
