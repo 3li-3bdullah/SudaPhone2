@@ -17,9 +17,10 @@ class BottomNavigation extends GetWidget<ScreenViewModel> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Obx(
-        () => BottomNavyBar(
+    return Obx(
+        () =>
+       Scaffold(
+        bottomNavigationBar: BottomNavyBar(
             selectedIndex: controller.activeIndex.value,
             showElevation: true,
             onItemSelected: (index) {
@@ -43,6 +44,7 @@ class BottomNavigation extends GetWidget<ScreenViewModel> {
                   title: const Text("Settings"),
                   activeColor: Colors.blue),
             ]),
+        body: screens[controller.activeIndex.value],
       ),
     );
   }
