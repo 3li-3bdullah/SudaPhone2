@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CategoriesTitle extends StatelessWidget {
-  CategoriesTitle({Key? key , this.text,this.press}) : super(key: key);
+  CategoriesTitle({Key? key, this.text, this.press}) : super(key: key);
   String? text;
   Function? press;
   @override
@@ -15,14 +15,14 @@ class CategoriesTitle extends StatelessWidget {
           style: const TextStyle(fontSize: 20),
         ),
         const Spacer(),
-        Material(
-          color: Colors.green,
-          child: MaterialButton(
-              onPressed: () {
-                press!();
-              },
-              child: const Text("more", style: TextStyle(color: Colors.white))),
-        )
+        MaterialButton(
+            color: Colors.green,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20)),
+            onPressed: () {
+              press!();
+            },
+            child: const Text("more", style: TextStyle(color: Colors.white)))
       ]),
     );
   }
