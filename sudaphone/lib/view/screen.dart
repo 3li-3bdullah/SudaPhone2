@@ -224,21 +224,21 @@ class Screen extends GetWidget<ScreenViewModel> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: const [
-                                  CustomText(
-                                    text: "Enjoy Your Eyes",
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    textAlign: TextAlign.center,
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Text("Enjoy Your Eyes",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        )),
                                   ),
                                   Padding(
                                     padding: EdgeInsets.all(5.0),
-                                    child: CustomText(
-                                      text:
-                                          "Open Your Eyes And See The World As You Will See As A Last Moment",
-                                      fontSize: 15,
-                                      color: Colors.white,
-                                      textAlign: TextAlign.center,
+                                    child: Text(
+                                      "Open Your Eyes And See The World As You Will See As A Last Moment",
+                                      style:TextStyle(fontSize: 15,
+                                      color: Colors.white,)
                                     ),
                                   ),
                                 ]))
@@ -325,7 +325,9 @@ class Screen extends GetWidget<ScreenViewModel> {
             ),
           ],
         ),
-        body: const Center(child: Text("Don't wait do it right now."),),
+        body: const Center(
+          child: Text("Don't wait do it right now."),
+        ),
       ),
     );
   }
