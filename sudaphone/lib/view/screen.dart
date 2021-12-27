@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/screen_widgets/categories_title.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
-import './widgets/custom_text.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -15,7 +14,6 @@ class Screen extends GetWidget<ScreenViewModel> {
   // final scontroller = Get.lazyPut(() => ScreenViewModel , fenix:true);
 
   Screen({Key? key}) : super(key: key);
-  // int activeIndex = 0;
 
   final controllerCarousel =
       PageController(viewportFraction: 0.8, keepPage: true);
@@ -114,13 +112,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                 },
                 icon: const FaIcon(FontAwesomeIcons.alignLeft),
               ),
-
-              // DrawerMenu(
-              //   onClicked: openDrawer,
-              // ),
             ),
-
-            /// drawer: MyDrawer(),
             body: ListView(children: [
               SizedBox(
                 height: halfheight,
@@ -257,12 +249,6 @@ class Screen extends GetWidget<ScreenViewModel> {
                 text: "Lastest Phones",
                 press: () {},
               ),
-              // Container(
-              //   padding: const EdgeInsets.all(10),
-              //   child: const Text(
-              //     "Lastest Phones", style:TextStyle(fontSize:20)
-              //   ),
-              // ),
               SizedBox(
                 height: halfheight + partOfHeight,
                 child: GridView(
