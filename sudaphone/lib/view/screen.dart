@@ -10,6 +10,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'dart:core';
 
+// ignore: must_be_immutable
 class Screen extends GetWidget<ScreenViewModel> {
   // final scontroller = Get.lazyPut(() => ScreenViewModel , fenix:true);
 
@@ -228,10 +229,11 @@ class Screen extends GetWidget<ScreenViewModel> {
                                   Padding(
                                     padding: EdgeInsets.all(5.0),
                                     child: Text(
-                                      "Open Your Eyes And See The World As You Will See As A Last Moment",
-                                      style:TextStyle(fontSize: 15,
-                                      color: Colors.white,)
-                                    ),
+                                        "Open Your Eyes And See The World As You Will See As A Last Moment",
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                        )),
                                   ),
                                 ]))
                       ],
@@ -244,7 +246,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                           viewportFraction: 0.8,
                           autoPlayCurve: Curves.fastOutSlowIn,
                           autoPlayAnimationDuration:
-                              const Duration(milliseconds: 400)))),
+                              const Duration(milliseconds: 250)))),
               CategoriesTitle(
                 text: "Lastest Phones",
                 press: () {},
