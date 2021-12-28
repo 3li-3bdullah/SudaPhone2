@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class CategoriesTitle extends StatelessWidget {
   CategoriesTitle({Key? key, this.text, this.press}) : super(key: key);
   String? text;
+  String? text2;
   Function? press;
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,12 @@ class CategoriesTitle extends StatelessWidget {
         const Spacer(),
         MaterialButton(
             color: Colors.green,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
             onPressed: () {
               press!();
             },
-            child: const Text("more", style: TextStyle(color: Colors.white)))
+            child: Text(text2!, style: const TextStyle(color: Colors.white)))
       ]),
     );
   }
