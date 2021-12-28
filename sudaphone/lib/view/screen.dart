@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/screen_widgets/categories_title.dart';
 import 'package:sudaphone/view/widgets/data_search.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
@@ -99,24 +100,26 @@ class Screen extends GetWidget<ScreenViewModel> {
               backgroundColor: Colors.white,
               title: const Text(
                 "Sudaphone",
-                style: TextStyle(color: Colors.green),
+                style: TextStyle(color: Colors.black),
               ),
               centerTitle: true,
               elevation: 0,
               actions: [
-                Row(children: [
-                  Expanded(
-                      child: IconButton(
-                    icon: const Icon(Icons.search , color:Colors.blue),
-                    onPressed: () {
-                      showSearch(context: context, delegate: DataSearch());
-                    },
-                  )),
-                  Expanded(child:IconButton(
-                    icon: const Icon(Icons.shopping_cart_outlined , color:Colors.blue),
-                    onPressed: () {},
-                  ))
-                ])
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.shopping_cart_outlined,
+                            color: Colors.yellow.shade800),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.search, color: Colors.green),
+                        onPressed: () {
+                          showSearch(context: context, delegate: DataSearch());
+                        },
+                      ),
+                    ])
               ],
               leading: IconButton(
                 onPressed: () {
@@ -124,9 +127,9 @@ class Screen extends GetWidget<ScreenViewModel> {
                       ? controller.valueOne()
                       : controller.valueZero();
                 },
-                icon: const FaIcon(
-                  FontAwesomeIcons.alignLeft,
-                  color: Colors.green,
+                icon: const Icon(
+                  Icons.menu_outlined,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -149,7 +152,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                   ),
                   footer: Container(
                     height: 60,
-                    color: Colors.black.withOpacity(0.3),
+                    color: Colors.transparent,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -159,7 +162,12 @@ class Screen extends GetWidget<ScreenViewModel> {
                   ),
                 ),
               ),
-              CategoriesTitle(text: "Categories", press: () {}),
+              CategoriesTitle(
+                  text: "Categories",
+                  text2: "more",
+                  press: () {
+                    Get.to(() => const Categories());
+                  }),
               SizedBox(
                   height: 120,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -214,7 +222,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                       onTap: () {},
                     ),
                   ])),
-              CategoriesTitle(text: "Most Used", press: () {}),
+              CategoriesTitle(text: "Most Used",text2: "more",press: () {}),
               Container(
                   padding: const EdgeInsets.only(
                       top: 10, left: 5, bottom: 10, right: 5),
@@ -265,6 +273,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                               const Duration(milliseconds: 250)))),
               CategoriesTitle(
                 text: "Lastest Phones",
+                text2: "< Pull",
                 press: () {},
               ),
               SizedBox(
