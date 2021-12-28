@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/screen_widgets/categories_title.dart';
+import 'package:sudaphone/view/widgets/data_search.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
 import './widgets/categories_logo.dart';
 import './widgets/last_product.dart';
@@ -95,15 +96,27 @@ class Screen extends GetWidget<ScreenViewModel> {
           title: "Sudaphone",
           home: Scaffold(
             appBar: AppBar(
-              title: const Text("Sudaphone"),
+              backgroundColor: Colors.white,
+              title: const Text(
+                "Sudaphone",
+                style: TextStyle(color: Colors.green),
+              ),
               centerTitle: true,
               elevation: 0,
               actions: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
-                  child: ClipOval(
-                      child: Image.asset('assets/images/slider/ali.jpg')),
-                )
+                Row(children: [
+                  Expanded(
+                      child: IconButton(
+                    icon: const Icon(Icons.search , color:Colors.blue),
+                    onPressed: () {
+                      showSearch(context: context, delegate: DataSearch());
+                    },
+                  )),
+                  Expanded(child:IconButton(
+                    icon: const Icon(Icons.shopping_cart_outlined , color:Colors.blue),
+                    onPressed: () {},
+                  ))
+                ])
               ],
               leading: IconButton(
                 onPressed: () {
@@ -111,7 +124,10 @@ class Screen extends GetWidget<ScreenViewModel> {
                       ? controller.valueOne()
                       : controller.valueZero();
                 },
-                icon: const FaIcon(FontAwesomeIcons.alignLeft),
+                icon: const FaIcon(
+                  FontAwesomeIcons.alignLeft,
+                  color: Colors.green,
+                ),
               ),
             ),
             body: ListView(children: [
