@@ -9,6 +9,8 @@ import 'package:sudaphone/view_model/screen_view_model.dart';
 
 // ignore: must_be_immutable
 class BottomNavigation extends GetWidget<ScreenViewModel> {
+   ScreenViewModel s = Get.put(ScreenViewModel());
+
   BottomNavigation({Key? key}) : super(key: key);
   final List<Widget> screens = [
      Screen(),
