@@ -75,7 +75,7 @@ class Post extends StatelessWidget {
               title: Container(
                 margin: const EdgeInsets.only(top: 10),
                 child: const CustomText(
-                  text: "علي عبدالله",
+                  text: "Ali Abdullah",
                   color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class Post extends StatelessWidget {
               subtitle: Column(children:[
                 CustomText(
                   text:
-                      "السلام عليكم شباب ،، لدي Huawei Mate 40 Pro إستعمال يومين فقط ، نضيف ومع كامل الملحقات البيع لأعلي سعر",
+                      "Hi , Huawei Mate 40 Pro and i used it just one month , i wanna sell it for highest price.",
                   color: Colors.grey.shade800,
                   fontSize: 15,
                   fontWeight: FontWeight.normal,
