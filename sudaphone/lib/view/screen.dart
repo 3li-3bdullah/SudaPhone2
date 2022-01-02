@@ -178,7 +178,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                   text: "Categories",
                   text2: "more",
                   press: () {
-                    Get.to(() => const Categories());
+                    Get.to(() => const Categories(), transition:Transition.zoom,duration:const Duration(milliseconds:200));
                   }),
               SizedBox(
                   height: 120,

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CategoriesTitle extends StatelessWidget {
+
   CategoriesTitle({Key? key, this.text, this.text2, this.press}) : super(key: key);
+
+
   String? text;
   String? text2;
   Function? press;

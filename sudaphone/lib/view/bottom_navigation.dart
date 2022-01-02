@@ -9,6 +9,8 @@ import 'package:sudaphone/view_model/screen_view_model.dart';
 
 // ignore: must_be_immutable
 class BottomNavigation extends GetWidget<ScreenViewModel> {
+   ScreenViewModel s = Get.put(ScreenViewModel());
+
   BottomNavigation({Key? key}) : super(key: key);
   final List<Widget> screens = [
      Screen(),
@@ -21,10 +23,10 @@ class BottomNavigation extends GetWidget<ScreenViewModel> {
     return GetX<ScreenViewModel>(
       builder:(controller) => Scaffold(
           bottomNavigationBar: BottomNavyBar(
-              selectedIndex: controller.activeIndex.value,
+              selectedIndex: controller.activeIndex!.value,
               showElevation: true,
               onItemSelected: (index) {
-                controller.activeIndex.value = index;
+                controller.activeIndex!.value = index;
               },
               items: [
                 BottomNavyBarItem(
@@ -44,7 +46,7 @@ class BottomNavigation extends GetWidget<ScreenViewModel> {
                     title: const Text("Settings"),
                     activeColor: Colors.blue),
               ]),
-          body: GetX<ScreenViewModel>(builder: (controller) => screens[controller.activeIndex.value])),
+          body: GetX<ScreenViewModel>(builder: (controller) => screens[controller.activeIndex!.value])),
     );
   }
 }
