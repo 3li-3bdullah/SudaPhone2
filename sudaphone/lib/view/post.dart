@@ -9,12 +9,12 @@ class Post extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: TextDirection.ltr,
       child: Scaffold(
     appBar: AppBar(
 
       title: const Text(
-           "المنشورات"),
+           "Posts"),
           centerTitle: true,
     ),
     body: ListView(children: [
@@ -28,7 +28,7 @@ class Post extends StatelessWidget {
             minLines: 1,
             decoration: InputDecoration(
                 contentPadding: const EdgeInsets.all(10),
-                hintText: "اضف جوال للبيع",
+                hintText: "Write here...",
                 border: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.grey),
                   borderRadius: BorderRadius.circular(20),
@@ -55,7 +55,7 @@ class Post extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
-                        text: "اضف منشور",
+                        text: "add",
                         color: Colors.grey.shade800,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
