@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class PhoneCard extends StatelessWidget {
-  PhoneCard({Key? key, required this.image, this.isLiked,required this.name}) : super(key: key);
+  PhoneCard({Key? key, required this.image, this.isLiked,required this.price, required this.name})
+      : super(key: key);
   String image;
   bool? isLiked;
   String name;
+  String price;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,10 @@ class PhoneCard extends StatelessWidget {
             maxLines: 2,
             style: const TextStyle(fontWeight: FontWeight.w800),
             overflow: TextOverflow.ellipsis,
-          )
+          ),
+          const SizedBox(height: 8),
+          Text('\$$price',
+              style: const TextStyle(fontSize: 32, fontFamily: 'avenir')),
         ]),
       ),
     );
