@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class PhoneCard extends StatelessWidget {
-   PhoneCard({Key? key,required this.image}) : super(key: key);
+  PhoneCard({Key? key, required this.image, this.isLiked}) : super(key: key);
   String image;
+  bool? isLiked;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,16 @@ class PhoneCard extends StatelessWidget {
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(4)),
                 child: Image.asset(image, fit: BoxFit.cover),
+              ),
+              Positioned(
+                right: 0,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: isLiked!
+                      ? const Icon(Icons.favorite, color: Colors.blue)
+                      : const Icon(Icons.favorite_border_outlined,
+                          color: Colors.blue),
+                ),
               ),
             ],
           )
