@@ -5,6 +5,7 @@ import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/screen_widgets/categories_title.dart';
 import 'package:sudaphone/view/widgets/data_search.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
+
 import 'package:sudaphone/view/screen_widgets/categories_logo.dart';
 import './widgets/last_product.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
