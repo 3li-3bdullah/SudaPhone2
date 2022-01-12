@@ -1,20 +1,20 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/aboutapp.dart';
+import 'package:sudaphone/view/bottom_navigation.dart';
 import 'package:sudaphone/view/categories.dart';
-import 'package:sudaphone/view/login.dart';
 import 'package:sudaphone/view/post.dart';
-import 'package:sudaphone/view/screen.dart';
 import 'package:sudaphone/view/settings.dart';
 import 'package:sudaphone/view/widgets/build_listtile.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
-import 'package:sudaphone/view_model/mydrawer_view_model.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
 
+// ignore: must_be_immutable
 class MyDrawer extends GetWidget<ScreenViewModel> {
-  const MyDrawer({Key? key}) : super(key: key);
+   MyDrawer({Key? key}) : super(key: key);
+  ScreenViewModel s = Get.put(ScreenViewModel());
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyDrawer extends GetWidget<ScreenViewModel> {
           Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-              colors: [Colors.blue.shade400, Colors.blue.shade900],
+              colors: [Colors.green.shade400, Colors.green.shade900],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
             )),
@@ -62,25 +62,25 @@ class MyDrawer extends GetWidget<ScreenViewModel> {
                     Expanded(
                         child: ListView(children: [
                       BuildListTile(
-                        text: 'الصفحة الرئيسية',
+                        text: "Home",
                         onTap: () {
-                          Get.offAll(()=>const MyDrawer(),
+                          Get.offAll(() =>  MyDrawer(),
                               transition: Transition.rightToLeftWithFade);
                         },
-                        icon: Icons.home,
+                        icon: FontAwesomeIcons.home,
                       ),
                       BuildListTile(
-                        text: "الأقسام",
+                        text: "Categories",
                         onTap: () {
-                          Get.to(()=>const Categories(),
-                              transition: Transition.zoom);
+                          Get.to(() => const Categories(),
+                              transition: Transition.zoom , duration: const Duration(milliseconds:100));
                         },
                         icon: Icons.category,
                       ),
                       BuildListTile(
-                        text: "إضافة منشور",
+                        text: "Posts",
                         onTap: () {
-                          Get.to(()=>Post(),
+                          Get.to(() => const Post(),
                               transition: Transition.leftToRightWithFade);
                         },
                         icon: Icons.post_add,
@@ -92,23 +92,23 @@ class MyDrawer extends GetWidget<ScreenViewModel> {
                         ),
                       ),
                       BuildListTile(
-                        text: "حول التطبيق",
+                        text: "About",
                         onTap: () {
-                          Get.to(()=>const AboutApp(),
+                          Get.to(() => const AboutApp(),
                               transition: Transition.upToDown);
                         },
                         icon: Icons.info,
                       ),
                       BuildListTile(
-                        text: "الإعدادات",
+                        text: "Settings",
                         onTap: () {
-                          Get.to(()=>const Settings(),
+                          Get.to(() => const Settings(),
                               transition: Transition.downToUp);
                         },
                         icon: Icons.settings,
                       ),
                       BuildListTile(
-                          text: 'تسجيل الدخول',
+                          text: "Logout",
                           onTap: () {
                             // Get.to(() => LogIn());
                           },
@@ -148,7 +148,7 @@ class MyDrawer extends GetWidget<ScreenViewModel> {
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeIn,
                 builder: (_, double val, __) {
-                  return (Transform(
+                  return Transform(
                     alignment: Alignment.center,
                     transform: (Matrix4.identity()
                       ..setEntry(3, 2, 0.001)
@@ -158,58 +158,12 @@ class MyDrawer extends GetWidget<ScreenViewModel> {
                           200 *
                               val) //This will allows us to translate the screen
                       ..rotateY((pi / 6) * val)),
-                    child: Screen(),
-                  ));
+                    child: BottomNavigation(),
+                  );
                 }),
           ),
-        /// =========================Under testing.
-          // ///The GestureDectector will allows to me open the drawer
-          // GetX<MyDrawerViewModel>(
-          //     builder: (controller) => GestureDetector(
-          //           // onHorizontalDragUpdate: (e) {
-          //           //   if (e.delta.dx > 0) {
-          //           //     controller.one();
-          //           //   } else {
-          //           //     controller.zero();
-          //           //     // setState(() {
-          //           //     //   value = 0;
-          //           //     // });
-          //           //   }
-          //           // },
-
-          //           //   onTap: () {
-          //           //   ///If the value equal to 0 then when we tap it will become 1
-          //           //   ///else it will become 0
-          //           //   setState(() {
-          //           //     value == 0 ? value = 1 : value = 0;
-          //           //   });
-          //           // }
-          //         ))
         ],
       ),
     );
   }
 }
-/*
-GestureDetector(
-            onHorizontalDragUpdate: (e) {
-              if (e.delta.dx > 0) {
-                setState(() {
-                  value = 1;
-                });
-              } else {
-                setState(() {
-                  value = 0;
-                });
-              }
-            },
-
-            //   onTap: () {
-            //   ///If the value equal to 0 then when we tap it will become 1
-            //   ///else it will become 0
-            //   setState(() {
-            //     value == 0 ? value = 1 : value = 0;
-            //   });
-            // }
-          ) 
-*/
