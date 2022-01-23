@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/view/mydrawer.dart';
 
 class LoginViewModel extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -14,6 +15,51 @@ class LoginViewModel extends GetxController {
    return showsignin.value = !showsignin.value;
   }
 
+   signin(GlobalKey<FormState> signinKey) {
+    signinKey.currentState!.save();
+    if (signinKey.currentState!.validate()) {
+      signInWithEmailAndPassword();
+    }
+    Get.defaultDialog(
+      title: "تم تسحيل دخولك بنجاح",
+      textCancel: "إلغاء",
+      textConfirm: "تم",
+      buttonColor: Colors.green,
+      onCancel: () {
+        Get.back();
+      },
+      onConfirm: () {
+        Get.offAll(
+          MyDrawer(),
+          transition: Transition.zoom,
+        );
+      },
+      radius: 30,
+    );
+  }
+   signup(GlobalKey<FormState> signupKey) {
+    signupKey.currentState!.save();
+    if (signupKey.currentState!.validate()) {
+      signUpWithEmailAndPassword();
+    }
+
+    Get.defaultDialog(
+      title: "تم إنشاء الحساب بنجاح",
+      textCancel: "إلغاء",
+      textConfirm: "تم",
+      buttonColor: Colors.green,
+      onCancel: () {
+        Get.back();
+      },
+      onConfirm: () {
+        Get.offAll(
+          MyDrawer(),
+          transition: Transition.zoom,
+        );
+      },
+      radius: 30,
+    );
+  }
   @override
   void onInit() {
     super.onInit();
