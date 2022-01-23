@@ -13,59 +13,7 @@ import 'widgets/custom_text.dart';
 class LogIn extends GetWidget<LoginViewModel> {
   final GlobalKey<FormState> _signInKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
-
-  LoginViewModel xcontroller = Get.put(LoginViewModel());
-
-  // LoginViewModel controller = Get.find();
-  // LoginViewModel controller = Get.put(LoginViewModel());
-
-  signin() {
-    _signInKey.currentState!.save();
-    if (_signInKey.currentState!.validate()) {
-      controller.signInWithEmailAndPassword();
-    }
-    Get.defaultDialog(
-      title: "تم تسحيل دخولك بنجاح",
-      textCancel: "إلغاء",
-      textConfirm: "تم",
-      buttonColor: Colors.green,
-      onCancel: () {
-        Get.back();
-      },
-      onConfirm: () {
-        Get.offAll(
-          MyDrawer(),
-          transition: Transition.zoom,
-        );
-      },
-      radius: 30,
-    );
-  }
-
-  signup() {
-    _signUpKey.currentState!.save();
-    if (_signUpKey.currentState!.validate()) {
-      controller.signUpWithEmailAndPassword();
-    }
-
-    Get.defaultDialog(
-      title: "تم إنشاء الحساب بنجاح",
-      textCancel: "إلغاء",
-      textConfirm: "تم",
-      buttonColor: Colors.green,
-      onCancel: () {
-        Get.back();
-      },
-      onConfirm: () {
-        Get.offAll(
-          MyDrawer(),
-          transition: Transition.zoom,
-        );
-      },
-      radius: 30,
-    );
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
@@ -127,8 +75,8 @@ class LogIn extends GetWidget<LoginViewModel> {
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 20),
                                 onPressed: controller.showsignin.value
-                                    ? signin
-                                    : signup,
+                                    ? controller.signin(_signInKey)
+                                    : controller.signup(_signUpKey),
                                 child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.min,
