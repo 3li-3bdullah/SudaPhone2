@@ -6,16 +6,15 @@ import 'package:sudaphone/view_model/login_view_model.dart';
 import '../../constants.dart';
 
 class BuildFormSignIn extends GetWidget<LoginViewModel> {
-   // ignore: use_key_in_widget_constructors
-   const BuildFormSignIn({required this.globalSignInKey});
-  //final GlobalKey<FormState> _formstatesignin = GlobalKey<FormState>();
+  // ignore: use_key_in_widget_constructors
+  const BuildFormSignIn({required this.globalSignInKey});
   final GlobalKey globalSignInKey;
 
   @override
   Widget build(BuildContext context) {
     final double mdw = MediaQuery.of(context).size.width;
     return Center(
-      //Here should i added expanded just after i test the last codes.
+        //Here should i added expanded just after i test the last codes.
         child: AnimatedContainer(
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeOutBack,
@@ -54,7 +53,7 @@ class BuildFormSignIn extends GetWidget<LoginViewModel> {
                           pass: false,
                           validator: (value) {
                             if (value == null) {
-                              print("Error");
+                              return "Please write your email";
                             }
                           },
                           icon: Icons.email_outlined,
@@ -63,8 +62,7 @@ class BuildFormSignIn extends GetWidget<LoginViewModel> {
                           fillColor: kfillColor,
                           enabledColor: ksignInColor1,
                           focusedColor: Colors.indigo.shade600,
-                          borderSideColor: ksignInColor1
-                          ),
+                          borderSideColor: ksignInColor1),
                       //End Email ----------
                       //Start User Password----------
                       const CustomText(
@@ -76,23 +74,22 @@ class BuildFormSignIn extends GetWidget<LoginViewModel> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onSave: (value) {
-                          controller.password = value;
-                        },
-                        pass: true,
-                        validator: (value) {
-                          if (value == null) {
-                            print("Error");
-                          }
-                        },
-                        icon: Icons.lock_outline,
-                        myhinttext: "أدخل  كلمة المرور هنا",
-                        prefixColor: Colors.green,
+                          onSave: (value) {
+                            controller.password = value;
+                          },
+                          pass: true,
+                          validator: (value) {
+                            if (value == null) {
+                              return "Please write your password";
+                            }
+                          },
+                          icon: Icons.lock_outline,
+                          myhinttext: "أدخل  كلمة المرور هنا",
+                          prefixColor: Colors.green,
                           fillColor: kfillColor,
                           enabledColor: ksignInColor1,
                           focusedColor: Colors.indigo.shade600,
-                          borderSideColor: ksignInColor1
-                      ),
+                          borderSideColor: ksignInColor1),
                       //End User Password----------
                     ],
                   ),
