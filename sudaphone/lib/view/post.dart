@@ -31,7 +31,7 @@ class Post extends GetWidget<PostViewModel> {
                   minLines: 1,
                   validator: (String? val) {
                     if (val!.isEmpty) {
-                      return "Please write somethings to publish";
+                      return "Please write somethings for publishing";
                     }
                   },
                   decoration: InputDecoration(
@@ -46,7 +46,32 @@ class Post extends GetWidget<PostViewModel> {
             ),
             IconButton(
               icon: const Icon(Icons.camera_alt_outlined),
-              onPressed: () {},
+              onPressed: () {
+                Get.bottomSheet(
+                  SizedBox(
+                    height: 180,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          trailing: const Icon(Icons.camera_alt_outlined,
+                              color: Colors.blue),
+                          title: const Text("From Camera"),
+                          onTap: () {
+                            controller.uploadFromCamera();
+                          },
+                        ),
+                        ListTile(
+                            trailing: const Icon(Icons.photo_outlined,
+                                color: Colors.blue),
+                            title: const Text("From Gallery"),
+                            onTap: () {
+                              controller.uploadFromGallery();
+                            }),
+                      ],
+                    ),
+                  ),
+                );
+              },
 
               ///=> pickercamera(),
             ),
@@ -110,6 +135,7 @@ class Post extends GetWidget<PostViewModel> {
                   ])),
               Divider(color: Colors.grey.withOpacity(0.2)),
               Row(children: [
+                //After test make this widget custom..............
                 Expanded(
                   child: InkWell(
                     child: Container(
@@ -119,18 +145,21 @@ class Post extends GetWidget<PostViewModel> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CustomText(
-                              text: "0",
+                              text: controller.like == false ? "0" : "1",
                               color: Colors.grey.shade800,
                               fontSize: 15,
                               fontWeight: FontWeight.normal,
                               textAlign: TextAlign.center,
                             ),
                             const SizedBox(width: 4),
-                            Icon(Icons.favorite_border_outlined,
-                                color: Colors.pink.shade600),
+                           controller.like == false ? Icon(Icons.favorite_border_outlined,
+                                color: Colors.pink.shade600) : Icon(Icons.favorite,
+                                color: Colors.pink.shade600) 
                           ]),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      controller.isLiked();
+                    },
                   ),
                 ),
                 Expanded(
