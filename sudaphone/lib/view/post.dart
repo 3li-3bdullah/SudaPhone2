@@ -1,175 +1,185 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sudaphone/view/comments.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
+import 'package:sudaphone/view_model/post_view_model.dart';
 
-
-class Post extends StatelessWidget {
+class Post extends GetWidget<PostViewModel> {
   const Post({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
-    appBar: AppBar(
-
-      title: const Text(
-           "Posts"),
+        appBar: AppBar(
+          title: const Text("Posts"),
           centerTitle: true,
-    ),
-    body: ListView(children: [
-      Card(
-          child: Column(children:[
-        ListTile(
-          leading: const CircleAvatar(backgroundImage: AssetImage("example/images/slider/ali.jpg"),),
-          title: TextFormField(
-            maxLength: 300,
-            maxLines: 10,
-            minLines: 1,
-            decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(10),
-                hintText: "Write here...",
-                border: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(20),
-                )),
-          ),
         ),
-        IconButton(
-          icon: const Icon(Icons.camera_alt_outlined),
-          onPressed: () {},
+        body: ListView(children: [
+          Card(
+              child: Column(children: [
+            ListTile(
+              leading: const CircleAvatar(
+                backgroundImage: AssetImage("assets/images/slider/ali.jpg"),
+              ),
+              title: Form(
+                key: controller.postKey,
+                child: TextFormField(
+                  maxLength: 300,
+                  maxLines: 10,
+                  minLines: 1,
+                  validator: (String? val) {
+                    if (val!.isEmpty) {
+                      return "Please write somethings to publish";
+                    }
+                  },
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.all(10),
+                      hintText: "Write here...",
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(20),
+                      )),
+                ),
+              ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.camera_alt_outlined),
+              onPressed: () {},
 
-          ///=> pickercamera(),
-        ),
-        Row(children: [
-          Expanded(
-              child: InkWell(
-            onTap: () {},
-            child: Container(
-                decoration: BoxDecoration(
-                    border: Border(
-                        top: BorderSide(
-                            color: Colors.grey.withOpacity(0.2)))),
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomText(
-                        text: "add",
-                        color: Colors.grey.shade800,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        textAlign: TextAlign.center,
-                      ),
-                    const  Padding(padding: EdgeInsets.only(right: 10)),
-                      Icon(Icons.add, 
-                      color: Colors.grey.shade800),
-                    ])),
-          )),
-        ]),
-      ])),
-      Card(
-        child: Column(children: [
-          ListTile(
-              leading: const CircleAvatar(child: Icon(Icons.person)),
-              title: Container(
-                margin: const EdgeInsets.only(top: 10),
-                child: const CustomText(
-                  text: "Ali Abdullah",
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  textAlign: TextAlign.right,
-                ),
-              ),
-              trailing: IconButton(
-                  icon: const Icon(Icons.more_horiz), onPressed: () {}),
-              isThreeLine: true,
-              subtitle: Column(children:[
-                CustomText(
-                  text:
-                      "Hi , Huawei Mate 40 Pro and i used it just one month , i wanna sell it for highest price.",
-                  color: Colors.grey.shade800,
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal,
-                  textAlign: TextAlign.center,
-                ),
-                Image.asset("example/images/product/huawei.jpg"),
-              ])),
-          Divider(color: Colors.grey.withOpacity(0.2)),
-          Row(children: [
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      border: Border(left: BorderSide(color: Colors.grey))),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children:[
-                        CustomText(
-                          text: "0",
-                          color: Colors.grey.shade800,
-                          fontSize: 15,
-                          fontWeight: FontWeight.normal,
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(width: 4),
-                        Icon(Icons.favorite_border_outlined
-                        , color: Colors.pink.shade600),
-                      ]),
-                ),
-                onTap: () {},
-              ),
+              ///=> pickercamera(),
             ),
-            Expanded(
-              child: InkWell(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomText(
-                        text: "0",
-                        color: Colors.grey.shade800,
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(width: 4),
-                      const Icon(Icons.insert_comment_outlined
-                      , color: Colors.green),
-                    ]),
-                onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const Comments();
-                  }));
+            Row(children: [
+              Expanded(
+                  child: InkWell(
+                onTap: () async {
+                  await controller.addPost();
                 },
-              ),
-            ),
-          ]),
-         const Padding(padding: EdgeInsets.only(top: 5)),
+                child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            top: BorderSide(
+                                color: Colors.grey.withOpacity(0.2)))),
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(
+                            text: "add",
+                            color: Colors.grey.shade800,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            textAlign: TextAlign.center,
+                          ),
+                          const Padding(padding: EdgeInsets.only(right: 10)),
+                          Icon(Icons.add, color: Colors.grey.shade800),
+                        ])),
+              )),
+            ]),
+          ])),
+          Card(
+            child: Column(children: [
+              ListTile(
+                  leading: const CircleAvatar(
+                      backgroundImage:
+                          AssetImage("assets/images/slider/ali.jpg")),
+                  title: Container(
+                    margin: const EdgeInsets.only(top: 10),
+                    child: const CustomText(
+                      text: "Ali Abdullah",
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                  trailing: IconButton(
+                      icon: const Icon(Icons.more_horiz), onPressed: () {}),
+                  isThreeLine: true,
+                  subtitle: Column(children: [
+                    CustomText(
+                      text:
+                          "Hi , Huawei Mate 40 Pro and i used it just one month , i wanna sell it for highest price.",
+                      color: Colors.grey.shade800,
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      textAlign: TextAlign.center,
+                    ),
+                    Image.asset("assets/images/product/huawei.jpg"),
+                  ])),
+              Divider(color: Colors.grey.withOpacity(0.2)),
+              Row(children: [
+                Expanded(
+                  child: InkWell(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          border: Border(left: BorderSide(color: Colors.grey))),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomText(
+                              text: "0",
+                              color: Colors.grey.shade800,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(width: 4),
+                            Icon(Icons.favorite_border_outlined,
+                                color: Colors.pink.shade600),
+                          ]),
+                    ),
+                    onTap: () {},
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(
+                            text: "0",
+                            color: Colors.grey.shade800,
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(width: 4),
+                          const Icon(Icons.insert_comment_outlined,
+                              color: Colors.green),
+                        ]),
+                    onTap: () {
+                      Get.to(() => const Comments(),
+                          transition: Transition.fadeIn);
+                    },
+                  ),
+                ),
+              ]),
+              const Padding(padding: EdgeInsets.only(top: 5)),
+            ]),
+          ),
+          //for (int i = 0; i < posts.length; i++)
+          //PostList(name: posts[i]['name'], contentpost: posts[i]['content']),
+          //---------------
+          // FutureBuilder(
+          //   builder: (BuildContext context, AsyncSnapshot snapshot) {
+          //     if (snapshot.hasData) {
+          //       return ListView.builder(
+          //           shrinkWrap: true,
+          //           physics: NeverScrollableScrollPhysics(),
+          //           itemCount: snapshot.data.lenght,
+          //           itemBuilder: (BuildContext context, int i) {
+          //             return PostList(
+          //                 name: snapshot.data[i]['name'],
+          //                 contentpost: snapshot.data[i]['content']);
+          //           });
+          //     }
+          //     return Center(child: CircularProgressIndicator());
+          //   },
+          // ),
+          //------------------
         ]),
-      ),
-      //for (int i = 0; i < posts.length; i++)
-      //PostList(name: posts[i]['name'], contentpost: posts[i]['content']),
-      //---------------
-      // FutureBuilder(
-      //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-      //     if (snapshot.hasData) {
-      //       return ListView.builder(
-      //           shrinkWrap: true,
-      //           physics: NeverScrollableScrollPhysics(),
-      //           itemCount: snapshot.data.lenght,
-      //           itemBuilder: (BuildContext context, int i) {
-      //             return PostList(
-      //                 name: snapshot.data[i]['name'],
-      //                 contentpost: snapshot.data[i]['content']);
-      //           });
-      //     }
-      //     return Center(child: CircularProgressIndicator());
-      //   },
-      // ),
-      //------------------
-    ]),
       ),
     );
   }
