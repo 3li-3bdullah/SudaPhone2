@@ -5,7 +5,7 @@ import 'package:sudaphone/view/categories.dart';
 import 'package:sudaphone/view/screen_widgets/categories_title.dart';
 import 'package:sudaphone/view/widgets/data_search.dart';
 import 'package:sudaphone/view_model/screen_view_model.dart';
-import './widgets/categories_logo.dart';
+import 'package:sudaphone/view/screen_widgets/categories_logo.dart';
 import './widgets/last_product.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:elastic_drawer/elastic_drawer.dart';
@@ -39,10 +39,17 @@ class Screen extends GetWidget<ScreenViewModel> {
   Widget buildImage(String imagesCarousel, int index, double width) =>
       Container(
           margin: const EdgeInsets.symmetric(horizontal: 5),
-          color: Colors.grey,
-          child: Image.asset(
-            imagesCarousel,
-            fit: BoxFit.cover,
+          color: Colors.white,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: DecorationImage(
+                image: AssetImage(
+                  imagesCarousel,
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
           ));
   Widget buildIndicator() => SmoothPageIndicator(
         controller: controllerCarousel,
@@ -97,28 +104,34 @@ class Screen extends GetWidget<ScreenViewModel> {
           home: Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.white,
-              title: const Text(
-                "Sudaphone",
-                style: TextStyle(color: Colors.black),
+              title: const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Sudaphone",
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
-              centerTitle: true,
               elevation: 0,
               actions: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.shopping_cart_outlined,
-                            color: Colors.yellow.shade800),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.search, color: Colors.green),
-                        onPressed: () {
-                          showSearch(context: context, delegate: DataSearch());
-                        },
-                      ),
-                    ])
+                Padding(
+                  padding: const EdgeInsets.only(right: 15.0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.search, color: Colors.green),
+                          onPressed: () {
+                            showSearch(
+                                context: context, delegate: DataSearch());
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.shopping_cart_outlined,
+                              color: Colors.yellow.shade800),
+                          onPressed: () {},
+                        ),
+                      ]),
+                )
               ],
               leading: IconButton(
                 onPressed: () {
@@ -221,7 +234,7 @@ class Screen extends GetWidget<ScreenViewModel> {
                       onTap: () {},
                     ),
                   ])),
-              CategoriesTitle(text: "Most Used",text2: "more",press: () {}),
+              CategoriesTitle(text: "Most Used", text2: "more", press: () {}),
               Container(
                   padding: const EdgeInsets.only(
                       top: 10, left: 5, bottom: 10, right: 5),
