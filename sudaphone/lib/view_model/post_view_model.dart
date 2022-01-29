@@ -14,8 +14,8 @@ class PostViewModel extends GetxController {
   CollectionReference addNewData =
       FirebaseFirestore.instance.collection("users");
   String? text;
-  String? urlToImage;
-  DateTime? postTime;
+  String? imageUrl;
+  DateTime? postTime = DateTime.now();
   bool like = false;
   File? file;
   ImagePicker? pickedImage;
@@ -26,13 +26,19 @@ class PostViewModel extends GetxController {
     FormState? formState = postKey.currentState;
     if (formState!.validate()) {
       Get.defaultDialog(
-        content: 
+        barrierDismissible: false,
+        title: "Publishing",
+        content: const ListTile(
+          title: Text("Please wait a second..", style: TextStyle(fontSize: 18)),
+          leading: Center(child: CircularProgressIndicator()),
+        ),
       );
       formState.save();
       await uploadToStorage!.putFile(file!);
-      urlToImage = await uploadToStorage!.getDownloadURL();
+      imageUrl = await uploadToStorage!.getDownloadURL();
       await addNewData
-          .add({"text": text, "imageurl": urlToImage, "dateTime": postTime});
+          .add({"text": text, "imageUrl": imageUrl, "dateTime": postTime});
+      Get.back();
     }
   }
 
@@ -59,6 +65,7 @@ class PostViewModel extends GetxController {
   }
 
   isLiked() {
-    return like != like;
+    like != like;
+    update();
   }
 }
