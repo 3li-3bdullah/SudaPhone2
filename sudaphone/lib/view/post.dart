@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:sudaphone/view/comments.dart';
 import 'package:sudaphone/view/widgets/custom_text.dart';
 import 'package:sudaphone/view_model/post_view_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Post extends GetWidget<PostViewModel> {
   const Post({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class Post extends GetWidget<PostViewModel> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.ltr,
+      textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Posts"),
@@ -103,111 +104,127 @@ class Post extends GetWidget<PostViewModel> {
               )),
             ]),
           ])),
-          Card(
-            child: Column(children: [
-              ListTile(
-                  leading: const CircleAvatar(
-                      backgroundImage:
-                          AssetImage("assets/images/slider/ali.jpg")),
-                  title: Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    child: const CustomText(
-                      text: "Ali Abdullah",
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      textAlign: TextAlign.right,
-                    ),
-                  ),
-                  trailing: IconButton(
-                      icon: const Icon(Icons.more_horiz), onPressed: () {}),
-                  isThreeLine: true,
-                  subtitle: Column(children: [
-                    CustomText(
-                      text:
-                          "Hi , Huawei Mate 40 Pro and i used it just one month , i wanna sell it for highest price.",
-                      color: Colors.grey.shade800,
-                      fontSize: 15,
-                      fontWeight: FontWeight.normal,
-                      textAlign: TextAlign.center,
-                    ),
-                    Image.asset("assets/images/product/huawei.jpg"),
-                  ])),
-              Divider(color: Colors.grey.withOpacity(0.2)),
-              Row(children: [
-                //After test make this widget custom..............
-                Expanded(
-                  child: InkWell(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                          border: Border(left: BorderSide(color: Colors.grey))),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomText(
-                              text: controller.like == false ? "0" : "1",
-                              color: Colors.grey.shade800,
-                              fontSize: 15,
-                              fontWeight: FontWeight.normal,
-                              textAlign: TextAlign.center,
+          FutureBuilder(
+              future: controller.addNewData.get(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.hasData) {
+                  QuerySnapshot<dynamic>? snap = snapshot.data;
+                  return ListView.builder(
+                    itemCount: snap!.docs.length,
+                    itemBuilder: (context, i) {
+                      return Column(children: [
+                        Card(
+                            child: Column(children: [
+                          ListTile(
+                              leading: const CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      "assets/images/slider/ali.jpg")),
+                              title: Column(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(top: 10),
+                                    child: const CustomText(
+                                      text: "Ali Abdullah",
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ),
+                                  CustomText(
+                                    text: "${snap.docs[i].data()['dateTime']}",
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.grey,
+                                    textAlign: TextAlign.right,
+                                  )
+                                ],
+                              ),
+                              trailing: IconButton(
+                                  icon: const Icon(Icons.more_horiz),
+                                  onPressed: () {}),
+                              isThreeLine: true,
+                              subtitle: Column(children: [
+                                CustomText(
+                                  text: "${snap.docs[i].data()['text']}",
+                                  color: Colors.black,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.normal,
+                                  textAlign: TextAlign.center,
+                                ),
+                                Image.asset("assets/images/product/huawei.jpg"),
+                              ])),
+                          Divider(color: Colors.grey.withOpacity(0.2)),
+                          Row(children: [
+                            //After test make this widget custom..............
+                            Expanded(
+                              child: GetBuilder<PostViewModel>(
+                                builder: (controller) => InkWell(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                        border: Border(
+                                            left: BorderSide(
+                                                color: Colors.grey))),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          CustomText(
+                                            text: controller.like == false
+                                                ? "0"
+                                                : "1",
+                                            color: Colors.grey.shade800,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.normal,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          const SizedBox(width: 4),
+                                          controller.like == false
+                                              ? Icon(
+                                                  Icons
+                                                      .favorite_border_outlined,
+                                                  color: Colors.pink.shade600)
+                                              : Icon(Icons.favorite,
+                                                  color: Colors.pink.shade600)
+                                        ]),
+                                  ),
+                                  onTap: () {
+                                    controller.isLiked();
+                                  },
+                                ),
+                              ),
                             ),
-                            const SizedBox(width: 4),
-                           controller.like == false ? Icon(Icons.favorite_border_outlined,
-                                color: Colors.pink.shade600) : Icon(Icons.favorite,
-                                color: Colors.pink.shade600) 
+                            Expanded(
+                              child: InkWell(
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CustomText(
+                                        text: "0",
+                                        color: Colors.grey.shade800,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.normal,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(width: 4),
+                                      const Icon(Icons.insert_comment_outlined,
+                                          color: Colors.green),
+                                    ]),
+                                onTap: () {
+                                  Get.to(() => const Comments(),
+                                      transition: Transition.fadeIn);
+                                },
+                              ),
+                            ),
                           ]),
-                    ),
-                    onTap: () {
-                      controller.isLiked();
+                          const Padding(padding: EdgeInsets.only(top: 5)),
+                        ]))
+                      ]);
                     },
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CustomText(
-                            text: "0",
-                            color: Colors.grey.shade800,
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(width: 4),
-                          const Icon(Icons.insert_comment_outlined,
-                              color: Colors.green),
-                        ]),
-                    onTap: () {
-                      Get.to(() => const Comments(),
-                          transition: Transition.fadeIn);
-                    },
-                  ),
-                ),
-              ]),
-              const Padding(padding: EdgeInsets.only(top: 5)),
-            ]),
-          ),
-          //for (int i = 0; i < posts.length; i++)
-          //PostList(name: posts[i]['name'], contentpost: posts[i]['content']),
-          //---------------
-          // FutureBuilder(
-          //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-          //     if (snapshot.hasData) {
-          //       return ListView.builder(
-          //           shrinkWrap: true,
-          //           physics: NeverScrollableScrollPhysics(),
-          //           itemCount: snapshot.data.lenght,
-          //           itemBuilder: (BuildContext context, int i) {
-          //             return PostList(
-          //                 name: snapshot.data[i]['name'],
-          //                 contentpost: snapshot.data[i]['content']);
-          //           });
-          //     }
-          //     return Center(child: CircularProgressIndicator());
-          //   },
-          // ),
-          //------------------
+                  );
+                }
+                return const Center(child: CircularProgressIndicator());
+              })
         ]),
       ),
     );
