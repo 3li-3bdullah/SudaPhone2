@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sudaphone/view/aboutapp.dart';
 import 'package:sudaphone/view/bottom_navigation.dart';
@@ -67,7 +66,7 @@ class MyDrawer extends GetWidget<ScreenViewModel> {
                           Get.offAll(() =>  MyDrawer(),
                               transition: Transition.rightToLeftWithFade);
                         },
-                        icon: FontAwesomeIcons.home,
+                        icon: Icons.home,
                       ),
                       BuildListTile(
                         text: "Categories",
