@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sudaphone/binding/binding.dart';
 import 'package:sudaphone/view/mydrawer.dart';
 
 main() async {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "SudaPhone SD",
       theme: ThemeData(primaryColor: Colors.white),
-      home: MyDrawer(),
+      initialBinding: Binding(),
+      home: const MyDrawer(),
     );
   }
 }
