@@ -1,3 +1,3 @@
 # SudaPhone2
 
-The second upgraded version of Sudaphone .
+The second update version of Sudaphone .
